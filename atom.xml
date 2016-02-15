@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>酷鱼网</title>
-  <subtitle>不会做菜的玩家，不是好程序员。</subtitle>
+  <subtitle>人生，从外打破，是压力；从内打破，是成长。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-15T08:27:23.000Z</updated>
+  <updated>2016-02-15T15:54:53.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -20,21 +20,24 @@
     <link href="http://coolfishstudio.github.io/2016/02/15/Hello-World/"/>
     <id>http://coolfishstudio.github.io/2016/02/15/Hello-World/</id>
     <published>2016-02-15T08:11:19.000Z</published>
-    <updated>2016-02-15T08:27:23.000Z</updated>
+    <updated>2016-02-15T15:54:53.000Z</updated>
     
-    <content type="html">&lt;p&gt;作为一个程序员 第一句话 必须是 &lt;code&gt;hello world&lt;/code&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;本次博客搭建 采用了 以下技术:  &lt;/p&gt;
-&lt;ol&gt;
+    <content type="html">&lt;p&gt;作为一个程序员 第一句话 必须是  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hello world
+&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;本次博客搭建-采用了-以下技术&quot;&gt;&lt;a href=&quot;#本次博客搭建-采用了-以下技术&quot; class=&quot;headerlink&quot; title=&quot;本次博客搭建 采用了 以下技术:&quot;&gt;&lt;/a&gt;本次博客搭建 采用了 以下技术:&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;github: 用来保存静态页面  &lt;/li&gt;
 &lt;li&gt;hexo: 一款基于nodejs的博客模板框架  &lt;/li&gt;
 &lt;li&gt;多说: 一个第三方评论系统  &lt;/li&gt;
-&lt;li&gt;微搜索: 一个第三方站内搜索系统 不过貌似没想象的好使  &lt;/li&gt;
-&lt;li&gt;七牛: 一个第三方存储系统 可作为图床&lt;/li&gt;
+&lt;li&gt;七牛: 一个第三方存储系统 可作为图床  &lt;/li&gt;
 &lt;/ol&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;作为一个程序员 第一句话 必须是 &lt;code&gt;hello world&lt;/code&gt;&lt;br&gt;
+      &lt;p&gt;作为一个程序员 第一句话 必须是  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hello world
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
