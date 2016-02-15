@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-15T08:23:50.000Z</updated>
+  <updated>2016-02-15T08:27:23.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -17,12 +17,12 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://coolfishstudio.github.io/2016/02/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-    <id>http://coolfishstudio.github.io/2016/02/15/第一篇文章/</id>
+    <link href="http://coolfishstudio.github.io/2016/02/15/Hello-World/"/>
+    <id>http://coolfishstudio.github.io/2016/02/15/Hello-World/</id>
     <published>2016-02-15T08:11:19.000Z</published>
-    <updated>2016-02-15T08:23:50.000Z</updated>
+    <updated>2016-02-15T08:27:23.000Z</updated>
     
-    <content type="html">&lt;p&gt;作为一个程序员 第一句话 必须是 &lt;code&gt;hello world&lt;/code&gt;&lt;br&gt;本次博客搭建 采用了 以下技术:  &lt;/p&gt;
+    <content type="html">&lt;p&gt;作为一个程序员 第一句话 必须是 &lt;code&gt;hello world&lt;/code&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;本次博客搭建 采用了 以下技术:  &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;github: 用来保存静态页面  &lt;/li&gt;
 &lt;li&gt;hexo: 一款基于nodejs的博客模板框架  &lt;/li&gt;
@@ -34,11 +34,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;作为一个程序员 第一句话 必须是 &lt;code&gt;hello world&lt;/code&gt;&lt;br&gt;本次博客搭建 采用了 以下技术:  &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;github: 用来保存静态页面  &lt;/li&gt;
-&lt;li&gt;hexo: 一款基于nodejs的博客模板框架  &lt;/li&gt;
-&lt;
+      &lt;p&gt;作为一个程序员 第一句话 必须是 &lt;code&gt;hello world&lt;/code&gt;&lt;br&gt;
     
     </summary>
     

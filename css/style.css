@@ -273,10 +273,12 @@ a:focus {
       border-color: #999; }
 
 #footer {
-  padding: .8em 0 3.6em;
-  margin-top: 1em;
+  padding: 1em 0 3.6em;
+  margin-top: 1.8em;
   line-height: 1.5;
-  color: #999; }
+  color: #999;
+  text-align: center;
+  border-top: 1px solid #ddd; }
   #footer span {
     font-size: .9em; }
 
