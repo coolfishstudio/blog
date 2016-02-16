@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-15T15:54:53.000Z</updated>
+  <updated>2016-02-16T08:59:57.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过Github Pages建立个人站点</title>
+    <link href="http://coolfishstudio.github.io/2016/02/16/%E9%80%9A%E8%BF%87Github-Pages%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
+    <id>http://coolfishstudio.github.io/2016/02/16/通过Github-Pages建立个人站点/</id>
+    <published>2016-02-16T07:55:02.000Z</published>
+    <updated>2016-02-16T08:59:57.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;对一个程序员来说 最好的简历就是个人博客和GitHub.  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;想要进步的程序员都会有考虑过买一个服务器空间，配上自己的域名，那这里就是记录自己成长过程的空间。然而，买完域名，还要买空间，买完空间，还要维护空间，重点是，每年都要花一笔钱去阿里云购买空间。但是 &lt;strong&gt;GitHub&lt;/strong&gt; 提供了 &lt;strong&gt;GitHub Pages&lt;/strong&gt; 服务。&lt;/p&gt;
+&lt;h3 id=&quot;什么是GitHub-Pages？&quot;&gt;&lt;a href=&quot;#什么是GitHub-Pages？&quot; class=&quot;headerlink&quot; title=&quot;什么是GitHub Pages？&quot;&gt;&lt;/a&gt;什么是GitHub Pages？&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt; 可以被认为是用户编写的、托管在github上的静态网页，用于介绍托管在GitHub的项目，不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。&lt;/p&gt;
+&lt;h3 id=&quot;为什么使用Github-Pages&quot;&gt;&lt;a href=&quot;#为什么使用Github-Pages&quot; class=&quot;headerlink&quot; title=&quot;为什么使用Github Pages?&quot;&gt;&lt;/a&gt;为什么使用Github Pages?&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;搭建简单，而且免费；&lt;/li&gt;
+&lt;li&gt;支持静态脚本；&lt;/li&gt;
+&lt;li&gt;可以绑定你的域名；&lt;/li&gt;
+&lt;li&gt;有300M免费空间，资料自己管理，保存可靠；&lt;/li&gt;
+&lt;li&gt;学着用GitHub，享受GitHub的便利，上面有很多大牛，眼界会开阔很多；&lt;/li&gt;
+&lt;li&gt;GitHub可是全球最大的技术交流平台。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;创建一个GitHub站点&quot;&gt;&lt;a href=&quot;#创建一个GitHub站点&quot; class=&quot;headerlink&quot; title=&quot;创建一个GitHub站点&quot;&gt;&lt;/a&gt;创建一个GitHub站点&lt;/h3&gt;&lt;h4 id=&quot;1-注册账户&quot;&gt;&lt;a href=&quot;#1-注册账户&quot; class=&quot;headerlink&quot; title=&quot;1.注册账户&quot;&gt;&lt;/a&gt;1.注册账户&lt;/h4&gt;&lt;p&gt;地址: &lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com&lt;/a&gt;&lt;br&gt;输入账号、邮箱、密码，然后点击注册按钮。&lt;/p&gt;
+&lt;h4 id=&quot;2-创建页面仓库&quot;&gt;&lt;a href=&quot;#2-创建页面仓库&quot; class=&quot;headerlink&quot; title=&quot;2.创建页面仓库&quot;&gt;&lt;/a&gt;2.创建页面仓库&lt;/h4&gt;&lt;p&gt;地址: &lt;a href=&quot;https://github.com/new&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/new&lt;/a&gt;&lt;br&gt;这个仓库的名字需要和你的账号对应，规则如 &lt;strong&gt;username.github.io&lt;/strong&gt;  &lt;/p&gt;
+&lt;h4 id=&quot;3-设置配置&quot;&gt;&lt;a href=&quot;#3-设置配置&quot; class=&quot;headerlink&quot; title=&quot;3.设置配置&quot;&gt;&lt;/a&gt;3.设置配置&lt;/h4&gt;&lt;p&gt;在settings中，就能看到&lt;strong&gt;GitHub Pages&lt;/strong&gt;服务面板，&lt;br&gt;点击 &lt;strong&gt;&lt;em&gt;Launch automatic page generator&lt;/em&gt;&lt;/strong&gt; 启动自动页面生成器&lt;/p&gt;
+&lt;h4 id=&quot;4-创建用户页面&quot;&gt;&lt;a href=&quot;#4-创建用户页面&quot; class=&quot;headerlink&quot; title=&quot;4.创建用户页面&quot;&gt;&lt;/a&gt;4.创建用户页面&lt;/h4&gt;&lt;p&gt;根据提示信息，输入一些内容，&lt;br&gt;点击继续，到下一个页面选择主题。&lt;br&gt;这些主题其实是生成一些css、js、image、html等文件到你的仓库中。&lt;br&gt;可以后期修改。&lt;br&gt;最后点击发布按钮。&lt;/p&gt;
+&lt;h4 id=&quot;5-查看效果&quot;&gt;&lt;a href=&quot;#5-查看效果&quot; class=&quot;headerlink&quot; title=&quot;5.查看效果&quot;&gt;&lt;/a&gt;5.查看效果&lt;/h4&gt;&lt;p&gt;访问我们做出来的站点，地址为&lt;strong&gt;username.github.io&lt;/strong&gt;  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;对一个程序员来说 最好的简历就是个人博客和GitHub.  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="个人站点" scheme="http://coolfishstudio.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
+    
+    
+      <category term="GitHub" scheme="http://coolfishstudio.github.io/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
