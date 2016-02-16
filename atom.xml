@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-16T08:59:57.000Z</updated>
+  <updated>2016-02-16T16:43:22.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用Hexo来美化Github Pages的个人站点</title>
+    <link href="http://coolfishstudio.github.io/2016/02/16/%E5%88%A9%E7%94%A8Hexo%E6%9D%A5%E7%BE%8E%E5%8C%96Github-Pages%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
+    <id>http://coolfishstudio.github.io/2016/02/16/利用Hexo来美化Github-Pages的个人站点/</id>
+    <published>2016-02-16T11:24:19.000Z</published>
+    <updated>2016-02-16T16:43:22.000Z</updated>
+    
+    <content type="html">&lt;p&gt;上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点&lt;br&gt;这一次我们要使用 &lt;strong&gt;Hexo+GitHub+多说&lt;/strong&gt; 来搭建免费博客&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;要用到的模块&quot;&gt;&lt;a href=&quot;#要用到的模块&quot; class=&quot;headerlink&quot; title=&quot;要用到的模块&quot;&gt;&lt;/a&gt;要用到的模块&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Hexo&lt;/em&gt;&lt;/strong&gt;    是一款基于nodejs的快速、简单、强大的博客系统框架。&lt;br&gt;&lt;strong&gt;&lt;em&gt;GitHub&lt;/em&gt;&lt;/strong&gt;  代码仓库。&lt;br&gt;&lt;strong&gt;&lt;em&gt;多说&lt;/em&gt;&lt;/strong&gt;     一个第三方评论系统。  &lt;/p&gt;
+&lt;h3 id=&quot;安装Hexo来生成Blog&quot;&gt;&lt;a href=&quot;#安装Hexo来生成Blog&quot; class=&quot;headerlink&quot; title=&quot;安装Hexo来生成Blog&quot;&gt;&lt;/a&gt;安装Hexo来生成Blog&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;首先 通过npm 进行 全局安装 hexo&lt;br&gt;&lt;code&gt;npm install hexo -g&lt;/code&gt;&lt;br&gt;安装结束后，初始化一个blog项目&lt;br&gt;&lt;code&gt;hexo init blog&lt;/code&gt;&lt;br&gt;进入 blog 项目里&lt;br&gt;&lt;code&gt;cd blog&lt;/code&gt;&lt;br&gt;初始化安装第三方支撑库&lt;br&gt;&lt;code&gt;npm install&lt;/code&gt;&lt;br&gt;启动服务器&lt;br&gt;&lt;code&gt;hexo server&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;#####blog项目的文件目录结构为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;_config_yml // 注配置文件  &lt;/li&gt;
+&lt;li&gt;db.json // 数据  &lt;/li&gt;
+&lt;li&gt;debug.log // 调试日志  &lt;/li&gt;
+&lt;li&gt;node_mudules // nodejs 相关依赖  &lt;/li&gt;
+&lt;li&gt;package.json // 配置依赖  &lt;/li&gt;
+&lt;li&gt;scaffolds // 脚手架 - 也就是一个工具模板  &lt;/li&gt;
+&lt;li&gt;source // 存放blog正文的地方  &lt;/li&gt;
+&lt;li&gt;themes // 存放皮肤的地方  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;默认访问地址: &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;页面打不开&quot;&gt;&lt;a href=&quot;#页面打不开&quot; class=&quot;headerlink&quot; title=&quot;页面打不开&quot;&gt;&lt;/a&gt;页面打不开&lt;/h4&gt;&lt;p&gt;启动后，进行访问页面，会发现页面打开缓慢，这是因为我们电脑没有翻墙。&lt;br&gt;页面默认使用了ajax.google.com 下的js包。&lt;br&gt;因此我们要把包删掉。&lt;br&gt;解决办法：&lt;br&gt;进入你刚新建好的 blog根目录 ，进入&lt;code&gt;themes/landscape/layout/_partial&lt;/code&gt;中，&lt;br&gt;找到 &lt;strong&gt;after-footer.ejs&lt;/strong&gt;&lt;br&gt;把&lt;code&gt;&amp;lt;script src=&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&amp;quot;&amp;gt; &amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;替换成&lt;br&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js“ &amp;gt; &amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;找到 &lt;strong&gt;header.ejs&lt;/strong&gt;&lt;br&gt;注释掉或者删掉下面这句css引用&lt;br&gt;&lt;code&gt;&amp;lt;link href=&amp;quot;//fonts.googleapis.com/css?family=Source+Code+Pro&amp;quot; rel=”stylesheet” type=”text/css”&amp;gt;&lt;/code&gt;&lt;br&gt;重新 &lt;code&gt;hexo server&lt;/code&gt; 之后。&lt;br&gt;访问 &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt; 就会看到blog主页了。&lt;/p&gt;
+&lt;h4 id=&quot;新建文章&quot;&gt;&lt;a href=&quot;#新建文章&quot; class=&quot;headerlink&quot; title=&quot;新建文章&quot;&gt;&lt;/a&gt;新建文章&lt;/h4&gt;&lt;p&gt;写一篇文章的话 通过 &lt;code&gt;hexo new &amp;lt;title&amp;gt;&lt;/code&gt; 来实现&lt;br&gt;例如：&lt;code&gt;hexo new hello&lt;/code&gt;&lt;br&gt;然后 我们可以这个文件进行修改了 &lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;title: hello&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date: 2016-02-16 18:50:48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tags:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- tag1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- tag2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- tag3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;categories:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;__&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 你的内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--more--&amp;gt;&lt;/span&gt; // 以上为摘要&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;新建页面&quot;&gt;&lt;a href=&quot;#新建页面&quot; class=&quot;headerlink&quot; title=&quot;新建页面&quot;&gt;&lt;/a&gt;新建页面&lt;/h4&gt;&lt;p&gt;创建一个新的页面的话 通过 &lt;code&gt;hexo new page &amp;lt;title&amp;gt;&lt;/code&gt; 来实现&lt;br&gt;例如：&lt;code&gt;hexo new page about&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&quot;删除文章&quot;&gt;&lt;a href=&quot;#删除文章&quot; class=&quot;headerlink&quot; title=&quot;删除文章&quot;&gt;&lt;/a&gt;删除文章&lt;/h4&gt;&lt;p&gt;首先删除目录下的 &lt;strong&gt;db.json&lt;/strong&gt; 文件&lt;br&gt;然后 执行&lt;code&gt;hero clean&lt;/code&gt;&lt;br&gt;删掉不想要的md文件&lt;br&gt;然后 启动服务器 或 静态处理 就可以了&lt;/p&gt;
+&lt;h4 id=&quot;静态处理&quot;&gt;&lt;a href=&quot;#静态处理&quot; class=&quot;headerlink&quot; title=&quot;静态处理&quot;&gt;&lt;/a&gt;静态处理&lt;/h4&gt;&lt;p&gt;因为我们的blog要部署到github静态服务器上面，所有我们还要将页面进行静态化&lt;br&gt;hexo 为我们提供了 hexo g 的方法。进入blog根目录 执行&lt;code&gt;hexo g&lt;/code&gt;&lt;br&gt;那么在blog根目录下 就会生成public文件夹， 这里面就是生成的静态文件。&lt;/p&gt;
+&lt;h3 id=&quot;部署到GitHub上&quot;&gt;&lt;a href=&quot;#部署到GitHub上&quot; class=&quot;headerlink&quot; title=&quot;部署到GitHub上&quot;&gt;&lt;/a&gt;部署到GitHub上&lt;/h3&gt;&lt;h4 id=&quot;部署&quot;&gt;&lt;a href=&quot;#部署&quot; class=&quot;headerlink&quot; title=&quot;部署&quot;&gt;&lt;/a&gt;部署&lt;/h4&gt;&lt;p&gt;hexo已经集成了发布到github的配置，只需要修改根目录下的_config.yml 文件&lt;br&gt;增加配置信息，注意hexo3 的配置有所改动 此为hexo3 的配置信息&lt;br&gt;&lt;figure class=&quot;highlight haskell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;# Deployment&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;## Docs: http://hexo.io/docs/deployment.html&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;deploy&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;typedef&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;: git&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repo: your-github-url&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;部署到远程站点&lt;code&gt;hexo deploy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;注意：&lt;br&gt;hexo 版本号3以上 会出现 &lt;strong&gt;hexo ERROR Deployer not found: github&lt;/strong&gt;&lt;br&gt;你需要安装 &lt;code&gt;npm install hexo-deployer-git --save&lt;/code&gt;&lt;br&gt;并且将deploy 的 type由github改为git&lt;/p&gt;
+&lt;h4 id=&quot;域名指向&quot;&gt;&lt;a href=&quot;#域名指向&quot; class=&quot;headerlink&quot; title=&quot;域名指向&quot;&gt;&lt;/a&gt;域名指向&lt;/h4&gt;&lt;p&gt;在github blog项目下新建一个CNAME文件 内容为你的域名&lt;br&gt;然后去 万网解析一下你的域名&lt;br&gt;注意：&lt;br&gt;解析类型为 -&amp;gt; CNAME&lt;br&gt;解析地址为 -&amp;gt; username.github.io  &lt;/p&gt;
+&lt;h3 id=&quot;安装插件&quot;&gt;&lt;a href=&quot;#安装插件&quot; class=&quot;headerlink&quot; title=&quot;安装插件&quot;&gt;&lt;/a&gt;安装插件&lt;/h3&gt;&lt;h4 id=&quot;多说&quot;&gt;&lt;a href=&quot;#多说&quot; class=&quot;headerlink&quot; title=&quot;多说&quot;&gt;&lt;/a&gt;多说&lt;/h4&gt;&lt;p&gt;评论插件多说为 hexo量身打造了一套解决方案&lt;br&gt;&lt;a href=&quot;http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;查看教程&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;rss&quot;&gt;&lt;a href=&quot;#rss&quot; class=&quot;headerlink&quot; title=&quot;rss&quot;&gt;&lt;/a&gt;rss&lt;/h4&gt;&lt;p&gt;rss的安装非常简单 ，已经有人做好了插件，安装只需一步。&lt;br&gt;&lt;code&gt;npm install hexo-generator-feed --save&lt;/code&gt;&lt;br&gt;启动服务器，用浏览器打开 &lt;a href=&quot;http://localhost:4000/atom.xml，&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/atom.xml，&lt;/a&gt; 就可以看到RSS已经生效了.&lt;/p&gt;
+&lt;h4 id=&quot;sitemap&quot;&gt;&lt;a href=&quot;#sitemap&quot; class=&quot;headerlink&quot; title=&quot;sitemap&quot;&gt;&lt;/a&gt;sitemap&lt;/h4&gt;&lt;p&gt;同样是一条命令，就可以完成。  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;google&lt;/strong&gt; 的 sitemap -&amp;gt; &lt;code&gt;npm install hexo-generator-sitemap&lt;/code&gt;  启动服务器，用浏览器打开 用浏览器打开 &lt;a href=&quot;http://localhost:4000/sitemap.xml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/sitemap.xml&lt;/a&gt; 发现site已经生效。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;baidu&lt;/strong&gt; 的 sitemap -&amp;gt; &lt;code&gt;npm install hexo-generator-baidu-sitemap&lt;/code&gt;  启动服务器，用浏览器打开 用浏览器打开 &lt;a href=&quot;http://localhost:4000/baidusitemap.xml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/baidusitemap.xml&lt;/a&gt; 发现site已经生效。&lt;/p&gt;
+&lt;p&gt;其中sitemap.xml适合提交给谷歌搜素引擎，baidusitemap.xml适合提交百度搜索引擎。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点&lt;br&gt;这一次我们要使用 &lt;strong&gt;Hexo+GitHub+多说&lt;/strong&gt; 来搭建免费博客&lt;br&gt;
+    
+    </summary>
+    
+      <category term="个人站点" scheme="http://coolfishstudio.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
+    
+    
+      <category term="GitHub" scheme="http://coolfishstudio.github.io/tags/GitHub/"/>
+    
+      <category term="Hexo" scheme="http://coolfishstudio.github.io/tags/Hexo/"/>
+    
+      <category term="多说" scheme="http://coolfishstudio.github.io/tags/%E5%A4%9A%E8%AF%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>通过Github Pages建立个人站点</title>

@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="笔记," />
+  <meta name="keywords" content="GitHub,Hexo,多说," />
 
 
 
@@ -59,19 +59,16 @@
 
 
 
-<meta name="description" content="作为一个程序员 第一句话 必须是  
-hello world">
+<meta name="description" content="上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点这一次我们要使用 Hexo+GitHub+多说 来搭建免费博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/02/15/Hello-World/index.html">
+<meta property="og:title" content="利用Hexo来美化Github Pages的个人站点">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/02/16/利用Hexo来美化Github-Pages的个人站点/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="作为一个程序员 第一句话 必须是  
-hello world">
-<meta property="og:updated_time" content="2016-02-15T15:54:53.000Z">
+<meta property="og:description" content="上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点这一次我们要使用 Hexo+GitHub+多说 来搭建免费博客">
+<meta property="og:updated_time" content="2016-02-16T16:43:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="作为一个程序员 第一句话 必须是  
-hello world">
+<meta name="twitter:title" content="利用Hexo来美化Github Pages的个人站点">
+<meta name="twitter:description" content="上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点这一次我们要使用 Hexo+GitHub+多说 来搭建免费博客">
 
 
 
@@ -89,7 +86,7 @@ hello world">
   };
 </script>
 
-  <title> Hello World | 酷鱼网 </title>
+  <title> 利用Hexo来美化Github Pages的个人站点 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +246,7 @@ hello world">
             
             
               
-                Hello World
+                利用Hexo来美化Github Pages的个人站点
               
             
           </h1>
@@ -261,8 +258,8 @@ hello world">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-15T16:11:19+08:00" content="2016-02-15">
-              2016-02-15
+            <time itemprop="dateCreated" datetime="2016-02-16T19:24:19+08:00" content="2016-02-16">
+              2016-02-16
             </time>
           </span>
 
@@ -275,8 +272,8 @@ hello world">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日志/" itemprop="url" rel="index">
-                    <span itemprop="name">日志</span>
+                  <a href="/categories/个人站点/" itemprop="url" rel="index">
+                    <span itemprop="name">个人站点</span>
                   </a>
                 </span>
 
@@ -291,8 +288,8 @@ hello world">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/15/Hello-World/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/15/Hello-World/" itemprop="commentsCount"></span>
+                <a href="/2016/02/16/利用Hexo来美化Github-Pages的个人站点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/16/利用Hexo来美化Github-Pages的个人站点/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,15 +310,39 @@ hello world">
       
 
       
-        <p>作为一个程序员 第一句话 必须是  </p>
-<pre><code>hello world
-</code></pre><a id="more"></a>
-<h2 id="本次博客搭建-采用了-以下技术"><a href="#本次博客搭建-采用了-以下技术" class="headerlink" title="本次博客搭建 采用了 以下技术:"></a>本次博客搭建 采用了 以下技术:</h2><ol>
-<li>github: 用来保存静态页面  </li>
-<li>hexo: 一款基于nodejs的博客模板框架  </li>
-<li>多说: 一个第三方评论系统  </li>
-<li>七牛: 一个第三方存储系统 可作为图床  </li>
-</ol>
+        <p>上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点<br>这一次我们要使用 <strong>Hexo+GitHub+多说</strong> 来搭建免费博客<br><a id="more"></a></p>
+<h3 id="要用到的模块"><a href="#要用到的模块" class="headerlink" title="要用到的模块"></a>要用到的模块</h3><p><strong><em>Hexo</em></strong>    是一款基于nodejs的快速、简单、强大的博客系统框架。<br><strong><em>GitHub</em></strong>  代码仓库。<br><strong><em>多说</em></strong>     一个第三方评论系统。  </p>
+<h3 id="安装Hexo来生成Blog"><a href="#安装Hexo来生成Blog" class="headerlink" title="安装Hexo来生成Blog"></a>安装Hexo来生成Blog</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>首先 通过npm 进行 全局安装 hexo<br><code>npm install hexo -g</code><br>安装结束后，初始化一个blog项目<br><code>hexo init blog</code><br>进入 blog 项目里<br><code>cd blog</code><br>初始化安装第三方支撑库<br><code>npm install</code><br>启动服务器<br><code>hexo server</code> </p>
+<p>#####blog项目的文件目录结构为：</p>
+<ul>
+<li>_config_yml // 注配置文件  </li>
+<li>db.json // 数据  </li>
+<li>debug.log // 调试日志  </li>
+<li>node_mudules // nodejs 相关依赖  </li>
+<li>package.json // 配置依赖  </li>
+<li>scaffolds // 脚手架 - 也就是一个工具模板  </li>
+<li>source // 存放blog正文的地方  </li>
+<li>themes // 存放皮肤的地方  </li>
+</ul>
+<blockquote>
+<p>默认访问地址: <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+</blockquote>
+<h4 id="页面打不开"><a href="#页面打不开" class="headerlink" title="页面打不开"></a>页面打不开</h4><p>启动后，进行访问页面，会发现页面打开缓慢，这是因为我们电脑没有翻墙。<br>页面默认使用了ajax.google.com 下的js包。<br>因此我们要把包删掉。<br>解决办法：<br>进入你刚新建好的 blog根目录 ，进入<code>themes/landscape/layout/_partial</code>中，<br>找到 <strong>after-footer.ejs</strong><br>把<code>&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;&gt; &lt;/script&gt;</code><br>替换成<br><code>&lt;script src=&quot;http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js“ &gt; &lt;/script&gt;</code><br>找到 <strong>header.ejs</strong><br>注释掉或者删掉下面这句css引用<br><code>&lt;link href=&quot;//fonts.googleapis.com/css?family=Source+Code+Pro&quot; rel=”stylesheet” type=”text/css”&gt;</code><br>重新 <code>hexo server</code> 之后。<br>访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就会看到blog主页了。</p>
+<h4 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h4><p>写一篇文章的话 通过 <code>hexo new &lt;title&gt;</code> 来实现<br>例如：<code>hexo new hello</code><br>然后 我们可以这个文件进行修改了 </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">title: hello</span><br><span class="line">date: 2016-02-16 18:50:48</span><br><span class="line">tags:</span><br><span class="line">- tag1</span><br><span class="line">- tag2</span><br><span class="line">- tag3</span><br><span class="line">categories:</span><br><span class="line">- 目录</span><br><span class="line">__</span><br><span class="line"></span><br><span class="line">// 你的内容</span><br><span class="line"><span class="comment">&lt;!--more--&gt;</span> // 以上为摘要</span><br></pre></td></tr></table></figure>
+<h4 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h4><p>创建一个新的页面的话 通过 <code>hexo new page &lt;title&gt;</code> 来实现<br>例如：<code>hexo new page about</code></p>
+<h4 id="删除文章"><a href="#删除文章" class="headerlink" title="删除文章"></a>删除文章</h4><p>首先删除目录下的 <strong>db.json</strong> 文件<br>然后 执行<code>hero clean</code><br>删掉不想要的md文件<br>然后 启动服务器 或 静态处理 就可以了</p>
+<h4 id="静态处理"><a href="#静态处理" class="headerlink" title="静态处理"></a>静态处理</h4><p>因为我们的blog要部署到github静态服务器上面，所有我们还要将页面进行静态化<br>hexo 为我们提供了 hexo g 的方法。进入blog根目录 执行<code>hexo g</code><br>那么在blog根目录下 就会生成public文件夹， 这里面就是生成的静态文件。</p>
+<h3 id="部署到GitHub上"><a href="#部署到GitHub上" class="headerlink" title="部署到GitHub上"></a>部署到GitHub上</h3><h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>hexo已经集成了发布到github的配置，只需要修改根目录下的_config.yml 文件<br>增加配置信息，注意hexo3 的配置有所改动 此为hexo3 的配置信息<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Deployment</span></span><br><span class="line"><span class="preprocessor">## Docs: http://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="title">deploy</span>:</span><br><span class="line">  <span class="typedef"><span class="keyword">type</span>: git</span></span><br><span class="line">  repo: your-github-url</span><br></pre></td></tr></table></figure></p>
+<p>部署到远程站点<code>hexo deploy</code></p>
+<p>注意：<br>hexo 版本号3以上 会出现 <strong>hexo ERROR Deployer not found: github</strong><br>你需要安装 <code>npm install hexo-deployer-git --save</code><br>并且将deploy 的 type由github改为git</p>
+<h4 id="域名指向"><a href="#域名指向" class="headerlink" title="域名指向"></a>域名指向</h4><p>在github blog项目下新建一个CNAME文件 内容为你的域名<br>然后去 万网解析一下你的域名<br>注意：<br>解析类型为 -&gt; CNAME<br>解析地址为 -&gt; username.github.io  </p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><h4 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h4><p>评论插件多说为 hexo量身打造了一套解决方案<br><a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">查看教程</a></p>
+<h4 id="rss"><a href="#rss" class="headerlink" title="rss"></a>rss</h4><p>rss的安装非常简单 ，已经有人做好了插件，安装只需一步。<br><code>npm install hexo-generator-feed --save</code><br>启动服务器，用浏览器打开 <a href="http://localhost:4000/atom.xml，" target="_blank" rel="external">http://localhost:4000/atom.xml，</a> 就可以看到RSS已经生效了.</p>
+<h4 id="sitemap"><a href="#sitemap" class="headerlink" title="sitemap"></a>sitemap</h4><p>同样是一条命令，就可以完成。  </p>
+<p><strong>google</strong> 的 sitemap -&gt; <code>npm install hexo-generator-sitemap</code>  启动服务器，用浏览器打开 用浏览器打开 <a href="http://localhost:4000/sitemap.xml" target="_blank" rel="external">http://localhost:4000/sitemap.xml</a> 发现site已经生效。</p>
+<p><strong>baidu</strong> 的 sitemap -&gt; <code>npm install hexo-generator-baidu-sitemap</code>  启动服务器，用浏览器打开 用浏览器打开 <a href="http://localhost:4000/baidusitemap.xml" target="_blank" rel="external">http://localhost:4000/baidusitemap.xml</a> 发现site已经生效。</p>
+<p>其中sitemap.xml适合提交给谷歌搜素引擎，baidusitemap.xml适合提交百度搜索引擎。</p>
 
       
     </div>
@@ -330,7 +351,11 @@ hello world">
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag">#笔记</a>
+            <a href="/tags/GitHub/" rel="tag">#GitHub</a>
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/多说/" rel="tag">#多说</a>
           
         </div>
       
@@ -339,13 +364,13 @@ hello world">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/02/16/通过Github-Pages建立个人站点/" rel="next" title="通过Github Pages建立个人站点">
+                <i class="fa fa-chevron-left"></i> 通过Github Pages建立个人站点
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/16/通过Github-Pages建立个人站点/" rel="prev" title="通过Github Pages建立个人站点">
-                通过Github Pages建立个人站点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -371,8 +396,8 @@ hello world">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/15/Hello-World/"
-           data-title="Hello World" data-url="http://coolfishstudio.github.io/2016/02/15/Hello-World/">
+      <div class="ds-thread" data-thread-key="2016/02/16/利用Hexo来美化Github-Pages的个人站点/"
+           data-title="利用Hexo来美化Github Pages的个人站点" data-url="http://coolfishstudio.github.io/2016/02/16/利用Hexo来美化Github-Pages的个人站点/">
       </div>
     
   </div>
@@ -484,7 +509,7 @@ hello world">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本次博客搭建-采用了-以下技术"><span class="nav-number">1.</span> <span class="nav-text">本次博客搭建 采用了 以下技术:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#要用到的模块"><span class="nav-number">1.</span> <span class="nav-text">要用到的模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo来生成Blog"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo来生成Blog</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面打不开"><span class="nav-number">2.2.</span> <span class="nav-text">页面打不开</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建文章"><span class="nav-number">2.3.</span> <span class="nav-text">新建文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建页面"><span class="nav-number">2.4.</span> <span class="nav-text">新建页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文章"><span class="nav-number">2.5.</span> <span class="nav-text">删除文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态处理"><span class="nav-number">2.6.</span> <span class="nav-text">静态处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到GitHub上"><span class="nav-number">3.</span> <span class="nav-text">部署到GitHub上</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">3.1.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名指向"><span class="nav-number">3.2.</span> <span class="nav-text">域名指向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">4.</span> <span class="nav-text">安装插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多说"><span class="nav-number">4.1.</span> <span class="nav-text">多说</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rss"><span class="nav-number">4.2.</span> <span class="nav-text">rss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sitemap"><span class="nav-number">4.3.</span> <span class="nav-text">sitemap</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
