@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://coolfishstudio.github.io/2016/02/17/%E4%BD%BF%E7%94%A8NexT%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96Hexo%E6%A1%86%E6%9E%B6%E7%AB%99%E7%82%B9/</loc>
+    
+    <lastmod>2016-02-17T12:11:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://coolfishstudio.github.io/tags/index.html</loc>
+    
+    <lastmod>2016-02-17T11:57:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://coolfishstudio.github.io/2016/02/16/%E5%88%A9%E7%94%A8Hexo%E6%9D%A5%E7%BE%8E%E5%8C%96Github-Pages%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/</loc>
     
     <lastmod>2016-02-16T16:43:22.000Z</lastmod>
@@ -40,13 +54,6 @@
     <loc>http://coolfishstudio.github.io/about/index.html</loc>
     
     <lastmod>2016-02-15T15:53:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://coolfishstudio.github.io/tags/index.html</loc>
-    
-    <lastmod>2016-02-15T15:52:38.000Z</lastmod>
     
   </url>
   
