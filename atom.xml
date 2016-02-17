@@ -110,13 +110,12 @@
     <link href="http://coolfishstudio.github.io/2016/02/16/%E5%88%A9%E7%94%A8Hexo%E6%9D%A5%E7%BE%8E%E5%8C%96Github-Pages%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
     <id>http://coolfishstudio.github.io/2016/02/16/利用Hexo来美化Github-Pages的个人站点/</id>
     <published>2016-02-16T11:24:19.000Z</published>
-    <updated>2016-02-16T16:43:22.000Z</updated>
+    <updated>2016-02-17T12:33:33.000Z</updated>
     
     <content type="html">&lt;p&gt;上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点&lt;br&gt;这一次我们要使用 &lt;strong&gt;Hexo+GitHub+多说&lt;/strong&gt; 来搭建免费博客&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;要用到的模块&quot;&gt;&lt;a href=&quot;#要用到的模块&quot; class=&quot;headerlink&quot; title=&quot;要用到的模块&quot;&gt;&lt;/a&gt;要用到的模块&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Hexo&lt;/em&gt;&lt;/strong&gt;    是一款基于nodejs的快速、简单、强大的博客系统框架。&lt;br&gt;&lt;strong&gt;&lt;em&gt;GitHub&lt;/em&gt;&lt;/strong&gt;  代码仓库。&lt;br&gt;&lt;strong&gt;&lt;em&gt;多说&lt;/em&gt;&lt;/strong&gt;     一个第三方评论系统。  &lt;/p&gt;
 &lt;h3 id=&quot;安装Hexo来生成Blog&quot;&gt;&lt;a href=&quot;#安装Hexo来生成Blog&quot; class=&quot;headerlink&quot; title=&quot;安装Hexo来生成Blog&quot;&gt;&lt;/a&gt;安装Hexo来生成Blog&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;首先 通过npm 进行 全局安装 hexo&lt;br&gt;&lt;code&gt;npm install hexo -g&lt;/code&gt;&lt;br&gt;安装结束后，初始化一个blog项目&lt;br&gt;&lt;code&gt;hexo init blog&lt;/code&gt;&lt;br&gt;进入 blog 项目里&lt;br&gt;&lt;code&gt;cd blog&lt;/code&gt;&lt;br&gt;初始化安装第三方支撑库&lt;br&gt;&lt;code&gt;npm install&lt;/code&gt;&lt;br&gt;启动服务器&lt;br&gt;&lt;code&gt;hexo server&lt;/code&gt; &lt;/p&gt;
-&lt;p&gt;#####blog项目的文件目录结构为：&lt;/p&gt;
-&lt;ul&gt;
+&lt;h5 id=&quot;blog项目的文件目录结构为：&quot;&gt;&lt;a href=&quot;#blog项目的文件目录结构为：&quot; class=&quot;headerlink&quot; title=&quot;blog项目的文件目录结构为：&quot;&gt;&lt;/a&gt;blog项目的文件目录结构为：&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;_config_yml // 注配置文件  &lt;/li&gt;
 &lt;li&gt;db.json // 数据  &lt;/li&gt;
 &lt;li&gt;debug.log // 调试日志  &lt;/li&gt;
