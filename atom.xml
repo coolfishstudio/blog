@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-19T10:01:30.000Z</updated>
+  <updated>2016-02-20T14:44:34.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习了解Node.js</title>
+    <link href="http://coolfishstudio.github.io/2016/02/20/%E5%AD%A6%E4%B9%A0%E4%BA%86%E8%A7%A3Node-js/"/>
+    <id>http://coolfishstudio.github.io/2016/02/20/学习了解Node-js/</id>
+    <published>2016-02-20T13:58:29.000Z</published>
+    <updated>2016-02-20T14:44:34.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;什么是node-js&quot;&gt;&lt;a href=&quot;#什么是node-js&quot; class=&quot;headerlink&quot; title=&quot;什么是node.js&quot;&gt;&lt;/a&gt;什么是node.js&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;一个 “编码就绪” 服务器&lt;/strong&gt;&lt;br&gt;Node 是一个服务器端 JavaScript 解释器，它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。&lt;br&gt;我对于node的理解其实很简单，就是让Javascript脱离浏览器运行在服务器的一个平台，不是一种语言，node采用的Javascript引擎是来自Chrome的V8，并且不需要考虑Javascript兼容性问题，他就是一个服务器程序。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;什么是v8？&quot;&gt;&lt;a href=&quot;#什么是v8？&quot; class=&quot;headerlink&quot; title=&quot;什么是v8？&quot;&gt;&lt;/a&gt;什么是v8？&lt;/h3&gt;&lt;p&gt;V8引擎是Google用于其Chrome浏览器的底层JavaScript引擎。很少有人考虑JavaScript在客户机上实际做了些什么？实际上，JavaScript引擎负责解释并执行代码。Google使用V8创建了一个用C++编写的超快解释器，该解释器拥有另一个独特特征；您可以下载该引擎并将其嵌入任何应用程序。V8引擎并不仅限于在一个浏览器中运行。因此，Node实际上会使用Google编写的V8引擎，并将其重建为可在服务器上使用。太完美了！既然已经有一个不错的解决方案可用，为何还要创建一种新语言呢？&lt;/p&gt;
+&lt;h3 id=&quot;node-js能做什么&quot;&gt;&lt;a href=&quot;#node-js能做什么&quot; class=&quot;headerlink&quot; title=&quot;node.js能做什么&quot;&gt;&lt;/a&gt;node.js能做什么&lt;/h3&gt;&lt;p&gt;Node非常适合以下情况：在响应客户端之前，您预计可能有很高的流量，但所需的服务器端逻辑和处理不一定很多。&lt;br&gt;Node表现出众的典型示例包括：&lt;/p&gt;
+&lt;h4 id=&quot;RESTful-API&quot;&gt;&lt;a href=&quot;#RESTful-API&quot; class=&quot;headerlink&quot; title=&quot;RESTful API&quot;&gt;&lt;/a&gt;RESTful API&lt;/h4&gt;&lt;p&gt;提供 RESTful API 的 Web 服务接收几个参数，解析它们，组合一个响应，并返回一个响应（通常是较少的文本）给用户。这是适合 Node 的理想情况，因为您可以构建它来处理数万条连接。它仍然不需要大量逻辑；它本质上只是从某个数据库中查找一些值并将它们组成一个响应。由于响应是少量文本，入站请求也是少量的文本，因此流量不高，一台机器甚至也可以处理最繁忙的公司的 API 需求。&lt;/p&gt;
+&lt;h4 id=&quot;Twitter-队列&quot;&gt;&lt;a href=&quot;#Twitter-队列&quot; class=&quot;headerlink&quot; title=&quot;Twitter 队列&quot;&gt;&lt;/a&gt;Twitter 队列&lt;/h4&gt;&lt;p&gt;想像一下像 Twitter 这样的公司，它必须接收 tweets 并将其写入数据库。实际上，每秒几乎有数千条 tweet 达到，数据库不可能及时处理高峰时段所需的写入数量。Node 成为这个问题的解决方案的重要一环。如您所见，Node 能处理数万条入站 tweet。它能快速而又轻松地将它们写入一个内存排队机制（例如 memcached），另一个单独进程可以从那里将它们写入数据库。Node 在这里的角色是迅速收集 tweet，并将这个信息传递给另一个负责写入的进程。想象一下另一种设计（常规 PHP 服务器会自己尝试处理对数据库本身的写入）：每个 tweet 都会在写入数据库时导致一个短暂的延迟，因为数据库调用正在阻塞通道。由于数据库延迟，一台这样设计的机器每秒可能只能处理 2000 条入站 tweet。每秒处理 100 万条 tweet 则需要 500 个服务器。相反，Node 能处理每个连接而不会阻塞通道，从而能够捕获尽可能多的 tweets。一个能处理 50,000 条 tweet 的 Node 机器仅需 20 台服务器即可。&lt;/p&gt;
+&lt;h4 id=&quot;电子游戏统计数据&quot;&gt;&lt;a href=&quot;#电子游戏统计数据&quot; class=&quot;headerlink&quot; title=&quot;电子游戏统计数据&quot;&gt;&lt;/a&gt;电子游戏统计数据&lt;/h4&gt;&lt;p&gt;如果您在线玩过《使命召唤》这款游戏，当您查看游戏统计数据时，就会立即意识到一个问题：要生成那种级别的统计数据，必须跟踪海量信息。这样，如果有数百万玩家同时在线玩游戏，而且他们处于游戏中的不同位置，那么很快就会生成海量信息。Node 是这种场景的一种很好的解决方案，因为它能采集游戏生成的数据，对数据进行最少的合并，然后对数据进行排队，以便将它们写入数据库。使用整个服务器来跟踪玩家在游戏中发射了多少子弹看起来很愚蠢，如果您使用 Apache 这样的服务器，可能会 有一些有用的限制；但相反，如果您专门使用一个服务器来跟踪一个游戏的所有统计数据，就像使用运行 Node 的服务器所做的那样，那看起来似乎是一种明智之举。&lt;br&gt;&lt;strong&gt;&lt;em&gt;以上内容皆属废话［部分资料来源于网络］&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ps:在我看来，虽然我后台语言只接触过java，但是我觉得，统计、webapp、个人站点等常规网站都可以通过node.js来开发出来。&lt;br&gt;并且，node的开发语法非常适合前端人员低成本过渡到全栈开发工程师。&lt;/p&gt;
+&lt;h3 id=&quot;安装node&quot;&gt;&lt;a href=&quot;#安装node&quot; class=&quot;headerlink&quot; title=&quot;安装node&quot;&gt;&lt;/a&gt;安装node&lt;/h3&gt;&lt;p&gt;brew方式[Mac]&lt;br&gt;如果机器没有安装过node，那么首先brew install nvm安装nvm。&lt;br&gt;多版本管理器nvm，貌似Windows上好像不行，没测过。&lt;br&gt;其次需要在shell的配置文件(~/.bashrc, ~/.profile, or ~/.zshrc)中添加如下内容：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# For NVM&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; NVM_DIR=~/.nvm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; $(brew --prefix nvm)/nvm.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;重启终端，命令行下即可使用nvm，使用nvm install 进行对应的node版本安装。&lt;/p&gt;
+&lt;p&gt;其他系统请自行百度(以后有时间再补充)&lt;br&gt;&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://nodejs.org/en/&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;什么是node-js&quot;&gt;&lt;a href=&quot;#什么是node-js&quot; class=&quot;headerlink&quot; title=&quot;什么是node.js&quot;&gt;&lt;/a&gt;什么是node.js&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;一个 “编码就绪” 服务器&lt;/strong&gt;&lt;br&gt;Node 是一个服务器端 JavaScript 解释器，它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。&lt;br&gt;我对于node的理解其实很简单，就是让Javascript脱离浏览器运行在服务器的一个平台，不是一种语言，node采用的Javascript引擎是来自Chrome的V8，并且不需要考虑Javascript兼容性问题，他就是一个服务器程序。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Node学习笔记" scheme="http://coolfishstudio.github.io/categories/Node%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Node.js" scheme="http://coolfishstudio.github.io/tags/Node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML5摇一摇效果</title>
