@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-20T14:44:34.000Z</updated>
+  <updated>2016-02-21T15:16:53.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NPM基本使用梳理备忘录</title>
+    <link href="http://coolfishstudio.github.io/2016/02/21/NPM%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%A2%B3%E7%90%86%E5%A4%87%E5%BF%98%E5%BD%95/"/>
+    <id>http://coolfishstudio.github.io/2016/02/21/NPM基本使用梳理备忘录/</id>
+    <published>2016-02-21T15:08:15.000Z</published>
+    <updated>2016-02-21T15:16:53.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;npm使用笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;1-npm是node的包管理工具，会随node一起装到电脑上&quot;&gt;&lt;a href=&quot;#1-npm是node的包管理工具，会随node一起装到电脑上&quot; class=&quot;headerlink&quot; title=&quot;1.npm是node的包管理工具，会随node一起装到电脑上&quot;&gt;&lt;/a&gt;1.npm是node的包管理工具，会随node一起装到电脑上&lt;/h4&gt;&lt;h4 id=&quot;2-如果要使用别人的插件，别人的包：&quot;&gt;&lt;a href=&quot;#2-如果要使用别人的插件，别人的包：&quot; class=&quot;headerlink&quot; title=&quot;2.如果要使用别人的插件，别人的包：&quot;&gt;&lt;/a&gt;2.如果要使用别人的插件，别人的包：&lt;/h4&gt;&lt;p&gt;基本安装：&lt;code&gt;npm install xxoo&lt;/code&gt;，安装在当前目录，其外层会自动创建一个node_modules文件夹&lt;br&gt;全局安装：&lt;code&gt;npm install -g xxoo&lt;/code&gt;，插件可以在任何目录被调用，即全局&lt;br&gt;依赖安装：&lt;code&gt;npm install -save xxoo&lt;/code&gt;，安装在当前目录，安装的插件会被写入package.json文件&lt;/p&gt;
+&lt;h4 id=&quot;3-拷贝了一个基于npm的项目，项目中只有package-json文件，如何下载依赖？&quot;&gt;&lt;a href=&quot;#3-拷贝了一个基于npm的项目，项目中只有package-json文件，如何下载依赖？&quot; class=&quot;headerlink&quot; title=&quot;3.拷贝了一个基于npm的项目，项目中只有package.json文件，如何下载依赖？&quot;&gt;&lt;/a&gt;3.拷贝了一个基于npm的项目，项目中只有package.json文件，如何下载依赖？&lt;/h4&gt;&lt;p&gt;进入项目目录，执行命令：&lt;br&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;4-如何在自己的项目中使用npm？&quot;&gt;&lt;a href=&quot;#4-如何在自己的项目中使用npm？&quot; class=&quot;headerlink&quot; title=&quot;4.如何在自己的项目中使用npm？&quot;&gt;&lt;/a&gt;4.如何在自己的项目中使用npm？&lt;/h4&gt;&lt;p&gt;进入项目目录执行：&lt;code&gt;npm init&lt;/code&gt;，并根据提示完成package.json文件的构建&lt;/p&gt;
+&lt;h4 id=&quot;5-自己写了个npm插件，如何发布？&quot;&gt;&lt;a href=&quot;#5-自己写了个npm插件，如何发布？&quot; class=&quot;headerlink&quot; title=&quot;5.自己写了个npm插件，如何发布？&quot;&gt;&lt;/a&gt;5.自己写了个npm插件，如何发布？&lt;/h4&gt;&lt;p&gt;到&lt;a href=&quot;https://www.npmjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.npmjs.com/&lt;/a&gt;注册账号，然后进入自己用npm管理的项目目录：  &lt;/p&gt;
+&lt;h5 id=&quot;1-执行登录命令：npm-adduser，根据提示填写用户名和密码&quot;&gt;&lt;a href=&quot;#1-执行登录命令：npm-adduser，根据提示填写用户名和密码&quot; class=&quot;headerlink&quot; title=&quot;1. 执行登录命令：npm adduser，根据提示填写用户名和密码&quot;&gt;&lt;/a&gt;1. 执行登录命令：&lt;code&gt;npm adduser&lt;/code&gt;，根据提示填写用户名和密码&lt;/h5&gt;&lt;h5 id=&quot;2-执行发布插件命令：npm-publish，插件会被发布到https-www-npmjs-com-，供自己和其他人下载安装-如果发布失败，多是因为插件名称重复&quot;&gt;&lt;a href=&quot;#2-执行发布插件命令：npm-publish，插件会被发布到https-www-npmjs-com-，供自己和其他人下载安装-如果发布失败，多是因为插件名称重复&quot; class=&quot;headerlink&quot; title=&quot;2. 执行发布插件命令：npm publish，插件会被发布到https://www.npmjs.com/，供自己和其他人下载安装(如果发布失败，多是因为插件名称重复)&quot;&gt;&lt;/a&gt;2. 执行发布插件命令：&lt;code&gt;npm publish&lt;/code&gt;，插件会被发布到&lt;a href=&quot;https://www.npmjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.npmjs.com/&lt;/a&gt;，供自己和其他人下载安装(如果发布失败，多是因为插件名称重复)&lt;/h5&gt;&lt;h5 id=&quot;3-取消发布命令：npm-unpublish，插件会从https-www-npmjs-com-删除&quot;&gt;&lt;a href=&quot;#3-取消发布命令：npm-unpublish，插件会从https-www-npmjs-com-删除&quot; class=&quot;headerlink&quot; title=&quot;3. 取消发布命令：npm unpublish，插件会从https://www.npmjs.com/删除&quot;&gt;&lt;/a&gt;3. 取消发布命令：&lt;code&gt;npm unpublish&lt;/code&gt;，插件会从&lt;a href=&quot;https://www.npmjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.npmjs.com/&lt;/a&gt;删除&lt;/h5&gt;&lt;p&gt;更多资料：&lt;a href=&quot;http://www.runoob.com/nodejs/nodejs-npm.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.runoob.com/nodejs/nodejs-npm.html&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;npm使用笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Node学习笔记" scheme="http://coolfishstudio.github.io/categories/Node%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="NPM" scheme="http://coolfishstudio.github.io/tags/NPM/"/>
+    
+      <category term="Node.js" scheme="http://coolfishstudio.github.io/tags/Node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>学习了解Node.js</title>
