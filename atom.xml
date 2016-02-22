@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-21T15:40:59.000Z</updated>
+  <updated>2016-02-22T03:59:16.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何去除移动端链接a标签产生带色边框</title>
+    <link href="http://coolfishstudio.github.io/2016/02/22/%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%93%BE%E6%8E%A5a%E6%A0%87%E7%AD%BE%E4%BA%A7%E7%94%9F%E5%B8%A6%E8%89%B2%E8%BE%B9%E6%A1%86/"/>
+    <id>http://coolfishstudio.github.io/2016/02/22/如何去除移动端链接a标签产生带色边框/</id>
+    <published>2016-02-22T03:54:35.000Z</published>
+    <updated>2016-02-22T03:59:16.000Z</updated>
+    
+    <content type="html">&lt;p&gt;点击链接a标签时，会有一个很丑的边框出现，很是影响页面美观。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;样式代码如下&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;rules&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;none&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;-webkit-tap-highlight-color&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; &lt;span class=&quot;function&quot;&gt;rgba&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;-webkit-tap-highlight-color&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;transparent&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;outline&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;none&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;会出现这样的问题是因为：&lt;br&gt;&lt;strong&gt;&lt;em&gt;-webkit-tap-highlight-color是ios和android下点击元素时出现的阴影。&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;&lt;em&gt;-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color:transparent; 都可以将该阴影透明化，进而解决那个丑丑的边框问题。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;点击链接a标签时，会有一个很丑的边框出现，很是影响页面美观。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="手机移动" scheme="http://coolfishstudio.github.io/categories/%E6%89%8B%E6%9C%BA%E7%A7%BB%E5%8A%A8/"/>
+    
+    
+      <category term="CSS3" scheme="http://coolfishstudio.github.io/tags/CSS3/"/>
+    
+      <category term="移动端" scheme="http://coolfishstudio.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>改变NPM的镜像</title>
