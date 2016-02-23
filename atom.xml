@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-22T03:59:16.000Z</updated>
+  <updated>2016-02-23T03:27:32.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS中px和em,rem之间的区别</title>
+    <link href="http://coolfishstudio.github.io/2016/02/23/CSS%E4%B8%ADpx%E5%92%8Cem-rem%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://coolfishstudio.github.io/2016/02/23/CSS中px和em-rem之间的区别/</id>
+    <published>2016-02-23T03:10:06.000Z</published>
+    <updated>2016-02-23T03:27:32.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;PX特点&quot;&gt;&lt;a href=&quot;#PX特点&quot; class=&quot;headerlink&quot; title=&quot;PX特点&quot;&gt;&lt;/a&gt;PX特点&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;IE无法调整那些使用px作为单位的字体大小；&lt;/li&gt;
+&lt;li&gt;国外的大部分网站能够调整的原因在于其使用了em或rem作为字体单位；&lt;/li&gt;
+&lt;li&gt;Firefox能够调整px和em，rem，但是96%以上的中国网民使用IE浏览器(或内核)。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;px像素（Pixel）。相对长度单位。&lt;/strong&gt;像素px是相对于显示器屏幕分辨率而言的。(引自CSS2.0手册)&lt;br&gt;&lt;strong&gt;em是相对长度单位。相对于当前对象内文本的字体尺寸。&lt;/strong&gt;如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。(引自CSS2.0手册)&lt;br&gt;任意浏览器的默认字体高都是 &lt;strong&gt;16px&lt;/strong&gt; 。所有未经调整的浏览器都符合: 1em=16px。&lt;br&gt;那么12px=0.75em,10px=0.625em。&lt;br&gt;为了简化font-size的换算，需要在css中的body选择器中声明Font-size=62.5%，这就使em值变为 16px*62.5%=10px, 这样12px=1.2em, 10px=1em, 也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了。&lt;/p&gt;
+&lt;h3 id=&quot;EM特点&quot;&gt;&lt;a href=&quot;#EM特点&quot; class=&quot;headerlink&quot; title=&quot;EM特点&quot;&gt;&lt;/a&gt;EM特点&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;em的值并不是固定的；&lt;/li&gt;
+&lt;li&gt;em会继承父级元素的字体大小。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以我们在写CSS的时候，需要注意两点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;body选择器中声明Font-size=62.5%；&lt;/li&gt;
+&lt;li&gt;将你的原来的px数值除以10，然后换上em作为单位；&lt;/li&gt;
+&lt;li&gt;重新计算那些被放大的字体的em数值。避免字体大小的重复声明。&lt;br&gt;也就是避免1.2 * 1.2= 1.44的现象。比如说你在#content中声明了字体大小为1.2em，那么在声明p的字体大小时就只能是1em，而不是1.2em, 因为此em非彼em，它因继承#content的字体高而变为了1em=12px。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例如：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;rules&quot;&gt;&amp;#123; &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; &lt;span class=&quot;number&quot;&gt;100%&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;; &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;.box-0&lt;/span&gt; &lt;span class=&quot;rules&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; &lt;span class=&quot;number&quot;&gt;1em&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/* 此时height等于16px */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;.box-1&lt;/span&gt; &lt;span class=&quot;rules&quot;&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; &lt;span class=&quot;number&quot;&gt;0.625em&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/* 此时基准字号以变更为16*0.625=10px */&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; &lt;span class=&quot;number&quot;&gt;1em&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/* 此时实际height等于10px */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;REM特点&quot;&gt;&lt;a href=&quot;#REM特点&quot; class=&quot;headerlink&quot; title=&quot;REM特点&quot;&gt;&lt;/a&gt;REM特点&lt;/h3&gt;&lt;p&gt;rem是CSS3新增的一个相对单位（root em，根em），这个单位引起了广泛关注。这个单位与em有什么区别呢？&lt;br&gt;区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。&lt;br&gt;目前，除了IE8及更早版本外，所有浏览器均已支持rem。对于不支持它的浏览器，应对方法也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用rem设定的字体大小。&lt;br&gt;下面就是一个例子：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;rules&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; &lt;span class=&quot;number&quot;&gt;14px&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;/* 用来兼容ie678 */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt; &lt;span class=&quot;number&quot;&gt;0.875rem&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;注意：&lt;br&gt;选择使用什么字体单位主要由你的项目来决定，如果你的用户群都使用最新版的浏览器，那推荐使用rem，如果要考虑兼容性，那就使用px,或者两者同时使用。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;国内的设计师大都喜欢用px，而国外的网站大都喜欢用em和rem，那么三者有什么区别，又各自有什么优劣呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
+    
+    
+      <category term="CSS" scheme="http://coolfishstudio.github.io/tags/CSS/"/>
+    
+      <category term="CSS3" scheme="http://coolfishstudio.github.io/tags/CSS3/"/>
+    
+  </entry>
   
   <entry>
     <title>如何去除移动端链接a标签产生带色边框</title>
