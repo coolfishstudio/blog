@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-27T12:29:04.000Z</updated>
+  <updated>2016-02-28T11:43:34.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iframe在移动端上不能滚动的问题</title>
+    <link href="http://coolfishstudio.github.io/2016/02/28/iframe%E5%9C%A8%E7%A7%BB%E5%8A%A8%E7%AB%AF%E4%B8%8A%E4%B8%8D%E8%83%BD%E6%BB%9A%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://coolfishstudio.github.io/2016/02/28/iframe在移动端上不能滚动的问题/</id>
+    <published>2016-02-28T11:31:23.000Z</published>
+    <updated>2016-02-28T11:43:34.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天要在web中嵌套一个网址或本地HTML，用到了iframe，电脑上测试滚动是好使的。而在手机上无法滚动。经过查询，发现原来在html5中的iframe已经只有剩下src的属性。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;解决办法：&lt;br&gt;在iframe外加一层div，设置样式-webkit-overflow-scrolling:touch; overflow: scroll;&lt;br&gt;让超出div的内容可以通过touch来滚动。&lt;br&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;tag&quot;&gt;div&lt;/span&gt; id=&lt;span class=&quot;string&quot;&gt;&quot;scrollee&quot;&lt;/span&gt; style=&lt;span class=&quot;string&quot;&gt;&quot;width:300px;height:300px;-webkit-overflow-scrolling:touch; overflow: scroll;&quot;&lt;/span&gt;&amp;gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;&lt;span class=&quot;tag&quot;&gt;iframe&lt;/span&gt; id=&lt;span class=&quot;string&quot;&gt;&quot;object&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;90%&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;100%&quot;&lt;/span&gt; type=&lt;span class=&quot;string&quot;&gt;&quot;text/html&quot;&lt;/span&gt; src=&lt;span class=&quot;string&quot;&gt;&quot;https://www.baidu.com/&quot;&lt;/span&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天要在web中嵌套一个网址或本地HTML，用到了iframe，电脑上测试滚动是好使的。而在手机上无法滚动。经过查询，发现原来在html5中的iframe已经只有剩下src的属性。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="手机移动" scheme="http://coolfishstudio.github.io/categories/%E6%89%8B%E6%9C%BA%E7%A7%BB%E5%8A%A8/"/>
+    
+    
+      <category term="移动端" scheme="http://coolfishstudio.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>使用CSS伪类实现三角</title>
