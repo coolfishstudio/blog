@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS3,移动端," />
+  <meta name="keywords" content="移动端," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="点击链接a标签时，会有一个很丑的边框出现，很是影响页面美观。">
+<meta name="description" content="处理iframe子页面过宽问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何去除移动端链接a标签产生带色边框">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/02/22/如何去除移动端链接a标签产生带色边框/index.html">
+<meta property="og:title" content="关于iframe在移动端子页面宽度过宽问题">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/02/29/关于iframe在移动端子页面宽度过宽问题/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="点击链接a标签时，会有一个很丑的边框出现，很是影响页面美观。">
-<meta property="og:updated_time" content="2016-02-22T03:59:16.000Z">
+<meta property="og:description" content="处理iframe子页面过宽问题">
+<meta property="og:updated_time" content="2016-02-29T10:18:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何去除移动端链接a标签产生带色边框">
-<meta name="twitter:description" content="点击链接a标签时，会有一个很丑的边框出现，很是影响页面美观。">
+<meta name="twitter:title" content="关于iframe在移动端子页面宽度过宽问题">
+<meta name="twitter:description" content="处理iframe子页面过宽问题">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 如何去除移动端链接a标签产生带色边框 | 酷鱼网 </title>
+  <title> 关于iframe在移动端子页面宽度过宽问题 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                如何去除移动端链接a标签产生带色边框
+                关于iframe在移动端子页面宽度过宽问题
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-22T11:54:35+08:00" content="2016-02-22">
-              2016-02-22
+            <time itemprop="dateCreated" datetime="2016-02-29T18:14:25+08:00" content="2016-02-29">
+              2016-02-29
             </time>
           </span>
 
@@ -288,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/22/如何去除移动端链接a标签产生带色边框/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/22/如何去除移动端链接a标签产生带色边框/" itemprop="commentsCount"></span>
+                <a href="/2016/02/29/关于iframe在移动端子页面宽度过宽问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/关于iframe在移动端子页面宽度过宽问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,8 +310,11 @@
       
 
       
-        <p>点击链接a标签时，会有一个很丑的边框出现，很是影响页面美观。<br><a id="more"></a><br>样式代码如下<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value">none</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"> <span class="function">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value">transparent</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">outline</span>:<span class="value">none</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>会出现这样的问题是因为：<br><strong><em>-webkit-tap-highlight-color是ios和android下点击元素时出现的阴影。</em></strong><br><strong><em>-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color:transparent; 都可以将该阴影透明化，进而解决那个丑丑的边框问题。</em></strong></p>
+        <blockquote>
+<p>处理iframe子页面过宽问题</p>
+</blockquote>
+<a id="more"></a>
+<p>解决方案<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line">    iframe.style.border = <span class="string">'0'</span>;</span><br><span class="line">    iframe.style.width = <span class="string">'1px'</span>;</span><br><span class="line">    iframe.style.height = <span class="string">'100%'</span>;</span><br><span class="line">    iframe.style.minWidth = <span class="string">'100%'</span>;</span><br><span class="line">    iframe.width = <span class="string">'100%'</span>;</span><br><span class="line">    <span class="keyword">if</span>(isMobileSafari())&#123;</span><br><span class="line">        iframe.scrolling = <span class="string">'no'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isMobileSafari</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">return</span> (ua.match(<span class="regexp">/iP(hone|od|ad)/i</span>) &amp;&amp; (ua.indexOf(<span class="string">'Safari'</span>) &gt; -<span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -319,8 +322,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/CSS3/" rel="tag">#CSS3</a>
           
             <a href="/tags/移动端/" rel="tag">#移动端</a>
           
@@ -331,17 +332,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/21/改变NPM的镜像/" rel="next" title="改变NPM的镜像">
-                <i class="fa fa-chevron-left"></i> 改变NPM的镜像
+              <a href="/2016/02/28/iframe在移动端上不能滚动的问题/" rel="next" title="iframe在移动端上不能滚动的问题">
+                <i class="fa fa-chevron-left"></i> iframe在移动端上不能滚动的问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/23/CSS中px和em-rem之间的区别/" rel="prev" title="CSS中px和em,rem之间的区别">
-                CSS中px和em,rem之间的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -367,8 +364,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/22/如何去除移动端链接a标签产生带色边框/"
-           data-title="如何去除移动端链接a标签产生带色边框" data-url="http://coolfishstudio.github.io/2016/02/22/如何去除移动端链接a标签产生带色边框/">
+      <div class="ds-thread" data-thread-key="2016/02/29/关于iframe在移动端子页面宽度过宽问题/"
+           data-title="关于iframe在移动端子页面宽度过宽问题" data-url="http://coolfishstudio.github.io/2016/02/29/关于iframe在移动端子页面宽度过宽问题/">
       </div>
     
   </div>
