@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-02-29T10:18:10.000Z</updated>
+  <updated>2016-03-01T09:57:45.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS动态修改微信浏览器中的title</title>
+    <link href="http://coolfishstudio.github.io/2016/03/01/JS%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84title/"/>
+    <id>http://coolfishstudio.github.io/2016/03/01/JS动态修改微信浏览器中的title/</id>
+    <published>2016-03-01T09:54:17.000Z</published>
+    <updated>2016-03-01T09:57:45.000Z</updated>
+    
+    <content type="html">&lt;p&gt;平时使用JS修改title，直接document.title=新标题就好了&lt;br&gt;这样在安卓的微信浏览器是正常运行，可在IOS中这样的确不起作用。&lt;br&gt;这是因为微信浏览器的title在页面加载完成后就确定了，因此如果光使用document.title来修改，不会有效果。&lt;br&gt;所以这里使用了黑科技。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们的原理是设置一个ifame然后我们再加载一下就可以实现了.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在微信浏览器中使用如下代码来动态修改浏览器上的title标题：&lt;br&gt;&lt;figure class=&quot;highlight xquery&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var &lt;span class=&quot;variable&quot;&gt;$body&lt;/span&gt; = $(&lt;span class=&quot;string&quot;&gt;&#39;body&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;document.title = &lt;span class=&quot;string&quot;&gt;&#39;这里是要修改成的新标题&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var &lt;span class=&quot;variable&quot;&gt;$iframe&lt;/span&gt; = $(&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;iframe src=&quot;/favicon.ico&quot;&amp;gt;&amp;lt;/iframe&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$iframe&lt;/span&gt;.on(&lt;span class=&quot;string&quot;&gt;&#39;load&#39;&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    setTimeout(function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;$iframe&lt;/span&gt;.off(&lt;span class=&quot;string&quot;&gt;&#39;load&#39;&lt;/span&gt;).remove();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).appendTo(&lt;span class=&quot;variable&quot;&gt;$body&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;由于微信浏览器只在页面首次加载时初始化了标题title，之后就没有再监听 &lt;strong&gt; window.title &lt;/strong&gt; 的change事件。所以这里修改了title后，立即创建一个请求，加载一个空的iframe，由于加载后立即就移除，也不会对页面造成影响，但这样微信浏览器上的title便刷新了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;平时使用JS修改title，直接document.title=新标题就好了&lt;br&gt;这样在安卓的微信浏览器是正常运行，可在IOS中这样的确不起作用。&lt;br&gt;这是因为微信浏览器的title在页面加载完成后就确定了，因此如果光使用document.title来修改，不会有效果。&lt;br&gt;所以这里使用了黑科技。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们的原理是设置一个ifame然后我们再加载一下就可以实现了.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="手机移动" scheme="http://coolfishstudio.github.io/categories/%E6%89%8B%E6%9C%BA%E7%A7%BB%E5%8A%A8/"/>
+    
+    
+      <category term="微信" scheme="http://coolfishstudio.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="移动端" scheme="http://coolfishstudio.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>关于iframe在移动端子页面宽度过宽问题</title>
