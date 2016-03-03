@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-03-02T10:59:02.000Z</updated>
+  <updated>2016-03-03T10:43:14.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RGB和RGBA之间的转换</title>
+    <link href="http://coolfishstudio.github.io/2016/03/03/RGB%E5%92%8CRGBA%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://coolfishstudio.github.io/2016/03/03/RGB和RGBA之间的转换/</id>
+    <published>2016-03-03T10:38:25.000Z</published>
+    <updated>2016-03-03T10:43:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;项目需要用到透明度，但是服务端给我的都是颜色，没有给关于透明度的色系，无奈之下，自己写了一个转换&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;代码如下：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; util = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rgb2Rgba: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;rgb_color, alp&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//注：rgb_color的格式为#FFFFFFF 或 #FFF&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (rgb_color.length !== &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt; &amp;amp;&amp;amp; rgb_color.length !== &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt; ) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (rgb_color.length === &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            rgb_color = rgb_color.substr(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) + rgb_color.substr(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        rgb_color.substr(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) + rgb_color.substr(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        rgb_color.substr(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) + rgb_color.substr(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; r = &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;0x&#39;&lt;/span&gt; + rgb_color.substr(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; g = &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;0x&#39;&lt;/span&gt; + rgb_color.substr(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; b = &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;0x&#39;&lt;/span&gt; + rgb_color.substr(&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = alp || &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//为透明度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;rgba(&#39;&lt;/span&gt; + r + &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; + g + &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; + b + &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; + a + &lt;span class=&quot;string&quot;&gt;&#39;)&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rgba2Rgb: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;rgba_color&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//注：rgba_color的格式为rgba(0, 0, 0, 0.1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; BGcolur = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = rgba_color.split(&lt;span class=&quot;string&quot;&gt;&#39;(&#39;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;].split(&lt;span class=&quot;string&quot;&gt;&#39;)&#39;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].split(&lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = arr[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; r = BGcolur * (&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; - a) + arr[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] * a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; g = BGcolur * (&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; - a) + arr[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] * a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; b = BGcolur * (&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; - a) + arr[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;] * a;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;rgb(&#39;&lt;/span&gt; + r + &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; + g + &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt; + b + &lt;span class=&quot;string&quot;&gt;&#39;)&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;项目需要用到透明度，但是服务端给我的都是颜色，没有给关于透明度的色系，无奈之下，自己写了一个转换&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
+    
+    
+      <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>通过正则判断是否为邮箱格式</title>
@@ -750,39 +773,6 @@
     
     
       <category term="GitHub" scheme="http://coolfishstudio.github.io/tags/GitHub/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://coolfishstudio.github.io/2016/02/15/Hello-World/"/>
-    <id>http://coolfishstudio.github.io/2016/02/15/Hello-World/</id>
-    <published>2016-02-15T08:11:19.000Z</published>
-    <updated>2016-02-15T15:54:53.000Z</updated>
-    
-    <content type="html">&lt;p&gt;作为一个程序员 第一句话 必须是  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hello world
-&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;本次博客搭建-采用了-以下技术&quot;&gt;&lt;a href=&quot;#本次博客搭建-采用了-以下技术&quot; class=&quot;headerlink&quot; title=&quot;本次博客搭建 采用了 以下技术:&quot;&gt;&lt;/a&gt;本次博客搭建 采用了 以下技术:&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;github: 用来保存静态页面  &lt;/li&gt;
-&lt;li&gt;hexo: 一款基于nodejs的博客模板框架  &lt;/li&gt;
-&lt;li&gt;多说: 一个第三方评论系统  &lt;/li&gt;
-&lt;li&gt;七牛: 一个第三方存储系统 可作为图床  &lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;作为一个程序员 第一句话 必须是  &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hello world
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="日志" scheme="http://coolfishstudio.github.io/categories/%E6%97%A5%E5%BF%97/"/>
-    
-    
-      <category term="笔记" scheme="http://coolfishstudio.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
