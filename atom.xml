@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-03-04T10:18:01.000Z</updated>
+  <updated>2016-03-05T11:52:35.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,119 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WEB开发者应该具备的6大技能</title>
+    <link href="http://coolfishstudio.github.io/2016/03/05/WEB%E5%BC%80%E5%8F%91%E8%80%85%E5%BA%94%E8%AF%A5%E5%85%B7%E5%A4%87%E7%9A%846%E5%A4%A7%E6%8A%80%E8%83%BD/"/>
+    <id>http://coolfishstudio.github.io/2016/03/05/WEB开发者应该具备的6大技能/</id>
+    <published>2016-03-05T11:45:37.000Z</published>
+    <updated>2016-03-05T11:52:35.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;WEB开发本身涵盖了许多领域的许多技术，那么，有哪些是WEB开发者必备的技能呢？这是一个Quora上用户提出的问题，其中Ellyse Taylor的回答获得了1900+的赞同。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可能很多人对下面这个列表中的大部分内容都已经了解了，但其中必定有一些是你之前没有看到过，或者没有完全理解的，甚至有些你可能从来没听说过。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;1-界面和用户体验&quot;&gt;&lt;a href=&quot;#1-界面和用户体验&quot; class=&quot;headerlink&quot; title=&quot;1. 界面和用户体验&quot;&gt;&lt;/a&gt;1. 界面和用户体验&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;注意，浏览器的实现标准是不一致的，请确保你的网站能够兼容所有主流的浏览器。最少需要测试的有 Gecko 引擎(Firefox)，WebKit引擎(Safari以及一些手机浏览器)，Chrome，你所要支持的 IE 浏览器，以及 Opera。此外，你还需要了解不同系统下，浏览器是如何渲染网页的。&lt;/li&gt;
+&lt;li&gt;考虑一下人们不使用主流浏览器的情况，如手机，屏幕阅读器和搜索引擎。一些可用的辅助信息：WAI 和 Section508，移动开发：MobiForge。&lt;/li&gt;
+&lt;li&gt;阶段：如何在不影响用户的情况下部署更新。有一个或多个可以用来改变架构、代码或全部内容，并确保它们在可控范围内实现部署的测试或临时环境。有一种自动化的方式把更新部署到线上网站。最有效的实现方式是结合使用版本控制系统(CVS、Subversion等)和自动构建机制(Ant、NAnt等)。&lt;/li&gt;
+&lt;li&gt;不要直接向用户显示不友好的错误信息。&lt;/li&gt;
+&lt;li&gt;不要用纯文本的方式显示用户的电子邮件，因为他们可能会被垃圾邮件烦到死。&lt;/li&gt;
+&lt;li&gt;为用户生成的链接添加 rel=”nofollow” 属性，以避免垃圾邮件。&lt;/li&gt;
+&lt;li&gt;为你的网站建立周全的限制–这条也同时属于安全方面。&lt;/li&gt;
+&lt;li&gt;学习如何进一步的提高。&lt;/li&gt;
+&lt;li&gt;POST 提交成功后进行重定向，以免刷新造成重复提交。&lt;/li&gt;
+&lt;li&gt;别忘了考虑无障碍访问。这总是不错的，在某些情况下，这甚至是法律要求的。 WAI-ARIA 和 WCAG 2 里都有关于这方面很好的资源。&lt;/li&gt;
+&lt;li&gt;不要让我思考。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-安全&quot;&gt;&lt;a href=&quot;#2-安全&quot; class=&quot;headerlink&quot; title=&quot;2. 安全&quot;&gt;&lt;/a&gt;2. 安全&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;OWASP开发指南几乎覆盖了网站安全所有的内容。&lt;/li&gt;
+&lt;li&gt;了解注入，尤其是 SQL注入，并学会如何阻止它。&lt;/li&gt;
+&lt;li&gt;永远不要相信用户的输入，以及其他任何请求（包括Cookies和隐藏域的值）。&lt;/li&gt;
+&lt;li&gt;使用盐值(salt)哈希密码，并对不同的行使用不同的盐值，防止攻击。使用哈希算法如 bcrypt 或 scrypt(更安全，但比较新)(1, 2)来存储密码。(如何安全的存储密码)。NIST也允许使用PBKDF2来加密密码。避免直接使用 MD5 和 SHA 等算法。&lt;/li&gt;
+&lt;li&gt;不要企图拿出自己喜欢的认证系统。这是很容易出错的，并且是不可测的，甚至直到你被攻击了你才知道。&lt;/li&gt;
+&lt;li&gt;了解信用卡处理规则。(也可查看该问题)&lt;/li&gt;
+&lt;li&gt;在登录页和任何需要输入敏感数据的页面使用SSL/HTTPS。&lt;/li&gt;
+&lt;li&gt;防止 session 被劫持。&lt;/li&gt;
+&lt;li&gt;避免跨站脚本(XSS)。&lt;/li&gt;
+&lt;li&gt;避免点击劫持。&lt;/li&gt;
+&lt;li&gt;保持系统更新到最新的补丁。&lt;/li&gt;
+&lt;li&gt;确保数据库连接信息的安全。&lt;/li&gt;
+&lt;li&gt;让自己了解最新的攻击技术和会影响你平台的漏洞。&lt;/li&gt;
+&lt;li&gt;阅读谷歌浏览器安全手册。&lt;/li&gt;
+&lt;li&gt;阅读WEB应用黑客手册。&lt;/li&gt;
+&lt;li&gt;考虑最小特权原则，尽量使用非root用户运行服务器(以tomcat为例)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;3-性能&quot;&gt;&lt;a href=&quot;#3-性能&quot; class=&quot;headerlink&quot; title=&quot;3. 性能&quot;&gt;&lt;/a&gt;3. 性能&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;如果有必要的话，实现缓存，请正确理解和使用HTTP缓存。&lt;/li&gt;
+&lt;li&gt;优化图片。不要使用20K的图片作为平铺背景。&lt;/li&gt;
+&lt;li&gt;学习如何 gzip/deflate 内容（deflate效果更好）。&lt;/li&gt;
+&lt;li&gt;合并样式表与脚本文件以减小浏览器链接数，同时提高 gzip 的压缩能力。&lt;/li&gt;
+&lt;li&gt;浏览雅虎性能卓越的网站，以及大量的指南，其中包含提升前端性能和YSlow工具（需要安装Firefox, Safari, Chrome 或 Opera）。此外，Google page speed(浏览器扩展)也是一个性能分析工具，它同时可以优化你的图片。&lt;/li&gt;
+&lt;li&gt;对于小的如工具栏图片，使用CSS Image Sprites(参考最小化HTTP请求)。&lt;/li&gt;
+&lt;li&gt;访问量大的网站应该考虑跨域拆分组件。&lt;/li&gt;
+&lt;li&gt;静态内容（如图片、CSS、JavaScript及不需要访问cookie的内容）应该放在一个单独的域下，因为域及其子域的每一个请求都会发送cookie。这里是使用内容分发网络（CDN）的一个很好的选择。&lt;/li&gt;
+&lt;li&gt;减少浏览器渲染页面所需的HTTP请求的总数量。&lt;/li&gt;
+&lt;li&gt;利用Google Closure Compiler及其他压缩JS的工具。&lt;/li&gt;
+&lt;li&gt;确保网站根目录下有一个favicon.ico文件，即使在HTML中并没有提到它，浏览器也会自动加载它。如果你没有 /favicon.ico ，就会返回很多404错误，消耗服务器带宽。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;4-SEO-Search-Engine-Optimization-搜索引擎优化&quot;&gt;&lt;a href=&quot;#4-SEO-Search-Engine-Optimization-搜索引擎优化&quot; class=&quot;headerlink&quot; title=&quot;4. SEO (Search Engine Optimization) 搜索引擎优化&quot;&gt;&lt;/a&gt;4. SEO (Search Engine Optimization) 搜索引擎优化&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用“搜索引擎友好”的URL，如&lt;a href=&quot;http://example.com/pages/45-article-title而不是http://ofexample.com/index.php?page=45。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://example.com/pages/45-article-title而不是http://ofexample.com/index.php?page=45。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在动态内容中，把 # 改成 #! ，然后在服务器端使用$_REQUEST[“_escaped&lt;em&gt;fragment&lt;/em&gt;“]。换句话说 ./#!page=1变成了./?_escaped&lt;em&gt;fragments&lt;/em&gt;=page=1。此外，对于使用FF.b4或Chromium的用户，history.pushState({“foo”:“bar”}, “About”, “./?page=1″); 是一个非常棒的命令。因此，即使地址栏已经改变了，页面也不会刷新。&lt;/li&gt;
+&lt;li&gt;不要使用“点击这里”这样的链接。你是在浪费一个搜索引擎优化的机会，而且它让使用屏幕阅读器人们更难阅读。&lt;/li&gt;
+&lt;li&gt;有一个XML网站地图，最好在默认位置/sitemap.xml。&lt;/li&gt;
+&lt;li&gt;当有多个URL指向同一个内容的时候，使用&lt;link rel=&quot;”canonical”&quot; …=&quot;&quot;&gt;，这个问题可以通过Google Webmaster Tools来解决。&lt;/li&gt;
+&lt;li&gt;使用Google Webmaster Tools和Bing Webmaster Tools。&lt;/li&gt;
+&lt;li&gt;安装Google Analytics或者其他开源分析工具如：Piwik。&lt;/li&gt;
+&lt;li&gt;了解robots.txt及搜索引擎蜘蛛是如果工作的。&lt;/li&gt;
+&lt;li&gt;使用重定向（301）www.example.com到example.com(或者反过来)，防止它们平分谷歌网站排名。 要知道有badly-behaved蜘蛛的存在。&lt;/li&gt;
+&lt;li&gt;如果你的网站有非文本内容，Tim Farley的回答中有一些非常有用的信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;5-技术&quot;&gt;&lt;a href=&quot;#5-技术&quot; class=&quot;headerlink&quot; title=&quot;5. 技术&quot;&gt;&lt;/a&gt;5. 技术&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;理解HTTP以及GET、POST、session、cookie以及“无状态”的意思。&lt;/li&gt;
+&lt;li&gt;撰写XHTML/HTML和CSS要遵循W3C规范，并确保它们通过校验。这样做的目的是为了避免浏览器的怪癖模式，并且这使得非标准浏览器如屏幕阅读器和移动设备更加容易实现。&lt;/li&gt;
+&lt;li&gt;理解浏览器是如何处理JavaScript 的。&lt;/li&gt;
+&lt;li&gt;理解JavaScript 、样式表、以及页面使用的其他资源是如何加载的，并考虑它们对感知性能的影响。现在普遍认同的一种做法是把除分析代码等以外的脚本文件放在页面底部。&lt;/li&gt;
+&lt;li&gt;了解JavaScript 沙箱是如何工作的，特别是当你想使用 iframe 的时候。&lt;/li&gt;
+&lt;li&gt;需要注意到，JavaScript是可以被禁用的，因此AJAX只是一个扩展，而不是基准。虽然大部分用户并没有禁用它，但记住，NoScript正在变得越来越流行。并且，谷歌在索引你的网站时也不会运行JavaScript。&lt;/li&gt;
+&lt;li&gt;学习301和302重定向之间的不同。&lt;/li&gt;
+&lt;li&gt;尽可能多地了解你的部署平台。&lt;/li&gt;
+&lt;li&gt;考虑使用Reset Style Sheet或normalize.css。&lt;/li&gt;
+&lt;li&gt;考虑使用JavaScript框架(如jQuery, MooTools, Prototype, Dojo 或 YUI 3)，这可以避免很多使用JavaScript操作DOM时的差异。&lt;/li&gt;
+&lt;li&gt;在考虑感知性能和框架的同时，考虑使用服务，如Google Libraries API，来加载框架，这样浏览器可以使用已经缓存的框架而不是从你的网站上下载。&lt;/li&gt;
+&lt;li&gt;不要重复造轮子。在做任何事情之前，先搜索相关的组件或者实例。99%的可能别人已经实现了并发布出了开源的代码。&lt;/li&gt;
+&lt;li&gt;在确定需求之前，尽量不要使用超过20个的库，这是非常不利的。特别是客户端WEB，保存轻便、快速、灵活是最重要的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;6-BUG修复&quot;&gt;&lt;a href=&quot;#6-BUG修复&quot; class=&quot;headerlink&quot; title=&quot;6. BUG修复&quot;&gt;&lt;/a&gt;6. BUG修复&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;要了解你花费20%的时间写代码而花费80%的时间来维护，因此写代码时一定注意。&lt;/li&gt;
+&lt;li&gt;建立一个好的错误报告解决方案。&lt;/li&gt;
+&lt;li&gt;建立一个别人可以提建议和批评的系统。&lt;/li&gt;
+&lt;li&gt;为未来的支持人员和维护人员建立良好的文档。&lt;/li&gt;
+&lt;li&gt;经常备份！Ed Lucas的回答中有一些建议。有一个恢复策略，而不只是一个备份策略。&lt;/li&gt;
+&lt;li&gt;使用版本控制系统，如Subversion、Mercurial或Git。&lt;/li&gt;
+&lt;li&gt;不要忘记验收测试。Selenium等框架可以帮到你。&lt;/li&gt;
+&lt;li&gt;请确保您有足够的日志记录的地方，可以使用框架如log4j, log4net 或 log4r。当网站出现问题的时候，你需要能够找到问题所在。&lt;/li&gt;
+&lt;li&gt;日志要记录已处理异常和未处理异常。分析日志输出，因为它会显示出你网站的关键问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里有些省略的东西并不是因为它们没用，而是因为它们过于详细或者超出了范围，或者说的太远了。当然，上面的内容可能也有一些遗漏或者错误。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;WEB开发本身涵盖了许多领域的许多技术，那么，有哪些是WEB开发者必备的技能呢？这是一个Quora上用户提出的问题，其中Ellyse Taylor的回答获得了1900+的赞同。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可能很多人对下面这个列表中的大部分内容都已经了解了，但其中必定有一些是你之前没有看到过，或者没有完全理解的，甚至有些你可能从来没听说过。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日志" scheme="http://coolfishstudio.github.io/categories/%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>根据主题颜色修改图片的颜色</title>
@@ -701,64 +814,6 @@
       <category term="Hexo" scheme="http://coolfishstudio.github.io/tags/Hexo/"/>
     
       <category term="NexT主题" scheme="http://coolfishstudio.github.io/tags/NexT%E4%B8%BB%E9%A2%98/"/>
-    
-      <category term="多说" scheme="http://coolfishstudio.github.io/tags/%E5%A4%9A%E8%AF%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用Hexo来美化Github Pages的个人站点</title>
-    <link href="http://coolfishstudio.github.io/2016/02/16/%E5%88%A9%E7%94%A8Hexo%E6%9D%A5%E7%BE%8E%E5%8C%96Github-Pages%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
-    <id>http://coolfishstudio.github.io/2016/02/16/利用Hexo来美化Github-Pages的个人站点/</id>
-    <published>2016-02-16T11:24:19.000Z</published>
-    <updated>2016-02-17T12:33:33.000Z</updated>
-    
-    <content type="html">&lt;p&gt;上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点&lt;br&gt;这一次我们要使用 &lt;strong&gt;Hexo+GitHub+多说&lt;/strong&gt; 来搭建免费博客&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;要用到的模块&quot;&gt;&lt;a href=&quot;#要用到的模块&quot; class=&quot;headerlink&quot; title=&quot;要用到的模块&quot;&gt;&lt;/a&gt;要用到的模块&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;Hexo&lt;/em&gt;&lt;/strong&gt;    是一款基于nodejs的快速、简单、强大的博客系统框架。&lt;br&gt;&lt;strong&gt;&lt;em&gt;GitHub&lt;/em&gt;&lt;/strong&gt;  代码仓库。&lt;br&gt;&lt;strong&gt;&lt;em&gt;多说&lt;/em&gt;&lt;/strong&gt;     一个第三方评论系统。  &lt;/p&gt;
-&lt;h3 id=&quot;安装Hexo来生成Blog&quot;&gt;&lt;a href=&quot;#安装Hexo来生成Blog&quot; class=&quot;headerlink&quot; title=&quot;安装Hexo来生成Blog&quot;&gt;&lt;/a&gt;安装Hexo来生成Blog&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;首先 通过npm 进行 全局安装 hexo&lt;br&gt;&lt;code&gt;npm install hexo -g&lt;/code&gt;&lt;br&gt;安装结束后，初始化一个blog项目&lt;br&gt;&lt;code&gt;hexo init blog&lt;/code&gt;&lt;br&gt;进入 blog 项目里&lt;br&gt;&lt;code&gt;cd blog&lt;/code&gt;&lt;br&gt;初始化安装第三方支撑库&lt;br&gt;&lt;code&gt;npm install&lt;/code&gt;&lt;br&gt;启动服务器&lt;br&gt;&lt;code&gt;hexo server&lt;/code&gt; &lt;/p&gt;
-&lt;h5 id=&quot;blog项目的文件目录结构为：&quot;&gt;&lt;a href=&quot;#blog项目的文件目录结构为：&quot; class=&quot;headerlink&quot; title=&quot;blog项目的文件目录结构为：&quot;&gt;&lt;/a&gt;blog项目的文件目录结构为：&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;_config_yml // 注配置文件  &lt;/li&gt;
-&lt;li&gt;db.json // 数据  &lt;/li&gt;
-&lt;li&gt;debug.log // 调试日志  &lt;/li&gt;
-&lt;li&gt;node_mudules // nodejs 相关依赖  &lt;/li&gt;
-&lt;li&gt;package.json // 配置依赖  &lt;/li&gt;
-&lt;li&gt;scaffolds // 脚手架 - 也就是一个工具模板  &lt;/li&gt;
-&lt;li&gt;source // 存放blog正文的地方  &lt;/li&gt;
-&lt;li&gt;themes // 存放皮肤的地方  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;默认访问地址: &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;页面打不开&quot;&gt;&lt;a href=&quot;#页面打不开&quot; class=&quot;headerlink&quot; title=&quot;页面打不开&quot;&gt;&lt;/a&gt;页面打不开&lt;/h4&gt;&lt;p&gt;启动后，进行访问页面，会发现页面打开缓慢，这是因为我们电脑没有翻墙。&lt;br&gt;页面默认使用了ajax.google.com 下的js包。&lt;br&gt;因此我们要把包删掉。&lt;br&gt;解决办法：&lt;br&gt;进入你刚新建好的 blog根目录 ，进入&lt;code&gt;themes/landscape/layout/_partial&lt;/code&gt;中，&lt;br&gt;找到 &lt;strong&gt;after-footer.ejs&lt;/strong&gt;&lt;br&gt;把&lt;code&gt;&amp;lt;script src=&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&amp;quot;&amp;gt; &amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;替换成&lt;br&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js“ &amp;gt; &amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br&gt;找到 &lt;strong&gt;header.ejs&lt;/strong&gt;&lt;br&gt;注释掉或者删掉下面这句css引用&lt;br&gt;&lt;code&gt;&amp;lt;link href=&amp;quot;//fonts.googleapis.com/css?family=Source+Code+Pro&amp;quot; rel=”stylesheet” type=”text/css”&amp;gt;&lt;/code&gt;&lt;br&gt;重新 &lt;code&gt;hexo server&lt;/code&gt; 之后。&lt;br&gt;访问 &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt; 就会看到blog主页了。&lt;/p&gt;
-&lt;h4 id=&quot;新建文章&quot;&gt;&lt;a href=&quot;#新建文章&quot; class=&quot;headerlink&quot; title=&quot;新建文章&quot;&gt;&lt;/a&gt;新建文章&lt;/h4&gt;&lt;p&gt;写一篇文章的话 通过 &lt;code&gt;hexo new &amp;lt;title&amp;gt;&lt;/code&gt; 来实现&lt;br&gt;例如：&lt;code&gt;hexo new hello&lt;/code&gt;&lt;br&gt;然后 我们可以这个文件进行修改了 &lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;title: hello&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;date: 2016-02-16 18:50:48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tags:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- tag1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- tag2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- tag3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;categories:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;__&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// 你的内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--more--&amp;gt;&lt;/span&gt; // 以上为摘要&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;新建页面&quot;&gt;&lt;a href=&quot;#新建页面&quot; class=&quot;headerlink&quot; title=&quot;新建页面&quot;&gt;&lt;/a&gt;新建页面&lt;/h4&gt;&lt;p&gt;创建一个新的页面的话 通过 &lt;code&gt;hexo new page &amp;lt;title&amp;gt;&lt;/code&gt; 来实现&lt;br&gt;例如：&lt;code&gt;hexo new page about&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&quot;删除文章&quot;&gt;&lt;a href=&quot;#删除文章&quot; class=&quot;headerlink&quot; title=&quot;删除文章&quot;&gt;&lt;/a&gt;删除文章&lt;/h4&gt;&lt;p&gt;首先删除目录下的 &lt;strong&gt;db.json&lt;/strong&gt; 文件&lt;br&gt;然后 执行&lt;code&gt;hero clean&lt;/code&gt;&lt;br&gt;删掉不想要的md文件&lt;br&gt;然后 启动服务器 或 静态处理 就可以了&lt;/p&gt;
-&lt;h4 id=&quot;静态处理&quot;&gt;&lt;a href=&quot;#静态处理&quot; class=&quot;headerlink&quot; title=&quot;静态处理&quot;&gt;&lt;/a&gt;静态处理&lt;/h4&gt;&lt;p&gt;因为我们的blog要部署到github静态服务器上面，所有我们还要将页面进行静态化&lt;br&gt;hexo 为我们提供了 hexo g 的方法。进入blog根目录 执行&lt;code&gt;hexo g&lt;/code&gt;&lt;br&gt;那么在blog根目录下 就会生成public文件夹， 这里面就是生成的静态文件。&lt;/p&gt;
-&lt;h3 id=&quot;部署到GitHub上&quot;&gt;&lt;a href=&quot;#部署到GitHub上&quot; class=&quot;headerlink&quot; title=&quot;部署到GitHub上&quot;&gt;&lt;/a&gt;部署到GitHub上&lt;/h3&gt;&lt;h4 id=&quot;部署&quot;&gt;&lt;a href=&quot;#部署&quot; class=&quot;headerlink&quot; title=&quot;部署&quot;&gt;&lt;/a&gt;部署&lt;/h4&gt;&lt;p&gt;hexo已经集成了发布到github的配置，只需要修改根目录下的_config.yml 文件&lt;br&gt;增加配置信息，注意hexo3 的配置有所改动 此为hexo3 的配置信息&lt;br&gt;&lt;figure class=&quot;highlight haskell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;# Deployment&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;## Docs: http://hexo.io/docs/deployment.html&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;deploy&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;typedef&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;: git&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repo: your-github-url&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;部署到远程站点&lt;code&gt;hexo deploy&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;注意：&lt;br&gt;hexo 版本号3以上 会出现 &lt;strong&gt;hexo ERROR Deployer not found: github&lt;/strong&gt;&lt;br&gt;你需要安装 &lt;code&gt;npm install hexo-deployer-git --save&lt;/code&gt;&lt;br&gt;并且将deploy 的 type由github改为git&lt;/p&gt;
-&lt;h4 id=&quot;域名指向&quot;&gt;&lt;a href=&quot;#域名指向&quot; class=&quot;headerlink&quot; title=&quot;域名指向&quot;&gt;&lt;/a&gt;域名指向&lt;/h4&gt;&lt;p&gt;在github blog项目下新建一个CNAME文件 内容为你的域名&lt;br&gt;然后去 万网解析一下你的域名&lt;br&gt;注意：&lt;br&gt;解析类型为 -&amp;gt; CNAME&lt;br&gt;解析地址为 -&amp;gt; username.github.io  &lt;/p&gt;
-&lt;h3 id=&quot;安装插件&quot;&gt;&lt;a href=&quot;#安装插件&quot; class=&quot;headerlink&quot; title=&quot;安装插件&quot;&gt;&lt;/a&gt;安装插件&lt;/h3&gt;&lt;h4 id=&quot;多说&quot;&gt;&lt;a href=&quot;#多说&quot; class=&quot;headerlink&quot; title=&quot;多说&quot;&gt;&lt;/a&gt;多说&lt;/h4&gt;&lt;p&gt;评论插件多说为 hexo量身打造了一套解决方案&lt;br&gt;&lt;a href=&quot;http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;查看教程&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;rss&quot;&gt;&lt;a href=&quot;#rss&quot; class=&quot;headerlink&quot; title=&quot;rss&quot;&gt;&lt;/a&gt;rss&lt;/h4&gt;&lt;p&gt;rss的安装非常简单 ，已经有人做好了插件，安装只需一步。&lt;br&gt;&lt;code&gt;npm install hexo-generator-feed --save&lt;/code&gt;&lt;br&gt;启动服务器，用浏览器打开 &lt;a href=&quot;http://localhost:4000/atom.xml，&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/atom.xml，&lt;/a&gt; 就可以看到RSS已经生效了.&lt;/p&gt;
-&lt;h4 id=&quot;sitemap&quot;&gt;&lt;a href=&quot;#sitemap&quot; class=&quot;headerlink&quot; title=&quot;sitemap&quot;&gt;&lt;/a&gt;sitemap&lt;/h4&gt;&lt;p&gt;同样是一条命令，就可以完成。  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;google&lt;/strong&gt; 的 sitemap -&amp;gt; &lt;code&gt;npm install hexo-generator-sitemap&lt;/code&gt;  启动服务器，用浏览器打开 用浏览器打开 &lt;a href=&quot;http://localhost:4000/sitemap.xml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/sitemap.xml&lt;/a&gt; 发现site已经生效。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;baidu&lt;/strong&gt; 的 sitemap -&amp;gt; &lt;code&gt;npm install hexo-generator-baidu-sitemap&lt;/code&gt;  启动服务器，用浏览器打开 用浏览器打开 &lt;a href=&quot;http://localhost:4000/baidusitemap.xml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/baidusitemap.xml&lt;/a&gt; 发现site已经生效。&lt;/p&gt;
-&lt;p&gt;其中sitemap.xml适合提交给谷歌搜素引擎，baidusitemap.xml适合提交百度搜索引擎。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上一篇文章已经说了如何利用GitHub Pages服务来搭建免费站点&lt;br&gt;这一次我们要使用 &lt;strong&gt;Hexo+GitHub+多说&lt;/strong&gt; 来搭建免费博客&lt;br&gt;
-    
-    </summary>
-    
-      <category term="个人站点" scheme="http://coolfishstudio.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/"/>
-    
-    
-      <category term="GitHub" scheme="http://coolfishstudio.github.io/tags/GitHub/"/>
-    
-      <category term="Hexo" scheme="http://coolfishstudio.github.io/tags/Hexo/"/>
     
       <category term="多说" scheme="http://coolfishstudio.github.io/tags/%E5%A4%9A%E8%AF%B4/"/>
     
