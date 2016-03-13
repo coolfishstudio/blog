@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="移动端," />
+  <meta name="keywords" content="转载文章," />
 
 
 
@@ -59,16 +59,19 @@
 
 
 
-<meta name="description" content="处理iframe子页面过宽问题">
+<meta name="description" content="在head里面增加1&amp;lt;link rel=&apos;icon&apos; href=&apos;pic.ico&apos; type=&apos;image/x-ico&apos; /&amp;gt;
+本片文章的重点是制作ico图标的网站：http://www.bitbug.net/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于iframe在移动端子页面宽度过宽问题">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/02/29/关于iframe在移动端子页面宽度过宽问题/index.html">
+<meta property="og:title" content="给网页标题增加自己的图标">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/13/给网页标题增加自己的图标/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="处理iframe子页面过宽问题">
-<meta property="og:updated_time" content="2016-02-29T10:18:10.000Z">
+<meta property="og:description" content="在head里面增加1&amp;lt;link rel=&apos;icon&apos; href=&apos;pic.ico&apos; type=&apos;image/x-ico&apos; /&amp;gt;
+本片文章的重点是制作ico图标的网站：http://www.bitbug.net/">
+<meta property="og:updated_time" content="2016-03-13T13:44:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于iframe在移动端子页面宽度过宽问题">
-<meta name="twitter:description" content="处理iframe子页面过宽问题">
+<meta name="twitter:title" content="给网页标题增加自己的图标">
+<meta name="twitter:description" content="在head里面增加1&amp;lt;link rel=&apos;icon&apos; href=&apos;pic.ico&apos; type=&apos;image/x-ico&apos; /&amp;gt;
+本片文章的重点是制作ico图标的网站：http://www.bitbug.net/">
 
 
 
@@ -86,7 +89,7 @@
   };
 </script>
 
-  <title> 关于iframe在移动端子页面宽度过宽问题 | 酷鱼网 </title>
+  <title> 给网页标题增加自己的图标 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +249,7 @@
             
             
               
-                关于iframe在移动端子页面宽度过宽问题
+                给网页标题增加自己的图标
               
             
           </h1>
@@ -258,8 +261,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-29T18:14:25+08:00" content="2016-02-29">
-              2016-02-29
+            <time itemprop="dateCreated" datetime="2016-03-13T17:28:58+08:00" content="2016-03-13">
+              2016-03-13
             </time>
           </span>
 
@@ -272,8 +275,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/手机移动/" itemprop="url" rel="index">
-                    <span itemprop="name">手机移动</span>
+                  <a href="/categories/前端特效/" itemprop="url" rel="index">
+                    <span itemprop="name">前端特效</span>
                   </a>
                 </span>
 
@@ -288,8 +291,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/29/关于iframe在移动端子页面宽度过宽问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/关于iframe在移动端子页面宽度过宽问题/" itemprop="commentsCount"></span>
+                <a href="/2016/03/13/给网页标题增加自己的图标/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/13/给网页标题增加自己的图标/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,11 +313,8 @@
       
 
       
-        <blockquote>
-<p>处理iframe子页面过宽问题</p>
-</blockquote>
-<a id="more"></a>
-<p>解决方案<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line">    iframe.style.border = <span class="string">'0'</span>;</span><br><span class="line">    iframe.style.width = <span class="string">'1px'</span>;</span><br><span class="line">    iframe.style.height = <span class="string">'100%'</span>;</span><br><span class="line">    iframe.style.minWidth = <span class="string">'100%'</span>;</span><br><span class="line">    iframe.width = <span class="string">'100%'</span>;</span><br><span class="line">    <span class="keyword">if</span>(isMobileSafari())&#123;</span><br><span class="line">        iframe.scrolling = <span class="string">'no'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isMobileSafari</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">return</span> (ua.match(<span class="regexp">/iP(hone|od|ad)/i</span>) &amp;&amp; (ua.indexOf(<span class="string">'Safari'</span>) &gt; -<span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>在head里面增加<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="symbol">'icon'</span> href=<span class="symbol">'pic</span>.ico' <span class="keyword">type</span>=<span class="symbol">'image</span>/x-ico' /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>本片文章的重点是<br>制作ico图标的网站：<a href="http://www.bitbug.net/" target="_blank" rel="external">http://www.bitbug.net/</a></p>
 
       
     </div>
@@ -323,7 +323,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/移动端/" rel="tag">#移动端</a>
+            <a href="/tags/转载文章/" rel="tag">#转载文章</a>
           
         </div>
       
@@ -332,17 +332,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/28/iframe在移动端上不能滚动的问题/" rel="next" title="iframe在移动端上不能滚动的问题">
-                <i class="fa fa-chevron-left"></i> iframe在移动端上不能滚动的问题
+              <a href="/2016/03/12/Webpack配置React开发环境/" rel="next" title="Webpack配置React开发环境">
+                <i class="fa fa-chevron-left"></i> Webpack配置React开发环境
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/01/JS动态修改微信浏览器中的title/" rel="prev" title="JS动态修改微信浏览器中的title">
-                JS动态修改微信浏览器中的title <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -368,8 +364,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/29/关于iframe在移动端子页面宽度过宽问题/"
-           data-title="关于iframe在移动端子页面宽度过宽问题" data-url="http://coolfishstudio.github.io/2016/02/29/关于iframe在移动端子页面宽度过宽问题/">
+      <div class="ds-thread" data-thread-key="2016/03/13/给网页标题增加自己的图标/"
+           data-title="给网页标题增加自己的图标" data-url="http://coolfishstudio.github.io/2016/03/13/给网页标题增加自己的图标/">
       </div>
     
   </div>
