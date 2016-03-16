@@ -263,6 +263,129 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/16/网页常用的防复制代码/" itemprop="url">
+                  网页常用的防复制代码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-16T23:26:54+08:00" content="2016-03-16">
+              2016-03-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端特效/" itemprop="url" rel="index">
+                    <span itemprop="name">前端特效</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/16/网页常用的防复制代码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/16/网页常用的防复制代码/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>最牛的防复制代码</p>
+</blockquote>
+<h3 id="1-将此代码粘贴到body中可以有效防选中防复制和防鼠标右键"><a href="#1-将此代码粘贴到body中可以有效防选中防复制和防鼠标右键" class="headerlink" title="1.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键"></a>1.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="built_in">document</span>.body.oncontextmenu = </span><br><span class="line">    <span class="built_in">document</span>.body.ondragstart = </span><br><span class="line">    <span class="built_in">document</span>.body.onselectstart = </span><br><span class="line">    <span class="built_in">document</span>.body.onbeforecopy = </span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.body.onselect = </span><br><span class="line">    <span class="built_in">document</span>.body.oncopy = </span><br><span class="line">    <span class="built_in">document</span>.body.onmouseup = </span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">document</span>.selection.empty(); &#125;;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-将此代码粘贴到body中可以有效防选中防复制和防鼠标右键"><a href="#2-将此代码粘贴到body中可以有效防选中防复制和防鼠标右键" class="headerlink" title="2.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键"></a>2.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">"JavaScript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="built_in">document</span>.oncontextmenu = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'event.returnValue=false;'</span>);</span><br><span class="line">    <span class="built_in">document</span>.onselectstart = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'event.returnValue=false;'</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-禁止查看网页源文件代码-插入网页即可。"><a href="#3-禁止查看网页源文件代码-插入网页即可。" class="headerlink" title="3.禁止查看网页源文件代码,插入网页即可。"></a>3.禁止查看网页源文件代码,插入网页即可。</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">leftmargin</span>=<span class="value">"2"</span> <span class="attribute">topmargin</span>=<span class="value">"0"</span> <span class="attribute">marginwidth</span>=<span class="value">"0"</span> <span class="attribute">marginheight</span>=<span class="value">"0"</span> <span class="attribute">oncontextmenu</span>=<span class="value">"return false"</span> <span class="attribute">ondragstart</span>=<span class="value">"return false"</span> <span class="attribute">onselectstart</span> =<span class="value">"return false"</span> <span class="attribute">onselect</span>=<span class="value">"document.selection.empty()"</span> <span class="attribute">oncopy</span>=<span class="value">"document.selection.empty()"</span> <span class="attribute">onbeforecopy</span>=<span class="value">"return false"</span> <span class="attribute">onmouseup</span>=<span class="value">"document.selection.empty()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">noscript</span>&gt;</span><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">src</span>=<span class="value">"/blog/*&gt;"</span><span class="value">;&lt;</span>/<span class="attribute">iframe</span>&gt;</span><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-将彻底屏蔽鼠标右键"><a href="#4-将彻底屏蔽鼠标右键" class="headerlink" title="4.将彻底屏蔽鼠标右键"></a>4.将彻底屏蔽鼠标右键</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oncontextmenu=<span class="string">"window.event.returnvalue=false"</span></span><br><span class="line">&lt;<span class="tag">table</span> <span class="attribute">border</span> oncontextmenu=<span class="function"><span class="title">return</span><span class="params">(false)</span></span>&gt;&lt;td&gt;no&lt;/table&gt; <span class="comment">//可用于Table</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-取消选取、防止复制"><a href="#5-取消选取、防止复制" class="headerlink" title="5.取消选取、防止复制"></a>5.取消选取、防止复制</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">body</span> onselectstart=<span class="string">"return false"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="6-不准粘贴"><a href="#6-不准粘贴" class="headerlink" title="6.不准粘贴"></a>6.不准粘贴</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">onpaste=<span class="value"><span class="string">"return false"</span></span></span></span><br></pre></td></tr></table></figure>
+<h3 id="7-防止复制"><a href="#7-防止复制" class="headerlink" title="7.防止复制"></a>7.防止复制</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">oncopy=<span class="value"><span class="string">"return false;"</span> oncut=<span class="string">"return false;"</span></span></span></span><br></pre></td></tr></table></figure>
+<h3 id="8-防止被人frame"><a href="#8-防止被人frame" class="headerlink" title="8.防止被人frame"></a>8.防止被人frame</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">SCRIPT</span> <span class="attribute">LANGUAGE</span>=<span class="value">javascript</span>&gt;</span><span class="handlebars"><span class="xml"><span class="comment">&lt;!-- if (top.location != self.location)top.location=self.location; // --&gt;</span></span></span><span class="tag">&lt;/<span class="title">SCRIPT</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="9-网页将不能另存为"><a href="#9-网页将不能另存为" class="headerlink" title="9.网页将不能另存为"></a>9.网页将不能另存为</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">noscript</span>&gt;</span><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">src</span>=<span class="value">"/blog/*.html&gt;"</span><span class="value">;&lt;</span>/<span class="attribute">iframe</span>&gt;</span><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="10-改变连接是状态栏的显示内容"><a href="#10-改变连接是状态栏的显示内容" class="headerlink" title="10.改变连接是状态栏的显示内容"></a>10.改变连接是状态栏的显示内容</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.toyean.com"</span> <span class="attribute">onMo</span> <span class="attribute">...</span> ;<span class="attribute">window.status</span>=<span class="value">"输入连接状态栏显示内容&amp;rsquo;；return true"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="11-禁止网页中目标对象被下载-如图片"><a href="#11-禁止网页中目标对象被下载-如图片" class="headerlink" title="11.禁止网页中目标对象被下载(如图片)"></a>11.禁止网页中目标对象被下载(如图片)</h3><p>下面的代码将帮助你禁止网页中目标对象被下载：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">a</span> href=<span class="string">"javascript:void(0)"</span> onMouseDown=<span class="string">"alert('对不起!图片不能下载！')"</span>&gt;&lt;<span class="tag">img</span> src=<span class="string">"图片地址"</span> alt=<span class="string">""</span> /&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="12-页面禁止刷新完全，最好在pop出来的窗口里用-没工具栏的"><a href="#12-页面禁止刷新完全，最好在pop出来的窗口里用-没工具栏的" class="headerlink" title="12.页面禁止刷新完全，最好在pop出来的窗口里用,没工具栏的"></a>12.页面禁止刷新完全，最好在pop出来的窗口里用,没工具栏的</h3><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onkeydown=<span class="string">"KeyDown()"</span> onbeforeunload=<span class="string">"location=location"</span></span><br><span class="line">oncontextmenu=<span class="string">"event.returnValue=false"</span>&gt;</span><br><span class="line">&lt;script language=<span class="string">"Javascript"</span>&gt;&lt;!-- </span><br><span class="line"><span class="function">function <span class="title">KeyDown</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line"><span class="keyword">if</span> ((window.<span class="keyword">event</span>.altKey)&amp;&amp; </span><br><span class="line">     ((window.<span class="keyword">event</span>.keyCode==<span class="number">37</span>)||   </span><br><span class="line">      (window.<span class="keyword">event</span>.keyCode==<span class="number">39</span>)))&#123;alert(<span class="string">"请访问我的主页"</span>); </span><br><span class="line">    <span class="keyword">event</span>.returnValue=<span class="keyword">false</span>; </span><br><span class="line">    &#125; </span><br><span class="line"><span class="keyword">if</span> ((<span class="keyword">event</span>.keyCode==<span class="number">8</span>)||(<span class="keyword">event</span>.keyCode==<span class="number">116</span>))&#123;<span class="comment">//屏蔽 F5 刷新键 </span></span><br><span class="line">    <span class="keyword">event</span>.keyCode=<span class="number">0</span>; </span><br><span class="line">    <span class="keyword">event</span>.returnValue=<span class="keyword">false</span>; </span><br><span class="line">    &#125; </span><br><span class="line"><span class="keyword">if</span> ((<span class="keyword">event</span>.ctrlKey)&amp;&amp;(<span class="keyword">event</span>.keyCode==<span class="number">78</span>))&#123;   <span class="comment">//屏蔽 Ctrl+n </span></span><br><span class="line">    <span class="keyword">event</span>.returnValue=<span class="keyword">false</span>; </span><br><span class="line">    &#125; </span><br><span class="line"><span class="keyword">if</span> ((<span class="keyword">event</span>.shiftKey)&amp;&amp;(<span class="keyword">event</span>.keyCode==<span class="number">121</span>))&#123; <span class="comment">//屏蔽 shift+F10 </span></span><br><span class="line">    <span class="keyword">event</span>.returnValue=<span class="keyword">false</span>; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/15/MobileWebRetina下1px边框解决方案/" itemprop="url">
                   Mobile Web Retina 下 1px 边框解决方案
                 </a>
@@ -1264,118 +1387,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/06/sublime常用快捷键/" itemprop="url">
-                  sublime常用快捷键
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-06T18:44:17+08:00" content="2016-03-06">
-              2016-03-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/06/sublime常用快捷键/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/06/sublime常用快捷键/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>alt+shift+2 将sublime Text拆成左右两块<br>alt+shift+4则拆成从左到右四块<br>alt+shift+8则拆成上下两块<br>alt+shift+9则拆成上下三块<br>Ctrl+Shift+P：打开命令面板<br>Ctrl+P：搜索项目中的文件<br>Ctrl+G：跳转到第几行<br>Ctrl+W：关闭当前打开文件<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/06/sublime常用快捷键/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1422,7 +1433,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
