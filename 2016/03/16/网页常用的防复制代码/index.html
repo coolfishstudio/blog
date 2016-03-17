@@ -59,22 +59,16 @@
 
 
 
-<meta name="description" content="最牛的防复制代码
-
-1.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键123456789101112&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;    document.body.oncontextmenu =     document.body.ondragstart =     document.body.onselectstart =     docu">
+<meta name="description" content="最牛的防复制代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网页常用的防复制代码">
 <meta property="og:url" content="http://coolfishstudio.github.io/2016/03/16/网页常用的防复制代码/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="最牛的防复制代码
-
-1.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键123456789101112&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;    document.body.oncontextmenu =     document.body.ondragstart =     document.body.onselectstart =     docu">
-<meta property="og:updated_time" content="2016-03-16T15:35:00.000Z">
+<meta property="og:description" content="最牛的防复制代码">
+<meta property="og:updated_time" content="2016-03-17T08:38:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网页常用的防复制代码">
-<meta name="twitter:description" content="最牛的防复制代码
-
-1.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键123456789101112&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;    document.body.oncontextmenu =     document.body.ondragstart =     document.body.onselectstart =     docu">
+<meta name="twitter:description" content="最牛的防复制代码">
 
 
 
@@ -319,6 +313,7 @@
         <blockquote>
 <p>最牛的防复制代码</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="1-将此代码粘贴到body中可以有效防选中防复制和防鼠标右键"><a href="#1-将此代码粘贴到body中可以有效防选中防复制和防鼠标右键" class="headerlink" title="1.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键"></a>1.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="built_in">document</span>.body.oncontextmenu = </span><br><span class="line">    <span class="built_in">document</span>.body.ondragstart = </span><br><span class="line">    <span class="built_in">document</span>.body.onselectstart = </span><br><span class="line">    <span class="built_in">document</span>.body.onbeforecopy = </span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.body.onselect = </span><br><span class="line">    <span class="built_in">document</span>.body.oncopy = </span><br><span class="line">    <span class="built_in">document</span>.body.onmouseup = </span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="built_in">document</span>.selection.empty(); &#125;;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-将此代码粘贴到body中可以有效防选中防复制和防鼠标右键"><a href="#2-将此代码粘贴到body中可以有效防选中防复制和防鼠标右键" class="headerlink" title="2.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键"></a>2.将此代码粘贴到body中可以有效防选中防复制和防鼠标右键</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">"JavaScript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="built_in">document</span>.oncontextmenu = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'event.returnValue=false;'</span>);</span><br><span class="line">    <span class="built_in">document</span>.onselectstart = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'event.returnValue=false;'</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="3-禁止查看网页源文件代码-插入网页即可。"><a href="#3-禁止查看网页源文件代码-插入网页即可。" class="headerlink" title="3.禁止查看网页源文件代码,插入网页即可。"></a>3.禁止查看网页源文件代码,插入网页即可。</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">leftmargin</span>=<span class="value">"2"</span> <span class="attribute">topmargin</span>=<span class="value">"0"</span> <span class="attribute">marginwidth</span>=<span class="value">"0"</span> <span class="attribute">marginheight</span>=<span class="value">"0"</span> <span class="attribute">oncontextmenu</span>=<span class="value">"return false"</span> <span class="attribute">ondragstart</span>=<span class="value">"return false"</span> <span class="attribute">onselectstart</span> =<span class="value">"return false"</span> <span class="attribute">onselect</span>=<span class="value">"document.selection.empty()"</span> <span class="attribute">oncopy</span>=<span class="value">"document.selection.empty()"</span> <span class="attribute">onbeforecopy</span>=<span class="value">"return false"</span> <span class="attribute">onmouseup</span>=<span class="value">"document.selection.empty()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">noscript</span>&gt;</span><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">src</span>=<span class="value">"/blog/*&gt;"</span><span class="value">;&lt;</span>/<span class="attribute">iframe</span>&gt;</span><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span></span><br></pre></td></tr></table></figure>
