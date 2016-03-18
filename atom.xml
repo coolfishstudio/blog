@@ -152,15 +152,16 @@
     <link href="http://coolfishstudio.github.io/2016/03/13/%E7%BB%99%E7%BD%91%E9%A1%B5%E6%A0%87%E9%A2%98%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E6%A0%87/"/>
     <id>http://coolfishstudio.github.io/2016/03/13/给网页标题增加自己的图标/</id>
     <published>2016-03-13T09:28:58.000Z</published>
-    <updated>2016-03-13T13:44:00.000Z</updated>
+    <updated>2016-03-18T10:01:19.000Z</updated>
     
     <content type="html">&lt;p&gt;在head里面增加&lt;br&gt;&lt;figure class=&quot;highlight ocaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;link rel=&lt;span class=&quot;symbol&quot;&gt;&#39;icon&#39;&lt;/span&gt; href=&lt;span class=&quot;symbol&quot;&gt;&#39;pic&lt;/span&gt;.ico&#39; &lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;symbol&quot;&gt;&#39;image&lt;/span&gt;/x-ico&#39; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;本片文章的重点是&lt;br&gt;制作ico图标的网站：&lt;a href=&quot;http://www.bitbug.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.bitbug.net/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本片文章的重点是&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;制作ico图标的网站：&lt;a href=&quot;http://www.bitbug.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.bitbug.net/&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;在head里面增加&lt;br&gt;&lt;figure class=&quot;highlight ocaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code
+      &lt;p&gt;在head里面增加&lt;br&gt;&lt;figure class=&quot;highlight ocaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;link rel=&lt;span class=&quot;symbol&quot;&gt;&#39;icon&#39;&lt;/span&gt; href=&lt;span class=&quot;symbol&quot;&gt;&#39;pic&lt;/span&gt;.ico&#39; &lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;symbol&quot;&gt;&#39;image&lt;/span&gt;/x-ico&#39; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;本片文章的重点是&lt;br&gt;
     
     </summary>
     
