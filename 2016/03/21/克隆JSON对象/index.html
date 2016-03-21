@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,移动端," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -59,19 +59,25 @@
 
 
 
-<meta name="description" content="用localStorage也已经很久了，这次发现localStorage在iPad/iPhone的Safari的无痕浏览模式中存在一个问题。
-在无痕浏览中使用localStorage.setItem()居然会报错，但在window对象下确实有localStorage.setItem这个方法。在iPad/iPhone中用Chrome的隐身模式是可以用localStorage.setItem()。Sa">
+<meta name="description" content="一句话克隆JSON对象1var cloneData=JSON.parse(JSON.stringify(data))
+
+假设原始数据为12345678var a = &amp;#123;    r: 1,    s: &amp;#123;         o: 2,        p: 5,        q: 8&amp;#125;,    t: [1, 3, 5, 7, 9]&amp;#125;
+如果我们这么赋值的话1var">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Safari无痕浏览影响localStorage">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/07/Safari无痕浏览影响localStorage/index.html">
+<meta property="og:title" content="克隆JSON对象">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/21/克隆JSON对象/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="用localStorage也已经很久了，这次发现localStorage在iPad/iPhone的Safari的无痕浏览模式中存在一个问题。
-在无痕浏览中使用localStorage.setItem()居然会报错，但在window对象下确实有localStorage.setItem这个方法。在iPad/iPhone中用Chrome的隐身模式是可以用localStorage.setItem()。Sa">
-<meta property="og:updated_time" content="2016-03-07T07:21:44.000Z">
+<meta property="og:description" content="一句话克隆JSON对象1var cloneData=JSON.parse(JSON.stringify(data))
+
+假设原始数据为12345678var a = &amp;#123;    r: 1,    s: &amp;#123;         o: 2,        p: 5,        q: 8&amp;#125;,    t: [1, 3, 5, 7, 9]&amp;#125;
+如果我们这么赋值的话1var">
+<meta property="og:updated_time" content="2016-03-21T11:36:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Safari无痕浏览影响localStorage">
-<meta name="twitter:description" content="用localStorage也已经很久了，这次发现localStorage在iPad/iPhone的Safari的无痕浏览模式中存在一个问题。
-在无痕浏览中使用localStorage.setItem()居然会报错，但在window对象下确实有localStorage.setItem这个方法。在iPad/iPhone中用Chrome的隐身模式是可以用localStorage.setItem()。Sa">
+<meta name="twitter:title" content="克隆JSON对象">
+<meta name="twitter:description" content="一句话克隆JSON对象1var cloneData=JSON.parse(JSON.stringify(data))
+
+假设原始数据为12345678var a = &amp;#123;    r: 1,    s: &amp;#123;         o: 2,        p: 5,        q: 8&amp;#125;,    t: [1, 3, 5, 7, 9]&amp;#125;
+如果我们这么赋值的话1var">
 
 
 
@@ -89,7 +95,7 @@
   };
 </script>
 
-  <title> Safari无痕浏览影响localStorage | 酷鱼网 </title>
+  <title> 克隆JSON对象 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +255,7 @@
             
             
               
-                Safari无痕浏览影响localStorage
+                克隆JSON对象
               
             
           </h1>
@@ -261,8 +267,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-07T15:16:12+08:00" content="2016-03-07">
-              2016-03-07
+            <time itemprop="dateCreated" datetime="2016-03-21T19:23:34+08:00" content="2016-03-21">
+              2016-03-21
             </time>
           </span>
 
@@ -275,8 +281,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/手机移动/" itemprop="url" rel="index">
-                    <span itemprop="name">手机移动</span>
+                  <a href="/categories/黑科技/" itemprop="url" rel="index">
+                    <span itemprop="name">黑科技</span>
                   </a>
                 </span>
 
@@ -291,8 +297,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/07/Safari无痕浏览影响localStorage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/07/Safari无痕浏览影响localStorage/" itemprop="commentsCount"></span>
+                <a href="/2016/03/21/克隆JSON对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/21/克隆JSON对象/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,9 +319,14 @@
       
 
       
-        <p>用localStorage也已经很久了，这次发现localStorage在iPad/iPhone的Safari的无痕浏览模式中存在一个问题。</p>
-<p>在无痕浏览中使用localStorage.setItem()居然会报错，但在window对象下确实有localStorage.setItem这个方法。<br>在iPad/iPhone中用Chrome的隐身模式是可以用localStorage.setItem()。<br>Safari的无痕浏览这么严格，用了localStorage.setItem()居然还会报错。<br><a id="more"></a><br>既然无痕浏览不能使用localStorage.setItem()，但也不能让它影响我们的代码执行，最后只能给一个提示，告诉用户无痕浏览无法保存。</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line">    localStorage.setItem(<span class="variable">key</span>, d); </span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123; </span><br><span class="line">    alert(<span class="string">"您处于无痕浏览，无法为您保存"</span>);</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p> 一句话克隆JSON对象<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> cloneData=JSON.<span class="function"><span class="title">parse</span><span class="params">(JSON.stringify(data)</span></span>)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>假设原始数据为<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line">    r: <span class="number">1</span>,</span><br><span class="line">    s: &#123; </span><br><span class="line">        o: <span class="number">2</span>,</span><br><span class="line">        p: <span class="number">5</span>,</span><br><span class="line">        q: <span class="number">8</span>&#125;,</span><br><span class="line">    t: [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果我们这么赋值的话<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> b</span> = a;</span><br></pre></td></tr></table></figure></p>
+<p>那么 修改b, 则 a也随之改变<br>这是因为 他们的指向地址是一样的<br>如果 我们想克隆的话 应该这么做<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> c = JSON.<span class="function"><span class="title">parse</span><span class="params">(JSON.stringify(a)</span></span>)</span><br></pre></td></tr></table></figure></p>
+<p>这样子我们就拿到了一个克隆的json对象，<br>原因是 先把json对象转换成字符串 然后再转换成json对象，这样子他的 地址指向就不一样了， 从而实现了克隆</p>
+
       
     </div>
 
@@ -325,8 +336,6 @@
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/移动端/" rel="tag">#移动端</a>
-          
         </div>
       
 
@@ -334,17 +343,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/06/sublime常用快捷键/" rel="next" title="sublime常用快捷键">
-                <i class="fa fa-chevron-left"></i> sublime常用快捷键
+              <a href="/2016/03/19/前后端模板引擎选型/" rel="next" title="前后端模板引擎选型">
+                <i class="fa fa-chevron-left"></i> 前后端模板引擎选型
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/08/html5前端开发基础–meta全解/" rel="prev" title="html5前端开发基础–meta全解">
-                html5前端开发基础–meta全解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -370,8 +375,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/07/Safari无痕浏览影响localStorage/"
-           data-title="Safari无痕浏览影响localStorage" data-url="http://coolfishstudio.github.io/2016/03/07/Safari无痕浏览影响localStorage/">
+      <div class="ds-thread" data-thread-key="2016/03/21/克隆JSON对象/"
+           data-title="克隆JSON对象" data-url="http://coolfishstudio.github.io/2016/03/21/克隆JSON对象/">
       </div>
     
   </div>

@@ -263,6 +263,122 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/21/克隆JSON对象/" itemprop="url">
+                  克隆JSON对象
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-21T19:23:34+08:00" content="2016-03-21">
+              2016-03-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/黑科技/" itemprop="url" rel="index">
+                    <span itemprop="name">黑科技</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/21/克隆JSON对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/21/克隆JSON对象/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p> 一句话克隆JSON对象<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> cloneData=JSON.<span class="function"><span class="title">parse</span><span class="params">(JSON.stringify(data)</span></span>)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>假设原始数据为<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line">    r: <span class="number">1</span>,</span><br><span class="line">    s: &#123; </span><br><span class="line">        o: <span class="number">2</span>,</span><br><span class="line">        p: <span class="number">5</span>,</span><br><span class="line">        q: <span class="number">8</span>&#125;,</span><br><span class="line">    t: [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果我们这么赋值的话<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> b</span> = a;</span><br></pre></td></tr></table></figure></p>
+<p>那么 修改b, 则 a也随之改变<br>这是因为 他们的指向地址是一样的<br>如果 我们想克隆的话 应该这么做<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> c = JSON.<span class="function"><span class="title">parse</span><span class="params">(JSON.stringify(a)</span></span>)</span><br></pre></td></tr></table></figure></p>
+<p>这样子我们就拿到了一个克隆的json对象，<br>原因是 先把json对象转换成字符串 然后再转换成json对象，这样子他的 地址指向就不一样了， 从而实现了克隆</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/19/前后端模板引擎选型/" itemprop="url">
                   前后端模板引擎选型
                 </a>
@@ -1267,120 +1383,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/08/html5前端开发基础–meta全解/" itemprop="url">
-                  html5前端开发基础–meta全解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-08T23:18:34+08:00" content="2016-03-08">
-              2016-03-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端特效/" itemprop="url" rel="index">
-                    <span itemprop="name">前端特效</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/08/html5前端开发基础–meta全解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/08/html5前端开发基础–meta全解/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="一、大众机型常用标签的设置"><a href="#一、大众机型常用标签的设置" class="headerlink" title="一、大众机型常用标签的设置"></a>一、大众机型常用标签的设置</h3><h4 id="1、name之viewport"><a href="#1、name之viewport" class="headerlink" title="1、name之viewport"></a>1、name之viewport</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">""</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>说明：屏幕的缩放</p>
-<p>content的几个属性：<br>• width viewport的宽度[device-width | pixel_value]width如果直接设置pixel_value数值，大部分的安卓手机不支持，但是ios支持；<br>•height – viewport 的高度 （范围从 223 到 10,000 ）<br>•user-scalable [yes | no]是否允许缩放<br>•initial-scale [数值] 初始化比例（范围从 &gt; 0 到 10）<br>•minimum-scale [数值] 允许缩放的最小比例<br>•maximum-scale [数值] 允许缩放的最大比例<br>•target-densitydpi 值有以下（一般推荐设置中等响度密度或者低像素密度，后者设置具体的值dpi_value，另外webkit内核已不准备再支持此属性）<br>— dpi_value 一般是70-400//没英寸像素点的个数<br>— device-dpi设备默认像素密度<br>— high-dpi 高像素密度<br>— medium-dpi 中等像素密度<br>— low-dpi 低像素密度</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/08/html5前端开发基础–meta全解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1427,7 +1429,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1435,7 +1437,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
