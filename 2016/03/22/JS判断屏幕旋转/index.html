@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="移动端," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="项目需要用到透明度，但是服务端给我的都是颜色，没有给关于透明度的色系，无奈之下，自己写了一个转换">
+<meta name="description" content="判断屏幕是否旋转123456789101112131415function orientationChange() &amp;#123;    switch(window.orientation) &amp;#123;    　　case 0:            alert(&quot;肖像模式 0,screen-width: &quot; + screen.width + &quot;; screen-height:&quot; + screen">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RGB和RGBA之间的转换">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/03/RGB和RGBA之间的转换/index.html">
+<meta property="og:title" content="JS判断屏幕旋转">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/22/JS判断屏幕旋转/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="项目需要用到透明度，但是服务端给我的都是颜色，没有给关于透明度的色系，无奈之下，自己写了一个转换">
-<meta property="og:updated_time" content="2016-03-03T10:43:14.000Z">
+<meta property="og:description" content="判断屏幕是否旋转123456789101112131415function orientationChange() &amp;#123;    switch(window.orientation) &amp;#123;    　　case 0:            alert(&quot;肖像模式 0,screen-width: &quot; + screen.width + &quot;; screen-height:&quot; + screen">
+<meta property="og:updated_time" content="2016-03-22T12:16:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RGB和RGBA之间的转换">
-<meta name="twitter:description" content="项目需要用到透明度，但是服务端给我的都是颜色，没有给关于透明度的色系，无奈之下，自己写了一个转换">
+<meta name="twitter:title" content="JS判断屏幕旋转">
+<meta name="twitter:description" content="判断屏幕是否旋转123456789101112131415function orientationChange() &amp;#123;    switch(window.orientation) &amp;#123;    　　case 0:            alert(&quot;肖像模式 0,screen-width: &quot; + screen.width + &quot;; screen-height:&quot; + screen">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> RGB和RGBA之间的转换 | 酷鱼网 </title>
+  <title> JS判断屏幕旋转 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                RGB和RGBA之间的转换
+                JS判断屏幕旋转
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-03T18:38:25+08:00" content="2016-03-03">
-              2016-03-03
+            <time itemprop="dateCreated" datetime="2016-03-22T20:15:49+08:00" content="2016-03-22">
+              2016-03-22
             </time>
           </span>
 
@@ -272,8 +272,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端特效/" itemprop="url" rel="index">
-                    <span itemprop="name">前端特效</span>
+                  <a href="/categories/手机移动/" itemprop="url" rel="index">
+                    <span itemprop="name">手机移动</span>
                   </a>
                 </span>
 
@@ -288,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/03/RGB和RGBA之间的转换/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/03/RGB和RGBA之间的转换/" itemprop="commentsCount"></span>
+                <a href="/2016/03/22/JS判断屏幕旋转/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/JS判断屏幕旋转/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,7 +310,9 @@
       
 
       
-        <p>项目需要用到透明度，但是服务端给我的都是颜色，没有给关于透明度的色系，无奈之下，自己写了一个转换<br><a id="more"></a><br>代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> util = &#123;</span><br><span class="line">    rgb2Rgba: <span class="function"><span class="keyword">function</span> (<span class="params">rgb_color, alp</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//注：rgb_color的格式为#FFFFFFF 或 #FFF</span></span><br><span class="line">        <span class="keyword">if</span> (rgb_color.length !== <span class="number">7</span> &amp;&amp; rgb_color.length !== <span class="number">4</span> ) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (rgb_color.length === <span class="number">4</span>) &#123;</span><br><span class="line">            rgb_color = rgb_color.substr(<span class="number">1</span>,<span class="number">1</span>) + rgb_color.substr(<span class="number">1</span>,<span class="number">1</span>) +</span><br><span class="line">                        rgb_color.substr(<span class="number">2</span>,<span class="number">1</span>) + rgb_color.substr(<span class="number">2</span>,<span class="number">1</span>) +</span><br><span class="line">                        rgb_color.substr(<span class="number">3</span>,<span class="number">1</span>) + rgb_color.substr(<span class="number">3</span>,<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> r = <span class="built_in">parseInt</span>(<span class="string">'0x'</span> + rgb_color.substr(<span class="number">1</span>,<span class="number">2</span>));</span><br><span class="line">        <span class="keyword">var</span> g = <span class="built_in">parseInt</span>(<span class="string">'0x'</span> + rgb_color.substr(<span class="number">3</span>,<span class="number">2</span>));</span><br><span class="line">        <span class="keyword">var</span> b = <span class="built_in">parseInt</span>(<span class="string">'0x'</span> + rgb_color.substr(<span class="number">5</span>,<span class="number">2</span>));</span><br><span class="line">        <span class="keyword">var</span> a = alp || <span class="number">1</span>;<span class="comment">//为透明度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'rgba('</span> + r + <span class="string">','</span> + g + <span class="string">','</span> + b + <span class="string">','</span> + a + <span class="string">')'</span>;</span><br><span class="line">    &#125;,  </span><br><span class="line">    rgba2Rgb: <span class="function"><span class="keyword">function</span> (<span class="params">rgba_color</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//注：rgba_color的格式为rgba(0, 0, 0, 0.1)</span></span><br><span class="line">        <span class="keyword">var</span> BGcolur = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">var</span> arr = rgba_color.split(<span class="string">'('</span>)[<span class="number">1</span>].split(<span class="string">')'</span>)[<span class="number">0</span>].split(<span class="string">','</span>);</span><br><span class="line">        <span class="keyword">var</span> a = arr[<span class="number">3</span>];</span><br><span class="line">        <span class="keyword">var</span> r = BGcolur * (<span class="number">1</span> - a) + arr[<span class="number">0</span>] * a;</span><br><span class="line">        <span class="keyword">var</span> g = BGcolur * (<span class="number">1</span> - a) + arr[<span class="number">1</span>] * a;</span><br><span class="line">        <span class="keyword">var</span> b = BGcolur * (<span class="number">1</span> - a) + arr[<span class="number">2</span>] * a;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'rgb('</span> + r + <span class="string">','</span> + g + <span class="string">','</span> + b + <span class="string">')'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+        <p>判断屏幕是否旋转<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function orientationChange() &#123;</span><br><span class="line">    <span class="keyword">switch</span>(window.orientation) &#123;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            alert(<span class="string">"肖像模式 0,screen-width: "</span> + screen.<span class="variable">width</span> + <span class="string">"; screen-height:"</span> + screen.<span class="variable">height</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> -<span class="number">90</span>:</span><br><span class="line">            alert(<span class="string">"左旋 -90,screen-width: "</span> + screen.<span class="variable">width</span> + <span class="string">"; screen-height:"</span> + screen.<span class="variable">height</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">90</span>:</span><br><span class="line">            alert(<span class="string">"右旋 90,screen-width: "</span> + screen.<span class="variable">width</span> + <span class="string">"; screen-height:"</span> + screen.<span class="variable">height</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">180</span>:</span><br><span class="line">        　　alert(<span class="string">"风景模式 180,screen-width: "</span> + screen.<span class="variable">width</span> + <span class="string">"; screen-height:"</span> + screen.<span class="variable">height</span>);</span><br><span class="line">        　　<span class="keyword">break</span>;</span><br><span class="line">    &#125;;&#125;;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>添加事件监听<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    orientationChange();</span><br><span class="line">    <span class="built_in">window</span>.onorientationchange = orientationChange;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -319,7 +321,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/移动端/" rel="tag">#移动端</a>
           
         </div>
       
@@ -328,17 +330,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/02/通过正则判断是否为邮箱格式/" rel="next" title="通过正则判断是否为邮箱格式">
-                <i class="fa fa-chevron-left"></i> 通过正则判断是否为邮箱格式
+              <a href="/2016/03/21/克隆JSON对象/" rel="next" title="克隆JSON对象">
+                <i class="fa fa-chevron-left"></i> 克隆JSON对象
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/04/根据主题颜色修改图片的颜色/" rel="prev" title="根据主题颜色修改图片的颜色">
-                根据主题颜色修改图片的颜色 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -364,8 +362,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/03/RGB和RGBA之间的转换/"
-           data-title="RGB和RGBA之间的转换" data-url="http://coolfishstudio.github.io/2016/03/03/RGB和RGBA之间的转换/">
+      <div class="ds-thread" data-thread-key="2016/03/22/JS判断屏幕旋转/"
+           data-title="JS判断屏幕旋转" data-url="http://coolfishstudio.github.io/2016/03/22/JS判断屏幕旋转/">
       </div>
     
   </div>
