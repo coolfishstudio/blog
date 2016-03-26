@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-03-25T08:17:46.000Z</updated>
+  <updated>2016-03-26T12:11:41.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>html5移动端引入优酷视频iframe自适应</title>
+    <link href="http://coolfishstudio.github.io/2016/03/26/html5%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%95%E5%85%A5%E4%BC%98%E9%85%B7%E8%A7%86%E9%A2%91iframe%E8%87%AA%E9%80%82%E5%BA%94/"/>
+    <id>http://coolfishstudio.github.io/2016/03/26/html5移动端引入优酷视频iframe自适应/</id>
+    <published>2016-03-26T12:05:02.000Z</published>
+    <updated>2016-03-26T12:11:41.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;重点是 使得 iframe 的宽高比为 9:16 就好&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1、要引入的视频&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;iframe&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;498&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;510&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;http://player.youku.com/embed/XMTI4MjU5OTA3Mg==&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;frameborder&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;allowfullscreen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;iframe&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;2、css里设置iframe的宽度为100%&lt;/p&gt;
+&lt;p&gt;3、根据屏幕宽度自适应，这里我设定视频16/9的固定比例&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.onload = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.onresize = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123; resizeIframe(); &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; resizeIframe = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; bodyw=&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.body.clientWidth; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ilength=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;ilength&amp;lt;=&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&quot;iframe&quot;&lt;/span&gt;).length;ilength++) &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&quot;iframe&quot;&lt;/span&gt;)[ilength].height = bodyw*&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//设定高度 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xqxfk.com1.z0.glb.clouddn.com/2016%2F03%2F26A38FFCF3-3C62-48AB-A5D5-8A475A2B7C0C.png&quot; alt=&quot;优酷视频&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;重点是 使得 iframe 的宽高比为 9:16 就好&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1、要引入的视频&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;iframe&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;498&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;510&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;http://player.youku.com/embed/XMTI4MjU5OTA3Mg==&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;frameborder&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;allowfullscreen&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;iframe&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;2、css里设置iframe的宽度为100%&lt;/p&gt;
+&lt;p&gt;3、根据屏幕宽度自适应，这里我设定视频16/9的固定比例&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.onload = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.onresize = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123; resizeIframe(); &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; resizeIframe = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; bodyw=&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.body.clientWidth; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ilength=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;ilength&amp;lt;=&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&quot;iframe&quot;&lt;/span&gt;).length;ilength++) &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&quot;iframe&quot;&lt;/span&gt;)[ilength].height = bodyw*&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;;&lt;span class=&quot;comment&quot;&gt;//设定高度 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
+    
+      <category term="黑科技" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
+    
+    
+      <category term="HTML5" scheme="http://coolfishstudio.github.io/tags/HTML5/"/>
+    
+      <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
+    
+      <category term="移动端" scheme="http://coolfishstudio.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>快速合并多个数组</title>
@@ -752,40 +793,6 @@
     
     
       <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS动态修改微信浏览器中的title</title>
-    <link href="http://coolfishstudio.github.io/2016/03/01/JS%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84title/"/>
-    <id>http://coolfishstudio.github.io/2016/03/01/JS动态修改微信浏览器中的title/</id>
-    <published>2016-03-01T09:54:17.000Z</published>
-    <updated>2016-03-01T09:57:45.000Z</updated>
-    
-    <content type="html">&lt;p&gt;平时使用JS修改title，直接document.title=新标题就好了&lt;br&gt;这样在安卓的微信浏览器是正常运行，可在IOS中这样的确不起作用。&lt;br&gt;这是因为微信浏览器的title在页面加载完成后就确定了，因此如果光使用document.title来修改，不会有效果。&lt;br&gt;所以这里使用了黑科技。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我们的原理是设置一个ifame然后我们再加载一下就可以实现了.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;在微信浏览器中使用如下代码来动态修改浏览器上的title标题：&lt;br&gt;&lt;figure class=&quot;highlight xquery&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var &lt;span class=&quot;variable&quot;&gt;$body&lt;/span&gt; = $(&lt;span class=&quot;string&quot;&gt;&#39;body&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;document.title = &lt;span class=&quot;string&quot;&gt;&#39;这里是要修改成的新标题&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var &lt;span class=&quot;variable&quot;&gt;$iframe&lt;/span&gt; = $(&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;iframe src=&quot;/favicon.ico&quot;&amp;gt;&amp;lt;/iframe&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$iframe&lt;/span&gt;.on(&lt;span class=&quot;string&quot;&gt;&#39;load&#39;&lt;/span&gt;,&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    setTimeout(function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;variable&quot;&gt;$iframe&lt;/span&gt;.off(&lt;span class=&quot;string&quot;&gt;&#39;load&#39;&lt;/span&gt;).remove();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;).appendTo(&lt;span class=&quot;variable&quot;&gt;$body&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;由于微信浏览器只在页面首次加载时初始化了标题title，之后就没有再监听 &lt;strong&gt; window.title &lt;/strong&gt; 的change事件。所以这里修改了title后，立即创建一个请求，加载一个空的iframe，由于加载后立即就移除，也不会对页面造成影响，但这样微信浏览器上的title便刷新了。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;平时使用JS修改title，直接document.title=新标题就好了&lt;br&gt;这样在安卓的微信浏览器是正常运行，可在IOS中这样的确不起作用。&lt;br&gt;这是因为微信浏览器的title在页面加载完成后就确定了，因此如果光使用document.title来修改，不会有效果。&lt;br&gt;所以这里使用了黑科技。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我们的原理是设置一个ifame然后我们再加载一下就可以实现了.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="手机移动" scheme="http://coolfishstudio.github.io/categories/%E6%89%8B%E6%9C%BA%E7%A7%BB%E5%8A%A8/"/>
-    
-    
-      <category term="微信" scheme="http://coolfishstudio.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
-    
-      <category term="移动端" scheme="http://coolfishstudio.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
   </entry>
   
