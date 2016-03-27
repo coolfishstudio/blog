@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="NPM,Node.js," />
+  <meta name="keywords" content="JavaScript,转载文章," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="因为国内特别的网路环境，梯子不给力请用淘宝 NPM 镜像。">
+<meta name="description" content="计算字符串长度(英文占1个字符，中文汉字占2个字符)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="改变NPM的镜像">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/02/21/改变NPM的镜像/index.html">
+<meta property="og:title" content="JS判断字符串长度（英文占1个字符，中文汉字占2个字符）">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/27/JS判断字符串长度（英文占1个字符，中文汉字占2个字符）/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="因为国内特别的网路环境，梯子不给力请用淘宝 NPM 镜像。">
-<meta property="og:updated_time" content="2016-02-21T15:40:59.000Z">
+<meta property="og:description" content="计算字符串长度(英文占1个字符，中文汉字占2个字符)">
+<meta property="og:updated_time" content="2016-03-27T10:25:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="改变NPM的镜像">
-<meta name="twitter:description" content="因为国内特别的网路环境，梯子不给力请用淘宝 NPM 镜像。">
+<meta name="twitter:title" content="JS判断字符串长度（英文占1个字符，中文汉字占2个字符）">
+<meta name="twitter:description" content="计算字符串长度(英文占1个字符，中文汉字占2个字符)">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 改变NPM的镜像 | 酷鱼网 </title>
+  <title> JS判断字符串长度（英文占1个字符，中文汉字占2个字符） | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                改变NPM的镜像
+                JS判断字符串长度（英文占1个字符，中文汉字占2个字符）
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-21T23:40:10+08:00" content="2016-02-21">
-              2016-02-21
+            <time itemprop="dateCreated" datetime="2016-03-27T15:36:55+08:00" content="2016-03-27">
+              2016-03-27
             </time>
           </span>
 
@@ -272,8 +272,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Node学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Node学习笔记</span>
+                  <a href="/categories/前端特效/" itemprop="url" rel="index">
+                    <span itemprop="name">前端特效</span>
                   </a>
                 </span>
 
@@ -288,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/21/改变NPM的镜像/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/21/改变NPM的镜像/" itemprop="commentsCount"></span>
+                <a href="/2016/03/27/JS判断字符串长度（英文占1个字符，中文汉字占2个字符）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/27/JS判断字符串长度（英文占1个字符，中文汉字占2个字符）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,9 +310,15 @@
       
 
       
-        <p>因为国内特别的网路环境，梯子不给力请用淘宝 NPM 镜像。<br><a id="more"></a><br>临时使用:<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> --registry <span class="attribute">https</span>:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org install express</span><br></pre></td></tr></table></figure></p>
-<p>持久使用:<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="keyword">set</span> <span class="keyword">registry</span> https://<span class="keyword">registry</span>.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
-<p>配置后可通过下面方式来验证是否成功<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="keyword">get</span> registry</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>计算字符串长度(英文占1个字符，中文汉字占2个字符)</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.gblen = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    </span><br><span class="line">    <span class="keyword">var</span> len = <span class="number">0</span>;    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.length; i++) &#123;    </span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.charCodeAt(i)&gt;<span class="number">127</span> || <span class="keyword">this</span>.charCodeAt(i)==<span class="number">94</span>) &#123;    </span><br><span class="line">             len += <span class="number">2</span>;    </span><br><span class="line">         &#125; <span class="keyword">else</span> &#123;    </span><br><span class="line">             len ++;    </span><br><span class="line">         &#125;    </span><br><span class="line">     &#125;    </span><br><span class="line">    <span class="keyword">return</span> len;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">strlen</span><span class="params">(str)</span></span>&#123;  </span><br><span class="line">    var len = <span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">for</span> (var i=<span class="number">0</span>; i&lt;str.length; i++) &#123;   </span><br><span class="line">     var c = str.charCodeAt(i);   </span><br><span class="line">    <span class="comment">//单字节加1   </span></span><br><span class="line">     <span class="keyword">if</span> ((c &gt;= <span class="number">0x0001</span> &amp;&amp; c &lt;= <span class="number">0x007e</span>) || (<span class="number">0xff60</span>&lt;=c &amp;&amp; c&lt;=<span class="number">0xff9f</span>)) &#123;   </span><br><span class="line">       len++;   </span><br><span class="line">     &#125;   </span><br><span class="line">     <span class="keyword">else</span> &#123;   </span><br><span class="line">      len+=<span class="number">2</span>;   </span><br><span class="line">     &#125;   </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> len;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var jmz = &#123;&#125;;  </span><br><span class="line">jmz.GetLength = function(str) &#123;  </span><br><span class="line">    <span class="comment">///&lt;summary&gt;获得字符串实际长度，中文2，英文1&lt;/summary&gt;  </span></span><br><span class="line">    <span class="comment">///&lt;param name="str"&gt;要获得长度的字符串&lt;/param&gt;  </span></span><br><span class="line">    var realLength = <span class="number">0</span>, len = str.length, charCode = -<span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; len; i++) &#123;  </span><br><span class="line">        charCode = str.charCodeAt(i);  </span><br><span class="line">        <span class="keyword">if</span> (charCode &gt;= <span class="number">0</span> &amp;&amp; charCode &lt;= <span class="number">128</span>) realLength += <span class="number">1</span>;  </span><br><span class="line">        <span class="keyword">else</span> realLength += <span class="number">2</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> realLength;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="方法四："><a href="#方法四：" class="headerlink" title="方法四："></a>方法四：</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">var</span> l = <span class="keyword">str.length; </span>  </span><br><span class="line"><span class="label">var</span> <span class="keyword">blen </span>= <span class="number">0</span><span class="comment">;   </span></span><br><span class="line"><span class="label">for</span>(i<span class="number">=0</span><span class="comment">; i&lt;l; i++) &#123;   </span></span><br><span class="line">    <span class="preprocessor">if</span> ((<span class="keyword">str.charCodeAt(i) </span>&amp; <span class="number">0xff00</span>) != <span class="number">0</span>) &#123;   </span><br><span class="line">        <span class="keyword">blen </span>++<span class="comment">;   </span></span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">blen </span>++<span class="comment">;   </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法五："><a href="#方法五：" class="headerlink" title="方法五："></a>方法五：</h3><p>把双字节的替换成两个单字节的然后再获得长度<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">getBLen = function(<span class="keyword">str</span>) &#123;  </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">str</span> == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">if</span> (typeof <span class="keyword">str</span> != <span class="string">"string"</span>)&#123;  </span><br><span class="line">        <span class="keyword">str</span> += <span class="string">""</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">str</span>.replace(/[^\x00-\xff]/g,<span class="string">"01"</span>).length;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -321,9 +327,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/NPM/" rel="tag">#NPM</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/Node-js/" rel="tag">#Node.js</a>
+            <a href="/tags/转载文章/" rel="tag">#转载文章</a>
           
         </div>
       
@@ -332,17 +338,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/21/NPM基本使用梳理备忘录/" rel="next" title="NPM基本使用梳理备忘录">
-                <i class="fa fa-chevron-left"></i> NPM基本使用梳理备忘录
+              <a href="/2016/03/26/html5移动端引入优酷视频iframe自适应/" rel="next" title="html5移动端引入优酷视频iframe自适应">
+                <i class="fa fa-chevron-left"></i> html5移动端引入优酷视频iframe自适应
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/22/如何去除移动端链接a标签产生带色边框/" rel="prev" title="如何去除移动端链接a标签产生带色边框">
-                如何去除移动端链接a标签产生带色边框 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -368,8 +370,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/21/改变NPM的镜像/"
-           data-title="改变NPM的镜像" data-url="http://coolfishstudio.github.io/2016/02/21/改变NPM的镜像/">
+      <div class="ds-thread" data-thread-key="2016/03/27/JS判断字符串长度（英文占1个字符，中文汉字占2个字符）/"
+           data-title="JS判断字符串长度（英文占1个字符，中文汉字占2个字符）" data-url="http://coolfishstudio.github.io/2016/03/27/JS判断字符串长度（英文占1个字符，中文汉字占2个字符）/">
       </div>
     
   </div>
@@ -511,7 +513,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一："><span class="nav-number">1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二："><span class="nav-number">2.</span> <span class="nav-text">方法二：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三："><span class="nav-number">3.</span> <span class="nav-text">方法三：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法四："><span class="nav-number">4.</span> <span class="nav-text">方法四：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法五："><span class="nav-number">5.</span> <span class="nav-text">方法五：</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
