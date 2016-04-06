@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Node.js," />
+  <meta name="keywords" content="HTML5,转载文章," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="什么是node.js一个 “编码就绪” 服务器Node 是一个服务器端 JavaScript 解释器，它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。我对于node的理解其实很简单，就是让Javascript脱离浏览器运行在服务器的一个平台，不是一种语言，node采用的Javascript引擎是来自Chr">
+<meta name="description" content="使用HTML５中的canvas和video技术实现调用PC摄像头">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习了解Node.js">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/02/20/学习了解Node-js/index.html">
+<meta property="og:title" content="HTML调用PC摄像头">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/04/06/HTML调用PC摄像头/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="什么是node.js一个 “编码就绪” 服务器Node 是一个服务器端 JavaScript 解释器，它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。我对于node的理解其实很简单，就是让Javascript脱离浏览器运行在服务器的一个平台，不是一种语言，node采用的Javascript引擎是来自Chr">
-<meta property="og:updated_time" content="2016-02-20T14:44:34.000Z">
+<meta property="og:description" content="使用HTML５中的canvas和video技术实现调用PC摄像头">
+<meta property="og:updated_time" content="2016-04-06T11:41:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习了解Node.js">
-<meta name="twitter:description" content="什么是node.js一个 “编码就绪” 服务器Node 是一个服务器端 JavaScript 解释器，它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。我对于node的理解其实很简单，就是让Javascript脱离浏览器运行在服务器的一个平台，不是一种语言，node采用的Javascript引擎是来自Chr">
+<meta name="twitter:title" content="HTML调用PC摄像头">
+<meta name="twitter:description" content="使用HTML５中的canvas和video技术实现调用PC摄像头">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 学习了解Node.js | 酷鱼网 </title>
+  <title> HTML调用PC摄像头 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                学习了解Node.js
+                HTML调用PC摄像头
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-20T21:58:29+08:00" content="2016-02-20">
-              2016-02-20
+            <time itemprop="dateCreated" datetime="2016-04-06T19:36:04+08:00" content="2016-04-06">
+              2016-04-06
             </time>
           </span>
 
@@ -272,8 +272,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Node学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Node学习笔记</span>
+                  <a href="/categories/前端特效/" itemprop="url" rel="index">
+                    <span itemprop="name">前端特效</span>
                   </a>
                 </span>
 
@@ -288,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/20/学习了解Node-js/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/20/学习了解Node-js/" itemprop="commentsCount"></span>
+                <a href="/2016/04/06/HTML调用PC摄像头/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/06/HTML调用PC摄像头/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,17 +310,11 @@
       
 
       
-        <h3 id="什么是node-js"><a href="#什么是node-js" class="headerlink" title="什么是node.js"></a>什么是node.js</h3><p><strong>一个 “编码就绪” 服务器</strong><br>Node 是一个服务器端 JavaScript 解释器，它将改变服务器应该如何工作的概念。它的目标是帮助程序员构建高度可伸缩的应用程序，编写能够处理数万条同时连接到一个（只有一个）物理机的连接代码。<br>我对于node的理解其实很简单，就是让Javascript脱离浏览器运行在服务器的一个平台，不是一种语言，node采用的Javascript引擎是来自Chrome的V8，并且不需要考虑Javascript兼容性问题，他就是一个服务器程序。<br><a id="more"></a></p>
-<h3 id="什么是v8？"><a href="#什么是v8？" class="headerlink" title="什么是v8？"></a>什么是v8？</h3><p>V8引擎是Google用于其Chrome浏览器的底层JavaScript引擎。很少有人考虑JavaScript在客户机上实际做了些什么？实际上，JavaScript引擎负责解释并执行代码。Google使用V8创建了一个用C++编写的超快解释器，该解释器拥有另一个独特特征；您可以下载该引擎并将其嵌入任何应用程序。V8引擎并不仅限于在一个浏览器中运行。因此，Node实际上会使用Google编写的V8引擎，并将其重建为可在服务器上使用。太完美了！既然已经有一个不错的解决方案可用，为何还要创建一种新语言呢？</p>
-<h3 id="node-js能做什么"><a href="#node-js能做什么" class="headerlink" title="node.js能做什么"></a>node.js能做什么</h3><p>Node非常适合以下情况：在响应客户端之前，您预计可能有很高的流量，但所需的服务器端逻辑和处理不一定很多。<br>Node表现出众的典型示例包括：</p>
-<h4 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h4><p>提供 RESTful API 的 Web 服务接收几个参数，解析它们，组合一个响应，并返回一个响应（通常是较少的文本）给用户。这是适合 Node 的理想情况，因为您可以构建它来处理数万条连接。它仍然不需要大量逻辑；它本质上只是从某个数据库中查找一些值并将它们组成一个响应。由于响应是少量文本，入站请求也是少量的文本，因此流量不高，一台机器甚至也可以处理最繁忙的公司的 API 需求。</p>
-<h4 id="Twitter-队列"><a href="#Twitter-队列" class="headerlink" title="Twitter 队列"></a>Twitter 队列</h4><p>想像一下像 Twitter 这样的公司，它必须接收 tweets 并将其写入数据库。实际上，每秒几乎有数千条 tweet 达到，数据库不可能及时处理高峰时段所需的写入数量。Node 成为这个问题的解决方案的重要一环。如您所见，Node 能处理数万条入站 tweet。它能快速而又轻松地将它们写入一个内存排队机制（例如 memcached），另一个单独进程可以从那里将它们写入数据库。Node 在这里的角色是迅速收集 tweet，并将这个信息传递给另一个负责写入的进程。想象一下另一种设计（常规 PHP 服务器会自己尝试处理对数据库本身的写入）：每个 tweet 都会在写入数据库时导致一个短暂的延迟，因为数据库调用正在阻塞通道。由于数据库延迟，一台这样设计的机器每秒可能只能处理 2000 条入站 tweet。每秒处理 100 万条 tweet 则需要 500 个服务器。相反，Node 能处理每个连接而不会阻塞通道，从而能够捕获尽可能多的 tweets。一个能处理 50,000 条 tweet 的 Node 机器仅需 20 台服务器即可。</p>
-<h4 id="电子游戏统计数据"><a href="#电子游戏统计数据" class="headerlink" title="电子游戏统计数据"></a>电子游戏统计数据</h4><p>如果您在线玩过《使命召唤》这款游戏，当您查看游戏统计数据时，就会立即意识到一个问题：要生成那种级别的统计数据，必须跟踪海量信息。这样，如果有数百万玩家同时在线玩游戏，而且他们处于游戏中的不同位置，那么很快就会生成海量信息。Node 是这种场景的一种很好的解决方案，因为它能采集游戏生成的数据，对数据进行最少的合并，然后对数据进行排队，以便将它们写入数据库。使用整个服务器来跟踪玩家在游戏中发射了多少子弹看起来很愚蠢，如果您使用 Apache 这样的服务器，可能会 有一些有用的限制；但相反，如果您专门使用一个服务器来跟踪一个游戏的所有统计数据，就像使用运行 Node 的服务器所做的那样，那看起来似乎是一种明智之举。<br><strong><em>以上内容皆属废话［部分资料来源于网络］</em></strong></p>
-<p>ps:在我看来，虽然我后台语言只接触过java，但是我觉得，统计、webapp、个人站点等常规网站都可以通过node.js来开发出来。<br>并且，node的开发语法非常适合前端人员低成本过渡到全栈开发工程师。</p>
-<h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p>brew方式[Mac]<br>如果机器没有安装过node，那么首先brew install nvm安装nvm。<br>多版本管理器nvm，貌似Windows上好像不行，没测过。<br>其次需要在shell的配置文件(~/.bashrc, ~/.profile, or ~/.zshrc)中添加如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># For NVM</span></span><br><span class="line"><span class="built_in">export</span> NVM_DIR=~/.nvm</span><br><span class="line"><span class="built_in">source</span> $(brew --prefix nvm)/nvm.sh</span><br></pre></td></tr></table></figure></p>
-<p>重启终端，命令行下即可使用nvm，使用nvm install 进行对应的node版本安装。</p>
-<p>其他系统请自行百度(以后有时间再补充)<br><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
-
+        <blockquote>
+<p>使用HTML５中的canvas和video技术实现调用PC摄像头</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>HTML5调用电脑摄像头实例<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">   </span><br><span class="line">        <span class="built_in">window</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">            <span class="comment">// Grab elements, create settings, etc.  </span></span><br><span class="line">            <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>),  </span><br><span class="line">                context = canvas.getContext(<span class="string">"2d"</span>),  </span><br><span class="line">                video = <span class="built_in">document</span>.getElementById(<span class="string">"video"</span>),  </span><br><span class="line">                videoObj = &#123; <span class="string">"video"</span>: <span class="literal">true</span> &#125;,  </span><br><span class="line">                errBack = <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;  </span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"Video capture error: "</span>, error.code);   </span><br><span class="line">                &#125;;  </span><br><span class="line">           </span><br><span class="line">            <span class="comment">// Put video listeners into place  </span></span><br><span class="line">            <span class="keyword">if</span>(navigator.getUserMedia) &#123; <span class="comment">// Standard  </span></span><br><span class="line">                <span class="comment">//alert("支持navigator.getUserMedia");</span></span><br><span class="line">                navigator.getUserMedia(videoObj, <span class="function"><span class="keyword">function</span>(<span class="params">stream</span>) </span>&#123;  </span><br><span class="line">                    video.src = stream;  </span><br><span class="line">                    video.play();  </span><br><span class="line">                &#125;, errBack);  </span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(navigator.webkitGetUserMedia) &#123; <span class="comment">// WebKit-prefixed  </span></span><br><span class="line">                <span class="comment">//alert("支持navigator.webkitGetUserMedia");</span></span><br><span class="line">                navigator.webkitGetUserMedia(videoObj, <span class="function"><span class="keyword">function</span>(<span class="params">stream</span>)</span>&#123;  </span><br><span class="line">                    video.src = <span class="built_in">window</span>.webkitURL.createObjectURL(stream);  </span><br><span class="line">                    video.play();  </span><br><span class="line">                &#125;, errBack);  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(navigator.mozGetUserMedia) &#123; <span class="comment">// Firefox-prefixed  </span></span><br><span class="line">                <span class="comment">//alert("支持navigator.mozGetUserMedia");</span></span><br><span class="line">                navigator.mozGetUserMedia(videoObj, <span class="function"><span class="keyword">function</span>(<span class="params">stream</span>)</span>&#123;  </span><br><span class="line">                    video.src = <span class="built_in">window</span>.URL.createObjectURL(stream);  </span><br><span class="line">                    video.play();  </span><br><span class="line">                &#125;, errBack);  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="comment">// 触发拍照动作  </span></span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"snap"</span>).addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">                context.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, <span class="number">640</span>, <span class="number">480</span>);  </span><br><span class="line">            &#125;); </span><br><span class="line"> </span><br><span class="line">        &#125;, <span class="literal">false</span>);   </span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">video</span> <span class="attribute">id</span>=<span class="value">"video"</span> <span class="attribute">width</span>=<span class="value">"640"</span> <span class="attribute">height</span>=<span class="value">"480"</span> <span class="attribute">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="title">video</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"snap"</span> &gt;</span>点击拍照<span class="tag">&lt;/<span class="title">button</span>&gt;</span>  <span class="tag">&lt;<span class="title">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">canvas</span> <span class="attribute">id</span>=<span class="value">"canvas"</span> <span class="attribute">width</span>=<span class="value">"640"</span> <span class="attribute">height</span>=<span class="value">"480"</span>&gt;</span><span class="tag">&lt;/<span class="title">canvas</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -328,7 +322,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Node-js/" rel="tag">#Node.js</a>
+            <a href="/tags/HTML5/" rel="tag">#HTML5</a>
+          
+            <a href="/tags/转载文章/" rel="tag">#转载文章</a>
           
         </div>
       
@@ -337,17 +333,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/19/HTML5摇一摇效果/" rel="next" title="HTML5摇一摇效果">
-                <i class="fa fa-chevron-left"></i> HTML5摇一摇效果
+              <a href="/2016/04/05/JS实现网页切出网站TITLE变化/" rel="next" title="JS实现网页切出网站TITLE变化">
+                <i class="fa fa-chevron-left"></i> JS实现网页切出网站TITLE变化
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/21/NPM基本使用梳理备忘录/" rel="prev" title="NPM基本使用梳理备忘录">
-                NPM基本使用梳理备忘录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -373,8 +365,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/20/学习了解Node-js/"
-           data-title="学习了解Node.js" data-url="http://coolfishstudio.github.io/2016/02/20/学习了解Node-js/">
+      <div class="ds-thread" data-thread-key="2016/04/06/HTML调用PC摄像头/"
+           data-title="HTML调用PC摄像头" data-url="http://coolfishstudio.github.io/2016/04/06/HTML调用PC摄像头/">
       </div>
     
   </div>
@@ -516,7 +508,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是node-js"><span class="nav-number">1.</span> <span class="nav-text">什么是node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是v8？"><span class="nav-number">2.</span> <span class="nav-text">什么是v8？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-js能做什么"><span class="nav-number">3.</span> <span class="nav-text">node.js能做什么</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RESTful-API"><span class="nav-number">3.1.</span> <span class="nav-text">RESTful API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Twitter-队列"><span class="nav-number">3.2.</span> <span class="nav-text">Twitter 队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电子游戏统计数据"><span class="nav-number">3.3.</span> <span class="nav-text">电子游戏统计数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装node"><span class="nav-number">4.</span> <span class="nav-text">安装node</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
