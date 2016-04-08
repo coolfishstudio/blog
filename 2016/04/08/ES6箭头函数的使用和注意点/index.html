@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,移动端," />
+  <meta name="keywords" content="JavaScript,转载文章," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="微站点的开发，我们需要知道当前的浏览器是微信内置的浏览器，那么如何判断呢？">
+<meta name="description" content="ES6可以使用“箭头”（=&amp;gt;）定义函数，注意是函数，不要使用这种方式定义类（构造器）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何判断微信android和IOS">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/02/24/如何判断微信android和IOS/index.html">
+<meta property="og:title" content="ES6箭头函数的使用和注意点">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/04/08/ES6箭头函数的使用和注意点/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="微站点的开发，我们需要知道当前的浏览器是微信内置的浏览器，那么如何判断呢？">
-<meta property="og:updated_time" content="2016-02-24T08:04:16.000Z">
+<meta property="og:description" content="ES6可以使用“箭头”（=&amp;gt;）定义函数，注意是函数，不要使用这种方式定义类（构造器）。">
+<meta property="og:updated_time" content="2016-04-08T08:49:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何判断微信android和IOS">
-<meta name="twitter:description" content="微站点的开发，我们需要知道当前的浏览器是微信内置的浏览器，那么如何判断呢？">
+<meta name="twitter:title" content="ES6箭头函数的使用和注意点">
+<meta name="twitter:description" content="ES6可以使用“箭头”（=&amp;gt;）定义函数，注意是函数，不要使用这种方式定义类（构造器）。">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> 如何判断微信android和IOS | 酷鱼网 </title>
+  <title> ES6箭头函数的使用和注意点 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                如何判断微信android和IOS
+                ES6箭头函数的使用和注意点
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-24T15:51:00+08:00" content="2016-02-24">
-              2016-02-24
+            <time itemprop="dateCreated" datetime="2016-04-08T16:45:40+08:00" content="2016-04-08">
+              2016-04-08
             </time>
           </span>
 
@@ -272,8 +272,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/手机移动/" itemprop="url" rel="index">
-                    <span itemprop="name">手机移动</span>
+                  <a href="/categories/前端特效/" itemprop="url" rel="index">
+                    <span itemprop="name">前端特效</span>
                   </a>
                 </span>
 
@@ -288,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/24/如何判断微信android和IOS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/24/如何判断微信android和IOS/" itemprop="commentsCount"></span>
+                <a href="/2016/04/08/ES6箭头函数的使用和注意点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/ES6箭头函数的使用和注意点/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -311,13 +311,23 @@
 
       
         <blockquote>
-<p>微站点的开发，我们需要知道当前的浏览器是微信内置的浏览器，那么如何判断呢？</p>
+<p>ES6可以使用“箭头”（=&gt;）定义函数，注意是函数，不要使用这种方式定义类（构造器）。</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="微信内置浏览器的-User-Agent"><a href="#微信内置浏览器的-User-Agent" class="headerlink" title="微信内置浏览器的 User Agent"></a>微信内置浏览器的 User Agent</h3><p>首先需要获取微信内置浏览器的User Agent，经过在 iPhone 上微信的浏览器的检测，它的 User Agent 是：<br>Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_3 like Mac OS X)<br>AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B329 MicroMessenger/5.0.1<br>所以通过识别 MicroMessenger 这个关键字来确定是否微信内置的浏览器了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isWeiXin</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">return</span> (ua.match(<span class="regexp">/MicroMessenger/i</span>) === <span class="string">'micromessenger'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="判断IOS系统"><a href="#判断IOS系统" class="headerlink" title="判断IOS系统"></a>判断IOS系统</h3><p>通过 <code>window.navigator.userAgent.match(/iP(hone|od|ad)/)</code> 来判断是否是ios系统 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isIos</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">return</span> (ua.match(<span class="regexp">/iP(hone|od|ad)/i</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>获取IOS版本号<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">getVersion</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    var version = parseFloat(String(window.navigator.userAgent.match(/[<span class="number">0</span>-<span class="number">9</span>]_[<span class="number">0</span>-<span class="number">9</span>]/)).split(<span class="string">'_'</span>)[<span class="number">0</span>] + <span class="string">'.'</span> + String(window.navigator.userAgent.match(/[<span class="number">0</span>-<span class="number">9</span>]_[<span class="number">0</span>-<span class="number">9</span>]/)).split(<span class="string">'_'</span>)[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> version;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="一、语法"><a href="#一、语法" class="headerlink" title="一、语法"></a>一、语法</h3><h4 id="1-具有一个参数的简单函数"><a href="#1-具有一个参数的简单函数" class="headerlink" title="1.具有一个参数的简单函数"></a>1.具有一个参数的简单函数</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> single = <span class="tag">a</span> =&gt; <span class="tag">a</span></span><br><span class="line"><span class="function"><span class="title">single</span><span class="params">(<span class="string">'hello, world'</span>)</span></span> <span class="comment">// 'hello, world'</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-没有参数的需要用在箭头前加上小括号"><a href="#2-没有参数的需要用在箭头前加上小括号" class="headerlink" title="2.没有参数的需要用在箭头前加上小括号"></a>2.没有参数的需要用在箭头前加上小括号</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var log = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    alert(<span class="string">'no param'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-多个参数需要用到小括号，参数间逗号间隔，例如两个数字相加"><a href="#3-多个参数需要用到小括号，参数间逗号间隔，例如两个数字相加" class="headerlink" title="3.多个参数需要用到小括号，参数间逗号间隔，例如两个数字相加"></a>3.多个参数需要用到小括号，参数间逗号间隔，例如两个数字相加</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> add = (<span class="tag">a</span>, b) =&gt; <span class="tag">a</span> + <span class="tag">b</span></span><br><span class="line"><span class="function"><span class="title">add</span><span class="params">(<span class="number">3</span>, <span class="number">8</span>)</span></span> <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-函数体多条语句需要用到大括号"><a href="#4-函数体多条语句需要用到大括号" class="headerlink" title="4.函数体多条语句需要用到大括号"></a>4.函数体多条语句需要用到大括号</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var add = <span class="function"><span class="params">(a, b)</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> a == <span class="string">'number'</span> &amp;&amp; <span class="keyword">typeof</span> b == <span class="string">'number'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-返回对象时需要用小括号包起来，因为大括号被占用解释为代码块了"><a href="#5-返回对象时需要用小括号包起来，因为大括号被占用解释为代码块了" class="headerlink" title="5.返回对象时需要用小括号包起来，因为大括号被占用解释为代码块了"></a>5.返回对象时需要用小括号包起来，因为大括号被占用解释为代码块了</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getHash = arr =&gt; &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">return</span> (&#123;</span><br><span class="line">        name: <span class="string">'Jack'</span>,</span><br><span class="line">        age: <span class="number">33</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6-直接作为事件handler"><a href="#6-直接作为事件handler" class="headerlink" title="6.直接作为事件handler"></a>6.直接作为事件handler</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, ev =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(ev)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="7-作为数组排序回调"><a href="#7-作为数组排序回调" class="headerlink" title="7.作为数组排序回调"></a>7.作为数组排序回调</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="number">1</span>, <span class="number">9</span> , <span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">8</span>].sort((a, b) =&gt; &#123; </span><br><span class="line">    <span class="keyword">if</span> (a - b &gt; <span class="number">0</span> ) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">arr <span class="comment">// [1, 2, 3, 4, 8, 9]</span></span><br></pre></td></tr></table></figure>
+<h3 id="二、注意点"><a href="#二、注意点" class="headerlink" title="二、注意点"></a>二、注意点</h3><h4 id="1-typeof运算符和普通的function一样"><a href="#1-typeof运算符和普通的function一样" class="headerlink" title="1.typeof运算符和普通的function一样"></a>1.typeof运算符和普通的function一样</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="func"><span class="keyword">func</span> = <span class="title">a</span> =&gt; <span class="title">a</span></span><br><span class="line"><span class="title">console</span>.<span class="title">log</span><span class="params">(typeof <span class="keyword">func</span>)</span></span>; <span class="comment">// "function"</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-instanceof也返回true，表明也是Function的实例"><a href="#2-instanceof也返回true，表明也是Function的实例" class="headerlink" title="2.instanceof也返回true，表明也是Function的实例"></a>2.instanceof也返回true，表明也是Function的实例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(func <span class="keyword">instanceof</span> <span class="built_in">Function</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-this固定，不再善变"><a href="#3-this固定，不再善变" class="headerlink" title="3.this固定，不再善变"></a>3.this固定，不再善变</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">obj = &#123;</span><br><span class="line">    data: [<span class="string">'John Backus'</span>, <span class="string">'John Hopcroft'</span>],</span><br><span class="line">    init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.onclick = ev =&gt; &#123;</span><br><span class="line">            alert(<span class="keyword">this</span>.data) <span class="comment">// ['John Backus', 'John Hopcroft']</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 非箭头函数</span></span><br><span class="line">        <span class="comment">// document.onclick = function(ev) &#123;</span></span><br><span class="line">        <span class="comment">//     alert(this.data) // undefined</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.init()</span><br></pre></td></tr></table></figure>
+<p>这个很有用，再不用写me，self，_this了，或者bind。</p>
+<h4 id="4-箭头函数不能用new"><a href="#4-箭头函数不能用new" class="headerlink" title="4.箭头函数不能用new"></a>4.箭头函数不能用new</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = (name, age) =&gt; &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">    <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Func(<span class="string">'John'</span>, <span class="number">33</span>) <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-不能使用argument"><a href="#5-不能使用argument" class="headerlink" title="5.不能使用argument"></a>5.不能使用argument</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="func"><span class="keyword">func</span> = <span class="params">()</span></span> =&gt; &#123;</span><br><span class="line">    console.log(arguments)</span><br><span class="line">&#125;</span><br><span class="line"><span class="func"><span class="keyword">func</span><span class="params">(<span class="number">55</span>)</span></span> <span class="comment">//</span></span><br></pre></td></tr></table></figure>
+<p>对于5，在Firefox36里测试是可以输出55的，貌似并没有这个限制</p>
 
       
     </div>
@@ -328,7 +338,7 @@
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/移动端/" rel="tag">#移动端</a>
+            <a href="/tags/转载文章/" rel="tag">#转载文章</a>
           
         </div>
       
@@ -337,17 +347,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/23/CSS中px和em-rem之间的区别/" rel="next" title="CSS中px和em,rem之间的区别">
-                <i class="fa fa-chevron-left"></i> CSS中px和em,rem之间的区别
+              <a href="/2016/04/06/HTML调用PC摄像头/" rel="next" title="HTML调用PC摄像头">
+                <i class="fa fa-chevron-left"></i> HTML调用PC摄像头
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/25/近几年前端技术盘点以及2016年技术发展方向/" rel="prev" title="近几年前端技术盘点以及2016年技术发展方向">
-                近几年前端技术盘点以及2016年技术发展方向 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -373,8 +379,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/24/如何判断微信android和IOS/"
-           data-title="如何判断微信android和IOS" data-url="http://coolfishstudio.github.io/2016/02/24/如何判断微信android和IOS/">
+      <div class="ds-thread" data-thread-key="2016/04/08/ES6箭头函数的使用和注意点/"
+           data-title="ES6箭头函数的使用和注意点" data-url="http://coolfishstudio.github.io/2016/04/08/ES6箭头函数的使用和注意点/">
       </div>
     
   </div>
@@ -516,7 +522,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信内置浏览器的-User-Agent"><span class="nav-number">1.</span> <span class="nav-text">微信内置浏览器的 User Agent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断IOS系统"><span class="nav-number">2.</span> <span class="nav-text">判断IOS系统</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、语法"><span class="nav-number">1.</span> <span class="nav-text">一、语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-具有一个参数的简单函数"><span class="nav-number">1.1.</span> <span class="nav-text">1.具有一个参数的简单函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-没有参数的需要用在箭头前加上小括号"><span class="nav-number">1.2.</span> <span class="nav-text">2.没有参数的需要用在箭头前加上小括号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-多个参数需要用到小括号，参数间逗号间隔，例如两个数字相加"><span class="nav-number">1.3.</span> <span class="nav-text">3.多个参数需要用到小括号，参数间逗号间隔，例如两个数字相加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-函数体多条语句需要用到大括号"><span class="nav-number">1.4.</span> <span class="nav-text">4.函数体多条语句需要用到大括号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-返回对象时需要用小括号包起来，因为大括号被占用解释为代码块了"><span class="nav-number">1.5.</span> <span class="nav-text">5.返回对象时需要用小括号包起来，因为大括号被占用解释为代码块了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-直接作为事件handler"><span class="nav-number">1.6.</span> <span class="nav-text">6.直接作为事件handler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-作为数组排序回调"><span class="nav-number">1.7.</span> <span class="nav-text">7.作为数组排序回调</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、注意点"><span class="nav-number">2.</span> <span class="nav-text">二、注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-typeof运算符和普通的function一样"><span class="nav-number">2.1.</span> <span class="nav-text">1.typeof运算符和普通的function一样</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-instanceof也返回true，表明也是Function的实例"><span class="nav-number">2.2.</span> <span class="nav-text">2.instanceof也返回true，表明也是Function的实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-this固定，不再善变"><span class="nav-number">2.3.</span> <span class="nav-text">3.this固定，不再善变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-箭头函数不能用new"><span class="nav-number">2.4.</span> <span class="nav-text">4.箭头函数不能用new</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-不能使用argument"><span class="nav-number">2.5.</span> <span class="nav-text">5.不能使用argument</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
