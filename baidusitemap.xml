@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://coolfishstudio.github.io/2016/03/30/%E8%A7%A3%E5%86%B3UC%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%81%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%BF%E7%94%A8display-flex/</loc>
+    <lastmod>2016-04-09T13:50:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>解决UC浏览器、微信浏览器使用display:flex</title>
+        <pubTime>2016-03-30T02:50:06.000Z</pubTime>
+        
+        <tag>转载文章</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端特效" url="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coolfishstudio.github.io/2016/04/09/%E7%A7%BB%E5%8A%A8%E7%AB%AFweb%E7%9A%84head%E9%80%9A%E7%94%A8%E5%86%99%E6%B3%95/</loc>
+    <lastmod>2016-04-09T13:50:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>移动端web的head通用写法</title>
+        <pubTime>2016-04-09T13:47:55.000Z</pubTime>
+        
+        <tag>转载文章</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端特效" url="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coolfishstudio.github.io/2016/04/08/ES6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E6%B3%A8%E6%84%8F%E7%82%B9/</loc>
     <lastmod>2016-04-08T08:49:16.000Z</lastmod>
     <data>
@@ -65,21 +105,6 @@
              
               <breadCrumb title="黑科技" url="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coolfishstudio.github.io/2016/03/30/%E8%A7%A3%E5%86%B3UC%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%81%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%BF%E7%94%A8display-flex/</loc>
-    <lastmod>2016-03-30T03:22:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>解决UC浏览器、微信浏览器使用display:flex</title>
-        <pubTime>2016-03-30T02:50:06.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
