@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-04-09T13:50:30.000Z</updated>
+  <updated>2016-04-11T02:36:06.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个括号引发的撕逼</title>
+    <link href="http://coolfishstudio.github.io/2016/04/11/%E4%B8%80%E4%B8%AA%E6%8B%AC%E5%8F%B7%E5%BC%95%E5%8F%91%E7%9A%84%E6%92%95%E9%80%BC/"/>
+    <id>http://coolfishstudio.github.io/2016/04/11/一个括号引发的撕逼/</id>
+    <published>2016-04-11T02:34:11.000Z</published>
+    <updated>2016-04-11T02:36:06.000Z</updated>
+    
+    <content type="html">&lt;p&gt;前几天在网上看到很有趣的两个问题：&lt;br&gt;{}+{} 等于多少？&lt;br&gt;({}+{}) 等于多少？&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本人一看，这么小儿科的问题，都让开，让我来装下逼，于是答到：&lt;br&gt;{}+{} 等于 NaN&lt;br&gt;({}+{}) 等于 NaN&lt;br&gt;答完，别人却说不对。我擦，打死我，也不信，于是我在浏览器试了一下，发现结果还真的是不对的。&lt;br&gt;{}+{} 等于 NaN&lt;br&gt;({}+{}) 等于 “[object Object][object Object]”&lt;br&gt;装逼不成，反被撕。这下老脸都不知道丢到哪里去了。冷静一番后，我对这个问题产生了深厚的兴趣，为什么加了个括号后，结果却差别这么大。&lt;br&gt;经过一番苦苦找寻源由后，我终于发现原来是浏览器解析的问题。&lt;br&gt;在{ } + { }中，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器会把第一个{ }当成是一个语句块，像if语句中的{}一样。因为当浏览器寻找一份声明中,看到第一个左括号时，即{，就傻乎乎把它当做是一个语句块，但是里面的内容是空的，所以什么也不会做。&lt;/li&gt;
+&lt;li&gt;而接下来遇到+时，浏览器会把它当成是一元运算符，所以+｛｝会被当成表达式。在表达式中，{是对象初始化,而不是一个语句块开始,所以{}是一个对象,然后+试图转化｛｝对象成为一个数字,最终得到NaN。&lt;br&gt;所以 {}+{} 其实等价于 +{}&lt;br&gt;在({}+{})中，&lt;/li&gt;
+&lt;li&gt;当浏览器遇到(,会把它当成是一个运算符,所以({}+{})会被当成一个一个表达式。&lt;/li&gt;
+&lt;li&gt;在表达式中，两个{}会被当成两个对象，而一元运算符+，则变成字符串连接符，+将尝试将两个对象转化为字符串,所以两个{}分别调用自己的toString方法，将自己转化为”[object Object]” 。&lt;br&gt;所以最终的结果是 “[object Object]” +”[object Object]”  等于  “[object Object][object Object]”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;说到实际运用中，&lt;br&gt;我们以前一般会使用eval函数格式化JSON数据，但是我们会在参数中是添加’(‘和’)’,例如eval(“({‘a’:1,’b’:2})”)。&lt;br&gt;聪明的骚年啊，现在你知道原因是什么了吧！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前几天在网上看到很有趣的两个问题：&lt;br&gt;{}+{} 等于多少？&lt;br&gt;({}+{}) 等于多少？&lt;br&gt;
+    
+    </summary>
+    
+      <category term="黑科技" scheme="http://coolfishstudio.github.io/categories/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
+    
+      <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>移动端web的head通用写法</title>
@@ -650,54 +683,6 @@
     
     
       <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS中的伪类和伪元素</title>
-    <link href="http://coolfishstudio.github.io/2016/03/10/CSS%E4%B8%AD%E7%9A%84%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
-    <id>http://coolfishstudio.github.io/2016/03/10/CSS中的伪类和伪元素/</id>
-    <published>2016-03-10T10:37:37.000Z</published>
-    <updated>2016-03-10T11:41:01.000Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;1.CSS3为了区别伪类和伪元素，明确使用单冒号来表示伪类，双冒号来表示伪元素。但为兼容性考虑，目前基本还是使用单冒号来表示。&lt;br&gt;2.搜索引擎不会搜索伪元素的信息。因此，不要通过伪元素添加你想让搜索引擎索引的重要内容&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;伪类&quot;&gt;&lt;a href=&quot;#伪类&quot; class=&quot;headerlink&quot; title=&quot;伪类&quot;&gt;&lt;/a&gt;伪类&lt;/h3&gt;&lt;p&gt;伪类与类相似，但又没有类附加标签上。伪类分为UI伪类和结构化伪类。&lt;/p&gt;
-&lt;h4 id=&quot;UI伪类&quot;&gt;&lt;a href=&quot;#UI伪类&quot; class=&quot;headerlink&quot; title=&quot;UI伪类&quot;&gt;&lt;/a&gt;UI伪类&lt;/h4&gt;&lt;p&gt;:link(将样式添加到未被访问的链接上)&lt;/p&gt;
-&lt;p&gt;:visted(将样式已添加到访问的链接上)&lt;/p&gt;
-&lt;p&gt;:hover(将样式添加到鼠标悬浮的元素上)&lt;/p&gt;
-&lt;p&gt;:active(将样式添加到被激活的元素上)&lt;/p&gt;
-&lt;p&gt;:focus(将样式添加到被选中的元素上)&lt;/p&gt;
-&lt;h4 id=&quot;结构化伪类&quot;&gt;&lt;a href=&quot;#结构化伪类&quot; class=&quot;headerlink&quot; title=&quot;结构化伪类&quot;&gt;&lt;/a&gt;结构化伪类&lt;/h4&gt;&lt;p&gt;:first-child(将样式添加到第一个子元素上)&lt;/p&gt;
-&lt;p&gt;:last-child(将样式添加到最后一个子元素上)&lt;/p&gt;
-&lt;h3 id=&quot;伪元素&quot;&gt;&lt;a href=&quot;#伪元素&quot; class=&quot;headerlink&quot; title=&quot;伪元素&quot;&gt;&lt;/a&gt;伪元素&lt;/h3&gt;&lt;p&gt;伪元素是在文档中若有实无的元素。&lt;/p&gt;
-&lt;h4 id=&quot;主要有以下几种&quot;&gt;&lt;a href=&quot;#主要有以下几种&quot; class=&quot;headerlink&quot; title=&quot;主要有以下几种&quot;&gt;&lt;/a&gt;主要有以下几种&lt;/h4&gt;&lt;p&gt;:first-letter(将样式添加到第一个字母)&lt;/p&gt;
-&lt;p&gt;:first-line(将样式添加到第一行)&lt;/p&gt;
-&lt;p&gt;:before(在某些元素前面插入某些内容)&lt;/p&gt;
-&lt;p&gt;:after(在某些元素后面插入某些内容)&lt;/p&gt;
-&lt;p&gt;看到:after，大家脑子里应该都能浮现出那个清除浮动的CSS的吧。没错，就是这个。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;.clearfix&lt;/span&gt;&lt;span class=&quot;pseudo&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;rules&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;block&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;visibility&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;hidden&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;rule&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;clear&lt;/span&gt;:&lt;span class=&quot;value&quot;&gt;both&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;区别&quot;&gt;&lt;a href=&quot;#区别&quot; class=&quot;headerlink&quot; title=&quot;区别&quot;&gt;&lt;/a&gt;区别&lt;/h3&gt;&lt;p&gt;仔细琢磨下它们的定义。&lt;br&gt;伪类的实现就好比给这个标签添加了一个虚拟的类。&lt;/p&gt;
-&lt;p&gt;举个例子：&lt;br&gt;&lt;figure class=&quot;highlight processing&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;.hover&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    font-&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;color&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;red&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;a href=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt; class=&lt;span class=&quot;string&quot;&gt;&quot;hover&quot;&lt;/span&gt;&amp;gt;Hello,World&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;这么一对比，”伪类“就顾名思义了啊。&lt;/p&gt;
-&lt;p&gt;而伪元素则好比添加了一个新的标签。&lt;br&gt;&lt;figure class=&quot;highlight scss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;pseudo&quot;&gt;:first-letter&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;value&quot;&gt;:&lt;span class=&quot;number&quot;&gt;20px&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;value&quot;&gt;:red&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;p&amp;gt;Hello,World&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;若不用伪元素，实现同样的效果，需要这么做&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;.first-letter&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    font-size:20px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    color:red&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;first-letter&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Hello,World&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;因此总结下区分的方法：现实相同效果是需要添加一个类还是一个元素标签。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;1.CSS3为了区别伪类和伪元素，明确使用单冒号来表示伪类，双冒号来表示伪元素。但为兼容性考虑，目前基本还是使用单冒号来表示。&lt;br&gt;2.搜索引擎不会搜索伪元素的信息。因此，不要通过伪元素添加你想让搜索引擎索引的重要内容&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
-    
-    
-      <category term="CSS3" scheme="http://coolfishstudio.github.io/tags/CSS3/"/>
     
   </entry>
   

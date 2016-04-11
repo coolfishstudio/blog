@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTML5,JavaScript,转载文章," />
+  <meta name="keywords" content="JavaScript,转载文章," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="HTML5提出了一个新的用来跨域传值的方法，即postMessage(这个名字太通俗了所以你最好看看是不是自己写过一个同名的把它覆盖了)。幸运的是IE8就开始支持了。">
+<meta name="description" content="前几天在网上看到很有趣的两个问题：{}+{} 等于多少？({}+{}) 等于多少？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML5的PostMessage学习">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/28/HTML5的PostMessage学习/index.html">
+<meta property="og:title" content="一个括号引发的撕逼">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/04/11/一个括号引发的撕逼/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="HTML5提出了一个新的用来跨域传值的方法，即postMessage(这个名字太通俗了所以你最好看看是不是自己写过一个同名的把它覆盖了)。幸运的是IE8就开始支持了。">
-<meta property="og:updated_time" content="2016-03-28T09:34:19.000Z">
+<meta property="og:description" content="前几天在网上看到很有趣的两个问题：{}+{} 等于多少？({}+{}) 等于多少？">
+<meta property="og:updated_time" content="2016-04-11T02:36:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML5的PostMessage学习">
-<meta name="twitter:description" content="HTML5提出了一个新的用来跨域传值的方法，即postMessage(这个名字太通俗了所以你最好看看是不是自己写过一个同名的把它覆盖了)。幸运的是IE8就开始支持了。">
+<meta name="twitter:title" content="一个括号引发的撕逼">
+<meta name="twitter:description" content="前几天在网上看到很有趣的两个问题：{}+{} 等于多少？({}+{}) 等于多少？">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> HTML5的PostMessage学习 | 酷鱼网 </title>
+  <title> 一个括号引发的撕逼 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                HTML5的PostMessage学习
+                一个括号引发的撕逼
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-28T17:28:59+08:00" content="2016-03-28">
-              2016-03-28
+            <time itemprop="dateCreated" datetime="2016-04-11T10:34:11+08:00" content="2016-04-11">
+              2016-04-11
             </time>
           </span>
 
@@ -288,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/28/HTML5的PostMessage学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/28/HTML5的PostMessage学习/" itemprop="commentsCount"></span>
+                <a href="/2016/04/11/一个括号引发的撕逼/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/11/一个括号引发的撕逼/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,22 +310,15 @@
       
 
       
-        <p>HTML5提出了一个新的用来跨域传值的方法，即postMessage(这个名字太通俗了所以你最好看看是不是自己写过一个同名的把它覆盖了)。幸运的是IE8就开始支持了。</p>
-<a id="more"></a>
-<p>我们假设有两个网站，1.com与2.com，我在1.com的页面上通过iframe或window.open或超链接打开了一个2.com的网页，此时我要在2.com上做操作的时候，给1.com传值，让1.com有所变化。这个过程就是个跨域的过程。<br>如果你对window.open熟，你就会知道通过window.open打开的网页（我们称之为子网页），可以通过window.opener对象，访问到把它打开的页面（父网页），这样一来，调用父页面的函数就是非常简单的事了。但是，在跨域的条件下，window.opener就成了一个空对象，“没有权限”，浏览器会这么告诉你。<br>比如，你的父页面有个函数叫callback，然后你子页面本可以这样调用：window.opener.callback()，同域时能成功，跨域时就没有权限了。<br>但是，此时你调用window.opener.postMessage()，却可以成功！<br>关于跨域传值的痛苦我就不多说了，本文只说一些前两天学习postMessage时了解到的重要知识点。</p>
-<h3 id="postMessage语法"><a href="#postMessage语法" class="headerlink" title="postMessage语法"></a>postMessage语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.<span class="function"><span class="title">postMessage</span><span class="params">(msg,targetOrigin)</span></span></span><br></pre></td></tr></table></figure>
-<p>这里我要专门说一下postMessage要通过window对象调用！因为这里的window不只是当前window，大部分使用postMessage的时候，都不是本页面的window，而是其他网页的window！如：<br>1,iframe的contentWindow<br>2,通过window.open方法打开的新窗口的window<br>3,window.opener<br>如果你使用postMessage时没有带window，那么，当然，你就是用的本页面的window来调用了它。<br>参数说明</p>
-<h4 id="msg"><a href="#msg" class="headerlink" title="msg"></a>msg</h4><p>这就是要传递的消息了。它可以是一切javascript参数，如字符串，数字，对象，数组，而不是和json一样只局限于字符串，很强大吧？</p>
-<h4 id="targetOrigin"><a href="#targetOrigin" class="headerlink" title="targetOrigin"></a>targetOrigin</h4><p>这个参数称作“目标域”，注意啦，是目标域不是本域！比如，你想在2.com的网页上往1.com网页上传消息，那么这个参数就是“<a href="http://1.com/”，而不是2.com" target="_blank" rel="external">http://1.com/”，而不是2.com</a>.<br>另外，一个完整的域包括：<br>协议，主机名，端口号。如：<a href="http://g.cn:80/" target="_blank" rel="external">http://g.cn:80/</a><br>获取postMessage传过来的消息<br>要对postMessage传来的消息进行处理，就要在页面上加一个onmessage事件。如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.origin,e.data);</span><br><span class="line">    alert(<span class="string">'有数据传来了！'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>要注意：最好是通过addEventListener或attachEvent来加入onmessage事件，而不要直接window.onmessage=function(){}，因为有的浏览器这样加会识别不了（如低版Firefox）<br>这个onmessage事件接受一个参数，就是代码里的e，实际上他就是一个event对象。但他里面有很明显的3个参数与其他event对象不一样，即：<br>1,data：顾名思义，是传递来的message<br>2,source：发送消息的窗口对象<br>3,origin：发送消息窗口的源（协议+主机+端口号）.比如从2.com往1.com发了消息，那么1.com收到消息时，e.origin就是2.com<br>最重要的就是data了，你可以用e.data取得他，然后做后续操作了。不过为了安全，你最好先判断一下e.source和e.origin是不是正确来源，再作操作。</p>
-<h3 id="完整的postMessage流程示例"><a href="#完整的postMessage流程示例" class="headerlink" title="完整的postMessage流程示例"></a>完整的postMessage流程示例</h3><p>接着刚才的例子来，我着重讲一个弹窗给父页面传消息的例子。<br>我们的父页面叫1.com，他上面有关键代码是：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.origin,e.data);</span><br><span class="line">    alert(<span class="string">'子页面有数据传来了！'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>就这么简单。而弹出窗口(2.com)上的代码是：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domain=<span class="string">'http://1.com/'</span>;</span><br><span class="line"><span class="built_in">window</span>.opener.postMessage(&#123;obj:<span class="string">'I am a obj'</span>&#125;, domain)</span><br></pre></td></tr></table></figure></p>
-<p>还是很简单吧！你看，跨域时本来不能访问的window.opener可以访问了——不过你直接调用父页面的方法还是会失败！就是这么不讲理。<br>其他应用场景的例子<br>1,必须要说明：通过超链接打开的新窗口也能用window.opener来访问其父页面，代码跟上面一样<br>2，iframe的例子<br>父页面：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">varo=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'iframe'</span>)[<span class="number">0</span>];</span><br><span class="line">o.contentWindow.postMessage(<span class="string">'Hello World'</span>,<span class="string">"*"</span>);</span><br><span class="line"><span class="comment">//向框架页传消息</span></span><br></pre></td></tr></table></figure></p>
-<p>被框架包裹的子页面：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'onmessage'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.domain==<span class="string">'1.com'</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (e.data==<span class="string">'Hello World'</span>) &#123;</span><br><span class="line">            e.source.postMessage(<span class="string">'Hello'</span>,<span class="string">"*"</span>);</span><br><span class="line">            <span class="comment">//反过来向父页面传消息</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            alert(e.data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这个例子充分说明了postMessage是双向的。<br>3，window.open一个窗口，然后向他传消息<br>父页面：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> domain2=<span class="string">'http://2.com/'</span>;</span><br><span class="line"><span class="keyword">var</span> win=<span class="built_in">window</span>.open(domain2+<span class="string">'Portal/2.com.html'</span>,<span class="string">'wwwwwwww'</span>)</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    win.postMessage(<span class="string">'ddddddddd'</span>,domain2</span><br><span class="line">)&#125;,<span class="number">2000</span>)</span><br></pre></td></tr></table></figure></p>
-<p>子页面：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.origin,e.data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>要注意父页面中的setTimeout，也就是要延迟传消息，因为子页面不可能瞬间加载完成，他的onmessage事件也就没初始化成功，这时给他传消息，当然是收不到的了。</p>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>1,IE8+虽然支持postMessage，但只支持iframe的方式，window.open打开的新窗口之间，没法用。直到IE10才有相关改进<br>2,如何在本地模拟跨域呢？在hosts文件里加入：127.0.0.1 1.com127.0.0.1 2.com 就可以模拟出2个不同的域名了。</p>
+        <p>前几天在网上看到很有趣的两个问题：<br>{}+{} 等于多少？<br>({}+{}) 等于多少？<br><a id="more"></a></p>
+<p>本人一看，这么小儿科的问题，都让开，让我来装下逼，于是答到：<br>{}+{} 等于 NaN<br>({}+{}) 等于 NaN<br>答完，别人却说不对。我擦，打死我，也不信，于是我在浏览器试了一下，发现结果还真的是不对的。<br>{}+{} 等于 NaN<br>({}+{}) 等于 “[object Object][object Object]”<br>装逼不成，反被撕。这下老脸都不知道丢到哪里去了。冷静一番后，我对这个问题产生了深厚的兴趣，为什么加了个括号后，结果却差别这么大。<br>经过一番苦苦找寻源由后，我终于发现原来是浏览器解析的问题。<br>在{ } + { }中，</p>
+<ol>
+<li>浏览器会把第一个{ }当成是一个语句块，像if语句中的{}一样。因为当浏览器寻找一份声明中,看到第一个左括号时，即{，就傻乎乎把它当做是一个语句块，但是里面的内容是空的，所以什么也不会做。</li>
+<li>而接下来遇到+时，浏览器会把它当成是一元运算符，所以+｛｝会被当成表达式。在表达式中，{是对象初始化,而不是一个语句块开始,所以{}是一个对象,然后+试图转化｛｝对象成为一个数字,最终得到NaN。<br>所以 {}+{} 其实等价于 +{}<br>在({}+{})中，</li>
+<li>当浏览器遇到(,会把它当成是一个运算符,所以({}+{})会被当成一个一个表达式。</li>
+<li>在表达式中，两个{}会被当成两个对象，而一元运算符+，则变成字符串连接符，+将尝试将两个对象转化为字符串,所以两个{}分别调用自己的toString方法，将自己转化为”[object Object]” 。<br>所以最终的结果是 “[object Object]” +”[object Object]”  等于  “[object Object][object Object]”</li>
+</ol>
+<p>说到实际运用中，<br>我们以前一般会使用eval函数格式化JSON数据，但是我们会在参数中是添加’(‘和’)’,例如eval(“({‘a’:1,’b’:2})”)。<br>聪明的骚年啊，现在你知道原因是什么了吧！</p>
 
       
     </div>
@@ -333,8 +326,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/HTML5/" rel="tag">#HTML5</a>
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
@@ -347,17 +338,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/27/JS判断字符串长度（英文占1个字符，中文汉字占2个字符）/" rel="next" title="JS判断字符串长度（英文占1个字符，中文汉字占2个字符）">
-                <i class="fa fa-chevron-left"></i> JS判断字符串长度（英文占1个字符，中文汉字占2个字符）
+              <a href="/2016/04/09/移动端web的head通用写法/" rel="next" title="移动端web的head通用写法">
+                <i class="fa fa-chevron-left"></i> 移动端web的head通用写法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/29/html拨打电话与发送短信/" rel="prev" title="html拨打电话与发送短信">
-                html拨打电话与发送短信 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -383,8 +370,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/28/HTML5的PostMessage学习/"
-           data-title="HTML5的PostMessage学习" data-url="http://coolfishstudio.github.io/2016/03/28/HTML5的PostMessage学习/">
+      <div class="ds-thread" data-thread-key="2016/04/11/一个括号引发的撕逼/"
+           data-title="一个括号引发的撕逼" data-url="http://coolfishstudio.github.io/2016/04/11/一个括号引发的撕逼/">
       </div>
     
   </div>
@@ -526,7 +513,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#postMessage语法"><span class="nav-number">1.</span> <span class="nav-text">postMessage语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#msg"><span class="nav-number">1.1.</span> <span class="nav-text">msg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#targetOrigin"><span class="nav-number">1.2.</span> <span class="nav-text">targetOrigin</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整的postMessage流程示例"><span class="nav-number">2.</span> <span class="nav-text">完整的postMessage流程示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
