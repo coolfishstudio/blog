@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-04-11T02:36:06.000Z</updated>
+  <updated>2016-04-13T13:39:32.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>==和===到底有什么区别</title>
+    <link href="http://coolfishstudio.github.io/2016/04/13/%E5%92%8C-%E5%88%B0%E5%BA%95%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/"/>
+    <id>http://coolfishstudio.github.io/2016/04/13/和-到底有什么区别/</id>
+    <published>2016-04-13T13:37:08.000Z</published>
+    <updated>2016-04-13T13:39:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;以前一直以为==和===很简单，也很少去做对象比较&lt;br&gt;[]==![] 这个表达式结果是什么?&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;于是去翻了下==和===的比较&lt;/p&gt;
+&lt;h4 id=&quot;1-对于string-number等基础类型，-和-是有区别的&quot;&gt;&lt;a href=&quot;#1-对于string-number等基础类型，-和-是有区别的&quot; class=&quot;headerlink&quot; title=&quot;1. 对于string,number等基础类型，==和===是有区别的&quot;&gt;&lt;/a&gt;1. 对于string,number等基础类型，==和===是有区别的&lt;/h4&gt;&lt;p&gt;1）不同类型间比较，==之比较“转化成同一类型后的值”看“值”是否相等，===如果类型不同，其结果就是不等&lt;br&gt;2）同类型比较，直接进行“值”比较，两者结果一样&lt;/p&gt;
+&lt;h4 id=&quot;2-对于Array-Object等高级类型，-和-是没有区别的&quot;&gt;&lt;a href=&quot;#2-对于Array-Object等高级类型，-和-是没有区别的&quot; class=&quot;headerlink&quot; title=&quot;2. 对于Array,Object等高级类型，==和===是没有区别的&quot;&gt;&lt;/a&gt;2. 对于Array,Object等高级类型，==和===是没有区别的&lt;/h4&gt;&lt;p&gt;进行“指针地址”比较&lt;/p&gt;
+&lt;h4 id=&quot;3-基础类型与高级类型，-和-是有区别的&quot;&gt;&lt;a href=&quot;#3-基础类型与高级类型，-和-是有区别的&quot; class=&quot;headerlink&quot; title=&quot;3. 基础类型与高级类型，==和===是有区别的&quot;&gt;&lt;/a&gt;3. 基础类型与高级类型，==和===是有区别的&lt;/h4&gt;&lt;p&gt;1）对于==，将高级转化为基础类型，进行“值”比较&lt;br&gt;2）因为类型不同，===结果为false&lt;br&gt;想要得到结果很简单，chrome打开console下输入表达式，答案是true，为什么呢？&lt;br&gt;3-（2）答案在里面的值比较，右边![]肯定是个布尔值false，那么左边为什么也是false呢？&lt;br&gt;原来是valueOf和toString方法调用，这个地方先调用valueOf，Array的valueOf还是数组本身,然后调用了toString方法&lt;br&gt;得到结果是“”，“” == false，结果就是true了&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以前一直以为==和===很简单，也很少去做对象比较&lt;br&gt;[]==![] 这个表达式结果是什么?&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
+    
+    
+      <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
+    
+      <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>一个括号引发的撕逼</title>
@@ -661,28 +691,6 @@
       <category term="React" scheme="http://coolfishstudio.github.io/tags/React/"/>
     
       <category term="Webpack" scheme="http://coolfishstudio.github.io/tags/Webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS根据身份证号码获取出生日期、年龄以及性别</title>
-    <link href="http://coolfishstudio.github.io/2016/03/11/js%E6%A0%B9%E6%8D%AE%E8%BA%AB%E4%BB%BD%E8%AF%81%E5%8F%B7%E7%A0%81%E8%8E%B7%E5%8F%96%E5%87%BA%E7%94%9F%E6%97%A5%E6%9C%9F%E3%80%81%E5%B9%B4%E9%BE%84%E4%BB%A5%E5%8F%8A%E6%80%A7%E5%88%AB/"/>
-    <id>http://coolfishstudio.github.io/2016/03/11/js根据身份证号码获取出生日期、年龄以及性别/</id>
-    <published>2016-03-11T11:42:41.000Z</published>
-    <updated>2016-03-11T11:45:16.000Z</updated>
-    
-    <content type="html">&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;doctype&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;lang&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;en&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;charset&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;js根据身份证号码获取出生日期、年龄以及性别&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;code&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;br&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;获取出生日期以及年龄&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;onclick&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;getCode()&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getCode&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; code=&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&quot;code&quot;&lt;/span&gt;).value;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; year=code.substring(&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert(year);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; month=code.substring(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert(month);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; day=code.substring(&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;14&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert(day);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sui=&lt;span class=&quot;number&quot;&gt;2015&lt;/span&gt;-year+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert(sui);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sexName=code.substring(&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;17&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sex=(sexName%&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;==&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;?&lt;span class=&quot;string&quot;&gt;&quot;女&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;男&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert(sex);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert(&lt;span class=&quot;string&quot;&gt;&quot;我的出生日期是&quot;&lt;/span&gt;+year+&lt;span class=&quot;string&quot;&gt;&quot;年&quot;&lt;/span&gt;+month+&lt;span class=&quot;string&quot;&gt;&quot;月&quot;&lt;/span&gt;+day+&lt;span class=&quot;string&quot;&gt;&quot;日&quot;&lt;/span&gt;+&lt;span class=&quot;string&quot;&gt;&quot;,今年&quot;&lt;/span&gt;+sui+&lt;span class=&quot;string&quot;&gt;&quot;岁了&quot;&lt;/span&gt;+&lt;span class=&quot;string&quot;&gt;&quot;,性别是&quot;&lt;/span&gt;+sex);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
-    
-    </summary>
-    
-      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
-    
-    
-      <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
     
   </entry>
   

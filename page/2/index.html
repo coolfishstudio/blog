@@ -259,6 +259,135 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/26/html5移动端引入优酷视频iframe自适应/" itemprop="url">
+                  html5移动端引入优酷视频iframe自适应
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-26T20:05:02+08:00" content="2016-03-26">
+              2016-03-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端特效/" itemprop="url" rel="index">
+                    <span itemprop="name">前端特效</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端特效/黑科技/" itemprop="url" rel="index">
+                    <span itemprop="name">黑科技</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/26/html5移动端引入优酷视频iframe自适应/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/26/html5移动端引入优酷视频iframe自适应/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>重点是 使得 iframe 的宽高比为 9:16 就好</p>
+</blockquote>
+<p>1、要引入的视频<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">height</span>=<span class="value">498</span> <span class="attribute">width</span>=<span class="value">510</span> <span class="attribute">src</span>=<span class="value">"http://player.youku.com/embed/XMTI4MjU5OTA3Mg=="</span> <span class="attribute">frameborder</span>=<span class="value">0</span> <span class="attribute">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>2、css里设置iframe的宽度为100%</p>
+<p>3、根据屏幕宽度自适应，这里我设定视频16/9的固定比例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; resizeIframe(); &#125; </span><br><span class="line"><span class="keyword">var</span> resizeIframe = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> bodyw=<span class="built_in">document</span>.body.clientWidth; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> ilength=<span class="number">0</span>;ilength&lt;=<span class="built_in">document</span>.getElementsByTagName(<span class="string">"iframe"</span>).length;ilength++) &#123; </span><br><span class="line">        <span class="built_in">document</span>.getElementsByTagName(<span class="string">"iframe"</span>)[ilength].height = bodyw*<span class="number">9</span>/<span class="number">16</span>;<span class="comment">//设定高度 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/26/html5移动端引入优酷视频iframe自适应/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/25/快速合并多个数组/" itemprop="url">
                   快速合并多个数组
                 </a>
@@ -1266,115 +1395,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/11/js根据身份证号码获取出生日期、年龄以及性别/" itemprop="url">
-                  JS根据身份证号码获取出生日期、年龄以及性别
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-11T19:42:41+08:00" content="2016-03-11">
-              2016-03-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端特效/" itemprop="url" rel="index">
-                    <span itemprop="name">前端特效</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/11/js根据身份证号码获取出生日期、年龄以及性别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/11/js根据身份证号码获取出生日期、年龄以及性别/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>js根据身份证号码获取出生日期、年龄以及性别<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">id</span>=<span class="value">"code"</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>/&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"获取出生日期以及年龄"</span> <span class="attribute">onclick</span>=<span class="value">"getCode()"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">             <span class="function"><span class="keyword">function</span> <span class="title">getCode</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">var</span> code=<span class="built_in">document</span>.getElementById(<span class="string">"code"</span>).value;</span><br><span class="line">                <span class="keyword">var</span> year=code.substring(<span class="number">6</span>,<span class="number">10</span>);</span><br><span class="line">                alert(year);</span><br><span class="line">                <span class="keyword">var</span> month=code.substring(<span class="number">10</span>,<span class="number">12</span>);</span><br><span class="line">                alert(month);</span><br><span class="line">                <span class="keyword">var</span> day=code.substring(<span class="number">12</span>,<span class="number">14</span>);</span><br><span class="line">                alert(day);</span><br><span class="line">                <span class="keyword">var</span> sui=<span class="number">2015</span>-year+<span class="number">1</span>;</span><br><span class="line">                alert(sui);</span><br><span class="line">                <span class="keyword">var</span> sexName=code.substring(<span class="number">16</span>,<span class="number">17</span>);</span><br><span class="line">                <span class="keyword">var</span> sex=(sexName%<span class="number">2</span>==<span class="number">0</span>?<span class="string">"女"</span>:<span class="string">"男"</span>);</span><br><span class="line">                alert(sex);</span><br><span class="line">                alert(<span class="string">"我的出生日期是"</span>+year+<span class="string">"年"</span>+month+<span class="string">"月"</span>+day+<span class="string">"日"</span>+<span class="string">",今年"</span>+sui+<span class="string">"岁了"</span>+<span class="string">",性别是"</span>+sex);</span><br><span class="line">             &#125;</span><br><span class="line">        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1421,7 +1441,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">49</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
