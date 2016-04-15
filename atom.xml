@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-04-14T12:32:37.000Z</updated>
+  <updated>2016-04-15T13:16:02.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信iframe问题之子页面过宽</title>
+    <link href="http://coolfishstudio.github.io/2016/04/15/%E5%BE%AE%E4%BF%A1iframe%E9%97%AE%E9%A2%98%E4%B9%8B%E5%AD%90%E9%A1%B5%E9%9D%A2%E8%BF%87%E5%AE%BD/"/>
+    <id>http://coolfishstudio.github.io/2016/04/15/微信iframe问题之子页面过宽/</id>
+    <published>2016-04-15T13:10:40.000Z</published>
+    <updated>2016-04-15T13:16:02.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天在测试的时候 遇到了一个奇葩的问题&lt;br&gt;微信iframe 子页面的URL 设定为百度&lt;br&gt;但是在微信浏览器里子页面过宽&lt;br&gt;这是因为 默认iframe的滚动条宽度被计算进去了&lt;br&gt;使用传统滚动条浏览器有这个问题 但是按理说微信浏览器应该没那么低端的。。。&lt;br&gt;主要解决方案 就是&lt;br&gt;iframe的scrolling属性 设为 no&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在测试的时候 遇到了一个奇葩的问题&lt;br&gt;微信iframe 子页面的URL 设定为百度&lt;br&gt;但是在微信浏览器里子页面过宽&lt;br&gt;这是因为 默认iframe的滚动条宽度被计算进去了&lt;br&gt;使用传统滚动条浏览器有这个问题 但是按理说微信浏览器应该没那么低端的。。。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>js函数前面的加号、叹号</title>
@@ -646,31 +665,6 @@
     
     
       <category term="HTML5" scheme="http://coolfishstudio.github.io/tags/HTML5/"/>
-    
-      <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>给网页标题增加自己的图标</title>
-    <link href="http://coolfishstudio.github.io/2016/03/13/%E7%BB%99%E7%BD%91%E9%A1%B5%E6%A0%87%E9%A2%98%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E6%A0%87/"/>
-    <id>http://coolfishstudio.github.io/2016/03/13/给网页标题增加自己的图标/</id>
-    <published>2016-03-13T09:28:58.000Z</published>
-    <updated>2016-03-18T10:01:19.000Z</updated>
-    
-    <content type="html">&lt;p&gt;在head里面增加&lt;br&gt;&lt;figure class=&quot;highlight ocaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;link rel=&lt;span class=&quot;symbol&quot;&gt;&#39;icon&#39;&lt;/span&gt; href=&lt;span class=&quot;symbol&quot;&gt;&#39;pic&lt;/span&gt;.ico&#39; &lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;symbol&quot;&gt;&#39;image&lt;/span&gt;/x-ico&#39; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;本片文章的重点是&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;制作ico图标的网站：&lt;a href=&quot;http://www.bitbug.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.bitbug.net/&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在head里面增加&lt;br&gt;&lt;figure class=&quot;highlight ocaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;link rel=&lt;span class=&quot;symbol&quot;&gt;&#39;icon&#39;&lt;/span&gt; href=&lt;span class=&quot;symbol&quot;&gt;&#39;pic&lt;/span&gt;.ico&#39; &lt;span class=&quot;keyword&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;symbol&quot;&gt;&#39;image&lt;/span&gt;/x-ico&#39; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;本片文章的重点是&lt;br&gt;
-    
-    </summary>
-    
-      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
-    
     
       <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
     
