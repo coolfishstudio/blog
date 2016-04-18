@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="Node.js," />
 
 
 
@@ -59,22 +59,22 @@
 
 
 
-<meta name="description" content="一句js实现快速合并多个数组
-
-12var arr = [].concat.call([1],[2,5],[3])console.log(arr); //值为 1,2,5,3">
+<meta name="description" content="process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。
+属性process对象提供一系列属性，用于返回系统信息。
+process.pid：当前进程的进程号。process.version：Node的版本，比如v0.10.18。process.platform：当前系统平台，比如Linux。process">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速合并多个数组">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/25/快速合并多个数组/index.html">
+<meta property="og:title" content="Node.js的process模块">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/04/18/Node-js的process模块/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="一句js实现快速合并多个数组
-
-12var arr = [].concat.call([1],[2,5],[3])console.log(arr); //值为 1,2,5,3">
-<meta property="og:updated_time" content="2016-03-25T08:17:46.000Z">
+<meta property="og:description" content="process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。
+属性process对象提供一系列属性，用于返回系统信息。
+process.pid：当前进程的进程号。process.version：Node的版本，比如v0.10.18。process.platform：当前系统平台，比如Linux。process">
+<meta property="og:updated_time" content="2016-04-18T09:54:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速合并多个数组">
-<meta name="twitter:description" content="一句js实现快速合并多个数组
-
-12var arr = [].concat.call([1],[2,5],[3])console.log(arr); //值为 1,2,5,3">
+<meta name="twitter:title" content="Node.js的process模块">
+<meta name="twitter:description" content="process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。
+属性process对象提供一系列属性，用于返回系统信息。
+process.pid：当前进程的进程号。process.version：Node的版本，比如v0.10.18。process.platform：当前系统平台，比如Linux。process">
 
 
 
@@ -92,7 +92,7 @@
   };
 </script>
 
-  <title> 快速合并多个数组 | 酷鱼网 </title>
+  <title> Node.js的process模块 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +252,7 @@
             
             
               
-                快速合并多个数组
+                Node.js的process模块
               
             
           </h1>
@@ -264,8 +264,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-25T16:10:43+08:00" content="2016-03-25">
-              2016-03-25
+            <time itemprop="dateCreated" datetime="2016-04-18T17:24:23+08:00" content="2016-04-18">
+              2016-04-18
             </time>
           </span>
 
@@ -278,8 +278,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/黑科技/" itemprop="url" rel="index">
-                    <span itemprop="name">黑科技</span>
+                  <a href="/categories/Node学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Node学习笔记</span>
                   </a>
                 </span>
 
@@ -294,8 +294,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/25/快速合并多个数组/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/25/快速合并多个数组/" itemprop="commentsCount"></span>
+                <a href="/2016/04/18/Node-js的process模块/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/Node-js的process模块/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -316,10 +316,22 @@
       
 
       
-        <blockquote>
-<p> 一句js实现快速合并多个数组</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr = [].concat.call([<span class="number">1</span>],[<span class="number">2</span>,<span class="number">5</span>],[<span class="number">3</span>])</span><br><span class="line">console.<span class="built_in">log</span>(arr); <span class="comment">//值为 1,2,5,3</span></span><br></pre></td></tr></table></figure>
+        <p>process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>process对象提供一系列属性，用于返回系统信息。</p>
+<p>process.pid：当前进程的进程号。<br>process.version：Node的版本，比如v0.10.18。<br>process.platform：当前系统平台，比如Linux。<br>process.title：默认值为“node”，可以自定义该值。<br>process.argv：当前进程的命令行参数数组。<br>process.env：指向当前shell的环境变量，比如process.env.HOME。<br>process.execPath：运行当前进程的可执行文件的绝对路径。<br>process.stdout：指向标准输出。<br>process.stdin：指向标准输入。<br>process.stderr：指向标准错误。<br>下面是主要属性的介绍。</p>
+<h5 id="1-stdout"><a href="#1-stdout" class="headerlink" title="(1)stdout"></a>(1)stdout</h5><p>process.stdout用来控制标准输出，也就是在命令行窗口向用户显示内容。它的write方法等同于console.log。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.<span class="built_in">log</span> = <span class="function"><span class="keyword">function</span><span class="params">()</span></span> &#123;</span><br><span class="line">    process.stdout.<span class="built_in">write</span>(<span class="keyword">format</span>.apply(this, arguments) + <span class="string">'\n'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-argv"><a href="#2-argv" class="headerlink" title="(2)argv"></a>(2)argv</h5><p>process.argv返回命令行脚本的各个参数组成的数组。</p>
+<p>先新建一个脚本文件argv.js。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// <span class="built_in">argv</span>.js</span><br><span class="line"> </span><br><span class="line">console.<span class="built_in">log</span>(<span class="string">"argv: "</span>,process.<span class="built_in">argv</span>);</span><br><span class="line">console.<span class="built_in">log</span>(<span class="string">"argc: "</span>,process.<span class="built_in">argc</span>);</span><br></pre></td></tr></table></figure></p>
+<p>在命令行下调用这个脚本，会得到以下结果。<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node argv.js a b c</span><br><span class="line"><span class="preprocessor"># [ <span class="string">'node'</span>, <span class="string">'/path/to/argv.js'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span> ]</span></span><br></pre></td></tr></table></figure></p>
+<p>上面代码表示，argv返回数组的成员依次是命令行的各个部分。要得到真正的参数部分，可以把argv.js改写成下面这样。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// argv.js</span></span><br><span class="line"> </span><br><span class="line">var myArgs = process.argv.slice(<span class="number">2</span>);</span><br><span class="line">console.<span class="built_in">log</span>(myArgs);</span><br></pre></td></tr></table></figure></p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>process对象提供以下方法：</p>
+<p>process.exit()：退出当前进程。<br>process.cwd()：返回运行当前脚本的工作目录的路径。_<br>process.chdir()：改变工作目录。<br>process.nextTick()：将一个回调函数放在下次事件循环的顶部。<br>process.chdir()改变工作目录的例子。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">process</span>.cwd()</span><br><span class="line"><span class="comment"># '/home/aaa'</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">process</span>.chdir(<span class="string">'/home/bbb'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="built_in">process</span>.cwd()</span><br><span class="line"><span class="comment"># '/home/bbb'</span></span><br></pre></td></tr></table></figure>
+<p>process.nextTick()的例子，指定下次事件循环首先运行的任务。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">process.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Next event loop!'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>上面代码可以用setTimeout改写，但是nextTick的效果更高、描述更准确。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'Next event loop!'</span>);</span><br><span class="line">&#125;, <span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><h5 id="（1）exit事件"><a href="#（1）exit事件" class="headerlink" title="（1）exit事件"></a>（1）exit事件</h5><p>当前进程退出时，会触发exit事件，可以对该事件指定回调函数。这一个用来定时检查模块的状态的好钩子(hook)(例如单元测试),当主事件循环在执行完’exit’的回调函数后将不再执行,所以在exit事件中定义的定时器可能不会被加入事件列表.<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">process.on(<span class="string">'exit'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">  fs.writeFileSync(<span class="string">'/tmp/myfile'</span>, <span class="string">'This MUST be saved on exit.'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h5 id="（2）uncaughtException事件"><a href="#（2）uncaughtException事件" class="headerlink" title="（2）uncaughtException事件"></a>（2）uncaughtException事件</h5><p>当前进程抛出一个没有被捕捉的意外时，会触发uncaughtException事件。<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">process.<span class="keyword">on</span>('uncaughtException', function (<span class="keyword">err</span>) &#123;</span><br><span class="line">  console.<span class="keyword">error</span>('<span class="keyword">An</span> uncaught <span class="keyword">error</span> occurred!');</span><br><span class="line">  console.<span class="keyword">error</span>(<span class="keyword">err</span>.<span class="keyword">stack</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -327,7 +339,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/Node-js/" rel="tag">#Node.js</a>
           
         </div>
       
@@ -336,17 +348,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/22/JS判断屏幕旋转/" rel="next" title="JS判断屏幕旋转">
-                <i class="fa fa-chevron-left"></i> JS判断屏幕旋转
+              <a href="/2016/04/15/微信iframe问题之子页面过宽/" rel="next" title="微信iframe问题之子页面过宽">
+                <i class="fa fa-chevron-left"></i> 微信iframe问题之子页面过宽
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/26/html5移动端引入优酷视频iframe自适应/" rel="prev" title="html5移动端引入优酷视频iframe自适应">
-                html5移动端引入优酷视频iframe自适应 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -372,8 +380,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/25/快速合并多个数组/"
-           data-title="快速合并多个数组" data-url="http://coolfishstudio.github.io/2016/03/25/快速合并多个数组/">
+      <div class="ds-thread" data-thread-key="2016/04/18/Node-js的process模块/"
+           data-title="Node.js的process模块" data-url="http://coolfishstudio.github.io/2016/04/18/Node-js的process模块/">
       </div>
     
   </div>
@@ -515,7 +523,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-stdout"><span class="nav-number">1.1.</span> <span class="nav-text">(1)stdout</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-argv"><span class="nav-number">1.2.</span> <span class="nav-text">(2)argv</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件"><span class="nav-number">3.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）exit事件"><span class="nav-number">3.1.</span> <span class="nav-text">（1）exit事件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）uncaughtException事件"><span class="nav-number">3.2.</span> <span class="nav-text">（2）uncaughtException事件</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

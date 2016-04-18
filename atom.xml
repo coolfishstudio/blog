@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-04-15T13:16:02.000Z</updated>
+  <updated>2016-04-18T09:54:29.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Node.js的process模块</title>
+    <link href="http://coolfishstudio.github.io/2016/04/18/Node-js%E7%9A%84process%E6%A8%A1%E5%9D%97/"/>
+    <id>http://coolfishstudio.github.io/2016/04/18/Node-js的process模块/</id>
+    <published>2016-04-18T09:24:23.000Z</published>
+    <updated>2016-04-18T09:54:29.000Z</updated>
+    
+    <content type="html">&lt;p&gt;process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。&lt;/p&gt;
+&lt;h4 id=&quot;属性&quot;&gt;&lt;a href=&quot;#属性&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;属性&lt;/h4&gt;&lt;p&gt;process对象提供一系列属性，用于返回系统信息。&lt;/p&gt;
+&lt;p&gt;process.pid：当前进程的进程号。&lt;br&gt;process.version：Node的版本，比如v0.10.18。&lt;br&gt;process.platform：当前系统平台，比如Linux。&lt;br&gt;process.title：默认值为“node”，可以自定义该值。&lt;br&gt;process.argv：当前进程的命令行参数数组。&lt;br&gt;process.env：指向当前shell的环境变量，比如process.env.HOME。&lt;br&gt;process.execPath：运行当前进程的可执行文件的绝对路径。&lt;br&gt;process.stdout：指向标准输出。&lt;br&gt;process.stdin：指向标准输入。&lt;br&gt;process.stderr：指向标准错误。&lt;br&gt;下面是主要属性的介绍。&lt;/p&gt;
+&lt;h5 id=&quot;1-stdout&quot;&gt;&lt;a href=&quot;#1-stdout&quot; class=&quot;headerlink&quot; title=&quot;(1)stdout&quot;&gt;&lt;/a&gt;(1)stdout&lt;/h5&gt;&lt;p&gt;process.stdout用来控制标准输出，也就是在命令行窗口向用户显示内容。它的write方法等同于console.log。&lt;br&gt;&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;exports.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    process.stdout.&lt;span class=&quot;built_in&quot;&gt;write&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;format&lt;/span&gt;.apply(this, arguments) + &lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&quot;2-argv&quot;&gt;&lt;a href=&quot;#2-argv&quot; class=&quot;headerlink&quot; title=&quot;(2)argv&quot;&gt;&lt;/a&gt;(2)argv&lt;/h5&gt;&lt;p&gt;process.argv返回命令行脚本的各个参数组成的数组。&lt;/p&gt;
+&lt;p&gt;先新建一个脚本文件argv.js。&lt;br&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// &lt;span class=&quot;built_in&quot;&gt;argv&lt;/span&gt;.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;argv: &quot;&lt;/span&gt;,process.&lt;span class=&quot;built_in&quot;&gt;argv&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;argc: &quot;&lt;/span&gt;,process.&lt;span class=&quot;built_in&quot;&gt;argc&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在命令行下调用这个脚本，会得到以下结果。&lt;br&gt;&lt;figure class=&quot;highlight autoit&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;node argv.js a b c&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;preprocessor&quot;&gt;# [ &lt;span class=&quot;string&quot;&gt;&#39;node&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;/path/to/argv.js&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;c&#39;&lt;/span&gt; ]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;上面代码表示，argv返回数组的成员依次是命令行的各个部分。要得到真正的参数部分，可以把argv.js改写成下面这样。&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// argv.js&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var myArgs = process.argv.slice(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;(myArgs);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h4&gt;&lt;p&gt;process对象提供以下方法：&lt;/p&gt;
+&lt;p&gt;process.exit()：退出当前进程。&lt;br&gt;process.cwd()：返回运行当前脚本的工作目录的路径。_&lt;br&gt;process.chdir()：改变工作目录。&lt;br&gt;process.nextTick()：将一个回调函数放在下次事件循环的顶部。&lt;br&gt;process.chdir()改变工作目录的例子。&lt;/p&gt;
+&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;process&lt;/span&gt;.cwd()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# &#39;/home/aaa&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;process&lt;/span&gt;.chdir(&lt;span class=&quot;string&quot;&gt;&#39;/home/bbb&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;process&lt;/span&gt;.cwd()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# &#39;/home/bbb&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;process.nextTick()的例子，指定下次事件循环首先运行的任务。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;process.nextTick(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;Next event loop!&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;上面代码可以用setTimeout改写，但是nextTick的效果更高、描述更准确。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;setTimeout(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;Next event loop!&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;事件&quot;&gt;&lt;a href=&quot;#事件&quot; class=&quot;headerlink&quot; title=&quot;事件&quot;&gt;&lt;/a&gt;事件&lt;/h4&gt;&lt;h5 id=&quot;（1）exit事件&quot;&gt;&lt;a href=&quot;#（1）exit事件&quot; class=&quot;headerlink&quot; title=&quot;（1）exit事件&quot;&gt;&lt;/a&gt;（1）exit事件&lt;/h5&gt;&lt;p&gt;当前进程退出时，会触发exit事件，可以对该事件指定回调函数。这一个用来定时检查模块的状态的好钩子(hook)(例如单元测试),当主事件循环在执行完’exit’的回调函数后将不再执行,所以在exit事件中定义的定时器可能不会被加入事件列表.&lt;br&gt;&lt;figure class=&quot;highlight actionscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;process.on(&lt;span class=&quot;string&quot;&gt;&#39;exit&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  fs.writeFileSync(&lt;span class=&quot;string&quot;&gt;&#39;/tmp/myfile&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;This MUST be saved on exit.&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&quot;（2）uncaughtException事件&quot;&gt;&lt;a href=&quot;#（2）uncaughtException事件&quot; class=&quot;headerlink&quot; title=&quot;（2）uncaughtException事件&quot;&gt;&lt;/a&gt;（2）uncaughtException事件&lt;/h5&gt;&lt;p&gt;当前进程抛出一个没有被捕捉的意外时，会触发uncaughtException事件。&lt;br&gt;&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;process.&lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt;(&#39;uncaughtException&#39;, function (&lt;span class=&quot;keyword&quot;&gt;err&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  console.&lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt;(&#39;&lt;span class=&quot;keyword&quot;&gt;An&lt;/span&gt; uncaught &lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt; occurred!&#39;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  console.&lt;span class=&quot;keyword&quot;&gt;error&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;err&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;stack&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。&lt;/p&gt;
+&lt;h4 id=&quot;属性&quot;&gt;&lt;a href=&quot;#属性&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="Node学习笔记" scheme="http://coolfishstudio.github.io/categories/Node%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Node.js" scheme="http://coolfishstudio.github.io/tags/Node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>微信iframe问题之子页面过宽</title>
@@ -631,40 +669,6 @@
     
     
       <category term="CSS3" scheme="http://coolfishstudio.github.io/tags/CSS3/"/>
-    
-      <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML锚点的使用</title>
-    <link href="http://coolfishstudio.github.io/2016/03/14/HTML%E9%94%9A%E7%82%B9%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://coolfishstudio.github.io/2016/03/14/HTML锚点的使用/</id>
-    <published>2016-03-14T12:22:09.000Z</published>
-    <updated>2016-03-14T12:25:24.000Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;HTML5已经去掉name属性，实现锚点时请使用id。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;同页面&quot;&gt;&lt;a href=&quot;#同页面&quot; class=&quot;headerlink&quot; title=&quot;同页面:&quot;&gt;&lt;/a&gt;同页面:&lt;/h4&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;#q1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;问题一?&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.......&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;q1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;问题一的解答&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;不同页面&quot;&gt;&lt;a href=&quot;#不同页面&quot; class=&quot;headerlink&quot; title=&quot;不同页面:&quot;&gt;&lt;/a&gt;不同页面:&lt;/h4&gt;&lt;p&gt;a的内容&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;b#q1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;问题一?&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;b的内容&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;q1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;问题一的解答&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;注：添加锚点，起始位置最好用&lt;a&gt;&lt;/a&gt;标记来写（适配移动端）。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;HTML5已经去掉name属性，实现锚点时请使用id。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;同页面&quot;&gt;&lt;a href=&quot;#同页面&quot; class=&quot;headerlink&quot; title=&quot;同页面:&quot;&gt;&lt;/a&gt;同页面:&lt;/h4&gt;&lt;figu
-    
-    </summary>
-    
-      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
-    
-    
-      <category term="HTML5" scheme="http://coolfishstudio.github.io/tags/HTML5/"/>
     
       <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
     
