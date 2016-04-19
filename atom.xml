@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-04-18T09:54:29.000Z</updated>
+  <updated>2016-04-19T11:05:21.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -20,11 +20,13 @@
     <link href="http://coolfishstudio.github.io/2016/04/18/Node-js%E7%9A%84process%E6%A8%A1%E5%9D%97/"/>
     <id>http://coolfishstudio.github.io/2016/04/18/Node-js的process模块/</id>
     <published>2016-04-18T09:24:23.000Z</published>
-    <updated>2016-04-18T09:54:29.000Z</updated>
+    <updated>2016-04-19T11:05:21.000Z</updated>
     
     <content type="html">&lt;p&gt;process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。&lt;/p&gt;
 &lt;h4 id=&quot;属性&quot;&gt;&lt;a href=&quot;#属性&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;属性&lt;/h4&gt;&lt;p&gt;process对象提供一系列属性，用于返回系统信息。&lt;/p&gt;
-&lt;p&gt;process.pid：当前进程的进程号。&lt;br&gt;process.version：Node的版本，比如v0.10.18。&lt;br&gt;process.platform：当前系统平台，比如Linux。&lt;br&gt;process.title：默认值为“node”，可以自定义该值。&lt;br&gt;process.argv：当前进程的命令行参数数组。&lt;br&gt;process.env：指向当前shell的环境变量，比如process.env.HOME。&lt;br&gt;process.execPath：运行当前进程的可执行文件的绝对路径。&lt;br&gt;process.stdout：指向标准输出。&lt;br&gt;process.stdin：指向标准输入。&lt;br&gt;process.stderr：指向标准错误。&lt;br&gt;下面是主要属性的介绍。&lt;/p&gt;
+&lt;p&gt;process.pid：当前进程的进程号。&lt;br&gt;process.version：Node的版本，比如v0.10.18。&lt;br&gt;process.platform：当前系统平台，比如Linux。&lt;br&gt;process.title：默认值为“node”，可以自定义该值。&lt;br&gt;process.argv：当前进程的命令行参数数组。&lt;br&gt;process.env：指向当前shell的环境变量，比如process.env.HOME。&lt;br&gt;process.execPath：运行当前进程的可执行文件的绝对路径。&lt;br&gt;process.stdout：指向标准输出。&lt;br&gt;process.stdin：指向标准输入。&lt;br&gt;process.stderr：指向标准错误。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;下面是主要属性的介绍。&lt;/p&gt;
 &lt;h5 id=&quot;1-stdout&quot;&gt;&lt;a href=&quot;#1-stdout&quot; class=&quot;headerlink&quot; title=&quot;(1)stdout&quot;&gt;&lt;/a&gt;(1)stdout&lt;/h5&gt;&lt;p&gt;process.stdout用来控制标准输出，也就是在命令行窗口向用户显示内容。它的write方法等同于console.log。&lt;br&gt;&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;exports.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    process.stdout.&lt;span class=&quot;built_in&quot;&gt;write&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;format&lt;/span&gt;.apply(this, arguments) + &lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h5 id=&quot;2-argv&quot;&gt;&lt;a href=&quot;#2-argv&quot; class=&quot;headerlink&quot; title=&quot;(2)argv&quot;&gt;&lt;/a&gt;(2)argv&lt;/h5&gt;&lt;p&gt;process.argv返回命令行脚本的各个参数组成的数组。&lt;/p&gt;
 &lt;p&gt;先新建一个脚本文件argv.js。&lt;br&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// &lt;span class=&quot;built_in&quot;&gt;argv&lt;/span&gt;.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;argv: &quot;&lt;/span&gt;,process.&lt;span class=&quot;built_in&quot;&gt;argv&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;argc: &quot;&lt;/span&gt;,process.&lt;span class=&quot;built_in&quot;&gt;argc&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -42,7 +44,8 @@
     <summary type="html">
     
       &lt;p&gt;process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。&lt;/p&gt;
-&lt;h4 id=&quot;属性&quot;&gt;&lt;a href=&quot;#属性&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;
+&lt;h4 id=&quot;属性&quot;&gt;&lt;a href=&quot;#属性&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;属性&lt;/h4&gt;&lt;p&gt;process对象提供一系列属性，用于返回系统信息。&lt;/p&gt;
+&lt;p&gt;process.pid：当前进程的进程号。&lt;br&gt;process.version：Node的版本，比如v0.10.18。&lt;br&gt;process.platform：当前系统平台，比如Linux。&lt;br&gt;process.title：默认值为“node”，可以自定义该值。&lt;br&gt;process.argv：当前进程的命令行参数数组。&lt;br&gt;process.env：指向当前shell的环境变量，比如process.env.HOME。&lt;br&gt;process.execPath：运行当前进程的可执行文件的绝对路径。&lt;br&gt;process.stdout：指向标准输出。&lt;br&gt;process.stdin：指向标准输入。&lt;br&gt;process.stderr：指向标准错误。&lt;/p&gt;
     
     </summary>
     

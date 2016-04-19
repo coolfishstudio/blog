@@ -69,7 +69,7 @@ process.pid：当前进程的进程号。process.version：Node的版本，比�
 <meta property="og:description" content="process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。
 属性process对象提供一系列属性，用于返回系统信息。
 process.pid：当前进程的进程号。process.version：Node的版本，比如v0.10.18。process.platform：当前系统平台，比如Linux。process">
-<meta property="og:updated_time" content="2016-04-18T09:54:29.000Z">
+<meta property="og:updated_time" content="2016-04-19T11:05:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js的process模块">
 <meta name="twitter:description" content="process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。
@@ -318,7 +318,9 @@ process.pid：当前进程的进程号。process.version：Node的版本，比�
       
         <p>process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。</p>
 <h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>process对象提供一系列属性，用于返回系统信息。</p>
-<p>process.pid：当前进程的进程号。<br>process.version：Node的版本，比如v0.10.18。<br>process.platform：当前系统平台，比如Linux。<br>process.title：默认值为“node”，可以自定义该值。<br>process.argv：当前进程的命令行参数数组。<br>process.env：指向当前shell的环境变量，比如process.env.HOME。<br>process.execPath：运行当前进程的可执行文件的绝对路径。<br>process.stdout：指向标准输出。<br>process.stdin：指向标准输入。<br>process.stderr：指向标准错误。<br>下面是主要属性的介绍。</p>
+<p>process.pid：当前进程的进程号。<br>process.version：Node的版本，比如v0.10.18。<br>process.platform：当前系统平台，比如Linux。<br>process.title：默认值为“node”，可以自定义该值。<br>process.argv：当前进程的命令行参数数组。<br>process.env：指向当前shell的环境变量，比如process.env.HOME。<br>process.execPath：运行当前进程的可执行文件的绝对路径。<br>process.stdout：指向标准输出。<br>process.stdin：指向标准输入。<br>process.stderr：指向标准错误。</p>
+<a id="more"></a>
+<p>下面是主要属性的介绍。</p>
 <h5 id="1-stdout"><a href="#1-stdout" class="headerlink" title="(1)stdout"></a>(1)stdout</h5><p>process.stdout用来控制标准输出，也就是在命令行窗口向用户显示内容。它的write方法等同于console.log。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.<span class="built_in">log</span> = <span class="function"><span class="keyword">function</span><span class="params">()</span></span> &#123;</span><br><span class="line">    process.stdout.<span class="built_in">write</span>(<span class="keyword">format</span>.apply(this, arguments) + <span class="string">'\n'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <h5 id="2-argv"><a href="#2-argv" class="headerlink" title="(2)argv"></a>(2)argv</h5><p>process.argv返回命令行脚本的各个参数组成的数组。</p>
 <p>先新建一个脚本文件argv.js。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// <span class="built_in">argv</span>.js</span><br><span class="line"> </span><br><span class="line">console.<span class="built_in">log</span>(<span class="string">"argv: "</span>,process.<span class="built_in">argv</span>);</span><br><span class="line">console.<span class="built_in">log</span>(<span class="string">"argc: "</span>,process.<span class="built_in">argc</span>);</span><br></pre></td></tr></table></figure></p>
