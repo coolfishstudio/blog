@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,转载文章," />
+  <meta name="keywords" content="转载文章," />
 
 
 
@@ -59,16 +59,17 @@
 
 
 
-<meta name="description" content="以前一直以为==和===很简单，也很少去做对象比较[]==![] 这个表达式结果是什么?">
+<meta name="description" content="OAuth，是Open Authorization的简写，叫开放授权。其他概念网上很多，这里直观的说下是怎么个过程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="==和===到底有什么区别">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/04/13/和-到底有什么区别/index.html">
+<meta property="og:title" content="10分钟看懂OAuth2.0">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/04/26/10分钟看懂OAuth2-0/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="以前一直以为==和===很简单，也很少去做对象比较[]==![] 这个表达式结果是什么?">
-<meta property="og:updated_time" content="2016-04-13T13:39:32.000Z">
+<meta property="og:description" content="OAuth，是Open Authorization的简写，叫开放授权。其他概念网上很多，这里直观的说下是怎么个过程。">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com/2016/04/26/1971004-a140d1515cad93c1.jpeg">
+<meta property="og:updated_time" content="2016-04-26T14:26:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="==和===到底有什么区别">
-<meta name="twitter:description" content="以前一直以为==和===很简单，也很少去做对象比较[]==![] 这个表达式结果是什么?">
+<meta name="twitter:title" content="10分钟看懂OAuth2.0">
+<meta name="twitter:description" content="OAuth，是Open Authorization的简写，叫开放授权。其他概念网上很多，这里直观的说下是怎么个过程。">
 
 
 
@@ -86,7 +87,7 @@
   };
 </script>
 
-  <title> ==和===到底有什么区别 | 酷鱼网 </title>
+  <title> 10分钟看懂OAuth2.0 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +247,7 @@
             
             
               
-                ==和===到底有什么区别
+                10分钟看懂OAuth2.0
               
             
           </h1>
@@ -258,8 +259,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-13T21:37:08+08:00" content="2016-04-13">
-              2016-04-13
+            <time itemprop="dateCreated" datetime="2016-04-26T22:15:49+08:00" content="2016-04-26">
+              2016-04-26
             </time>
           </span>
 
@@ -288,8 +289,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/13/和-到底有什么区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/和-到底有什么区别/" itemprop="commentsCount"></span>
+                <a href="/2016/04/26/10分钟看懂OAuth2-0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/26/10分钟看懂OAuth2-0/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,12 +311,25 @@
       
 
       
-        <p>以前一直以为==和===很简单，也很少去做对象比较<br>[]==![] 这个表达式结果是什么?</p>
+        <blockquote>
+<p>OAuth，是Open Authorization的简写，叫开放授权。其他概念网上很多，这里直观的说下是怎么个过程。</p>
+</blockquote>
 <a id="more"></a>
-<p>于是去翻了下==和===的比较</p>
-<h4 id="1-对于string-number等基础类型，-和-是有区别的"><a href="#1-对于string-number等基础类型，-和-是有区别的" class="headerlink" title="1. 对于string,number等基础类型，==和===是有区别的"></a>1. 对于string,number等基础类型，==和===是有区别的</h4><p>1）不同类型间比较，==之比较“转化成同一类型后的值”看“值”是否相等，===如果类型不同，其结果就是不等<br>2）同类型比较，直接进行“值”比较，两者结果一样</p>
-<h4 id="2-对于Array-Object等高级类型，-和-是没有区别的"><a href="#2-对于Array-Object等高级类型，-和-是没有区别的" class="headerlink" title="2. 对于Array,Object等高级类型，==和===是没有区别的"></a>2. 对于Array,Object等高级类型，==和===是没有区别的</h4><p>进行“指针地址”比较</p>
-<h4 id="3-基础类型与高级类型，-和-是有区别的"><a href="#3-基础类型与高级类型，-和-是有区别的" class="headerlink" title="3. 基础类型与高级类型，==和===是有区别的"></a>3. 基础类型与高级类型，==和===是有区别的</h4><p>1）对于==，将高级转化为基础类型，进行“值”比较<br>2）因为类型不同，===结果为false<br>想要得到结果很简单，chrome打开console下输入表达式，答案是true，为什么呢？<br>3-（2）答案在里面的值比较，右边![]肯定是个布尔值false，那么左边为什么也是false呢？<br>原来是valueOf和toString方法调用，这个地方先调用valueOf，Array的valueOf还是数组本身,然后调用了toString方法<br>得到结果是“”，“” == false，结果就是true了</p>
+<p>模拟4个对象，用户、A应用、B应用、服务器(属于A应用公司)。用户使用A应用的账号登陆B应用。</p>
+<p>1、B应用里嵌入了A应用的SDK，所以在B应用里点击“使用A应用账号登陆”的时候，就通过openUrl跳到A应用指定的登陆页面去了。在跳到A应用的过程中，B应用把自己的一些应用信息一并带过去了。</p>
+<p>2、这个时候已经跳到A客户端了，A得到了B发过来的“B的应用信息”。这个时候A应用先把自己客户端里的用户信息和A的应用信息发给服务器，服务器返回了一个用户信息+A应用信息的access_token，这里我们叫access_token1。</p>
+<p>3、（这一步页面上看不到变化，内部过程）A应用拿着access_token1和上一步收到的B的应用信息再发给服务器，得到了一个用户信息+B应用信息的access_token，这里叫access_token2。</p>
+<p>4、这个时候，已经有了用户+B应用的access_token2(令牌)。授权完毕后自动跳回B应用，在跳回过程中，access_token2也发给B应用了。B拿着这个access_token2。就可以去申请服务器里的资源。</p>
+<p>可能的问题：</p>
+<p>1、为什么是access_token2给了B，而不是access_token1？</p>
+<p>虽然服务器和A应用是一个公司的，但是服务器对所有应用都是一视同仁，(服务器只认token)谁要访问我的资源，谁就拿着用户信息+自身应用信息的access_token(令牌)来和我要资源。</p>
+<p>2、为什么要先要一下access_token1，然后再要access_token2？</p>
+<p>资源是在服务器，但这个账号是属于应用A的，如果B应用直接去问服务器的话，服务器又不知道B应用要的是哪个应用的资源。服务器上可是很多其他应用的资源。access_token1的过程就是A应用和服务器打个招呼，一会我会带B应用来申请我A应用的资源。</p>
+<p>3、注意点：上面的例子并不是所有情况，也就是有的情况只有一个access_token产生过程。文章主要是举栗解释下access_token是什么东西，access_token一般就有由用户信息+应用信息组成的一个标识码。</p>
+<p>4、为什么要用OAuth？</p>
+<p>为了不暴露用户账户信息，上面例子中，用应用A登陆了应用B，但是应用B并不知道用户的用户名密码是什么。用户在授权页输入用户名密码或者是跳转到应用的时候，应用B是挂在后面等消息的。</p>
+<p>接下来上一点其他地方载来的图：</p>
+<p>OAuth 2.0的运行流程如下图，摘自RFC 6749<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com/2016/04/26/1971004-a140d1515cad93c1.jpeg" alt="运行流程"></p>
 
       
     </div>
@@ -323,8 +337,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
             <a href="/tags/转载文章/" rel="tag">#转载文章</a>
           
@@ -335,17 +347,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/11/一个括号引发的撕逼/" rel="next" title="一个括号引发的撕逼">
-                <i class="fa fa-chevron-left"></i> 一个括号引发的撕逼
+              <a href="/2016/04/21/CSS画封页角/" rel="next" title="CSS画封页角">
+                <i class="fa fa-chevron-left"></i> CSS画封页角
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/14/js函数前面的加号、叹号/" rel="prev" title="js函数前面的加号、叹号">
-                js函数前面的加号、叹号 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -371,8 +379,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/13/和-到底有什么区别/"
-           data-title="==和===到底有什么区别" data-url="http://coolfishstudio.github.io/2016/04/13/和-到底有什么区别/">
+      <div class="ds-thread" data-thread-key="2016/04/26/10分钟看懂OAuth2-0/"
+           data-title="10分钟看懂OAuth2.0" data-url="http://coolfishstudio.github.io/2016/04/26/10分钟看懂OAuth2-0/">
       </div>
     
   </div>
@@ -514,7 +522,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-对于string-number等基础类型，-和-是有区别的"><span class="nav-number">1.</span> <span class="nav-text">1. 对于string,number等基础类型，==和===是有区别的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对于Array-Object等高级类型，-和-是没有区别的"><span class="nav-number">2.</span> <span class="nav-text">2. 对于Array,Object等高级类型，==和===是没有区别的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-基础类型与高级类型，-和-是有区别的"><span class="nav-number">3.</span> <span class="nav-text">3. 基础类型与高级类型，==和===是有区别的</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
