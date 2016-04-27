@@ -1,0 +1,874 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,转载文章," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="酷鱼网" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="正则表达式，一个十分古老而又强大的文本处理工具，仅仅用一段非常简短的表达式语句，便能够快速实现一个非常复杂的业务逻辑。熟练地掌握正则表达式的话，能够使你的开发效率得到极大的提升。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="知道这20个正则表达式，能让你少写1000行代码">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/04/27/知道这20个正则表达式，能让你少写1000行代码/index.html">
+<meta property="og:site_name" content="酷鱼网">
+<meta property="og:description" content="正则表达式，一个十分古老而又强大的文本处理工具，仅仅用一段非常简短的表达式语句，便能够快速实现一个非常复杂的业务逻辑。熟练地掌握正则表达式的话，能够使你的开发效率得到极大的提升。">
+<meta property="og:updated_time" content="2016-04-27T13:23:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="知道这20个正则表达式，能让你少写1000行代码">
+<meta name="twitter:description" content="正则表达式，一个十分古老而又强大的文本处理工具，仅仅用一段非常简短的表达式语句，便能够快速实现一个非常复杂的业务逻辑。熟练地掌握正则表达式的话，能够使你的开发效率得到极大的提升。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 知道这20个正则表达式，能让你少写1000行代码 | 酷鱼网 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b5c8397c77de69eded98c6238d1c9ab2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">酷鱼网</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生，从外打破，是压力；从内打破，是成长。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                知道这20个正则表达式，能让你少写1000行代码
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-27T21:01:21+08:00" content="2016-04-27">
+              2016-04-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端特效/" itemprop="url" rel="index">
+                    <span itemprop="name">前端特效</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端特效/黑科技/" itemprop="url" rel="index">
+                    <span itemprop="name">黑科技</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/27/知道这20个正则表达式，能让你少写1000行代码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/知道这20个正则表达式，能让你少写1000行代码/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>正则表达式，一个十分古老而又强大的文本处理工具，仅仅用一段非常简短的表达式语句，便能够快速实现一个非常复杂的业务逻辑。熟练地掌握正则表达式的话，能够使你的开发效率得到极大的提升。</p>
+</blockquote>
+<a id="more"></a>
+<p>正则表达式经常被用于字段或任意字符串的校验，如下面这段校验基本日期格式的JavaScript代码：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">reg</span> = /^(\\<span class="keyword">d</span>&#123;1,4&#125;)(-|\\/)(\\<span class="keyword">d</span>&#123;1,2&#125;)\\2(\\<span class="keyword">d</span>&#123;1,2&#125;)$/; </span><br><span class="line"><span class="keyword">var</span> r = fieldValue.<span class="literal">match</span>(<span class="keyword">reg</span>);             </span><br><span class="line"><span class="keyword">if</span>(r==null)alert('Date <span class="keyword">format</span> <span class="keyword">error</span>!');</span><br></pre></td></tr></table></figure></p>
+<h3 id="在前端开发中经常使用到的20个正则表达式。"><a href="#在前端开发中经常使用到的20个正则表达式。" class="headerlink" title="在前端开发中经常使用到的20个正则表达式。"></a>在前端开发中经常使用到的20个正则表达式。</h3><p>1 . 校验密码强度<br>密码的强度必须是包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间。<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="comment">(?=.*\\d)</span><span class="comment">(?=.*[a-z])</span><span class="comment">(?=.*[A-Z])</span>.&#123;<span class="number">8</span>,<span class="number">10</span>&#125;$</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>校验中文<br>字符串仅能是中文。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="special">[</span><span class="command">\\</span>u4e00-<span class="command">\\</span>u9fa5<span class="special">]</span><span class="special">&#123;</span>0,<span class="special">&#125;</span><span class="formula">$</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>由数字、26个英文字母或下划线组成的字符串</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="string">\\w+$</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>校验E-Mail 地址<br>同密码一样，下面是E-mail地址合规性的正则检查语句。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_label">\\w!#$%&amp;'*+/=?^_`&#123;|&#125;~-</span>]+(?:\\.[<span class="link_label">\\w!#$%&amp;'*+/=?^_`&#123;|&#125;~-</span>]+)<span class="emphasis">*@(?:[\\w](?:[\\w-]*</span>[<span class="link_label">\\w</span>])?\\.)+[<span class="link_label">\\w</span>](<span class="link_url">?:[\\w-]*[\\w]</span>)?</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>校验身份证号码<br>下面是身份证号码的正则校验。15 或 18位。</p>
+</li>
+</ol>
+<p>15位：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[<span class="number">1</span>-<span class="number">9</span>]\\d&#123;<span class="number">7</span>&#125;((<span class="number">0</span>\\d)|(<span class="number">1</span>[<span class="number">0</span>-<span class="number">2</span>]))(([<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>]\\d)|<span class="number">3</span>[<span class="number">0</span>-<span class="number">1</span>])\\d&#123;<span class="number">3</span>&#125;$</span><br></pre></td></tr></table></figure></p>
+<p>18位：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[<span class="number">1</span>-<span class="number">9</span>]\\d&#123;<span class="number">5</span>&#125;[<span class="number">1</span>-<span class="number">9</span>]\\d&#123;<span class="number">3</span>&#125;((<span class="number">0</span>\\d)|(<span class="number">1</span>[<span class="number">0</span>-<span class="number">2</span>]))(([<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>]\\d)|<span class="number">3</span>[<span class="number">0</span>-<span class="number">1</span>])\\d&#123;<span class="number">3</span>&#125;([<span class="number">0</span>-<span class="number">9</span>]|X)$</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>校验日期<br>“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(?:(?!0000)[<span class="link_label">0-9</span>]&#123;4&#125;-(?:(?:0[<span class="link_label">1-9</span>]|1[<span class="link_label">0-2</span>])-(?:0[<span class="link_label">1-9</span>]|1[<span class="link_label">0-9</span>]|2[<span class="link_label">0-8</span>])|(?:0[<span class="link_label">13-9</span>]|1[<span class="link_label">0-2</span>])-(?:29|30)|(?:0[<span class="link_label">13578</span>]|1[<span class="link_label">02</span>])-31)|(?:[<span class="link_label">0-9</span>]&#123;2&#125;(?:0[<span class="link_label">48</span>]|[<span class="link_label">2468</span>][<span class="link_reference">048</span>]|[<span class="link_label">13579</span>][<span class="link_reference">26</span>])|(?:0[<span class="link_label">48</span>]|[<span class="link_label">2468</span>][<span class="link_reference">048</span>]|[<span class="link_label">13579</span>][<span class="link_reference">26</span>])00)-02-29)$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>校验金额<br>金额校验，精确到2位小数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[<span class="number">0</span>-<span class="number">9</span>]+(.[<span class="number">0</span>-<span class="number">9</span>]&#123;<span class="number">2</span>&#125;)?$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>校验手机号<br>下面是国内 13、15、18开头的手机号正则表达式。（可根据目前国内收集号扩展前两位开头号码）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(<span class="number">13</span>[<span class="number">0</span>-<span class="number">9</span>]|<span class="number">14</span>[<span class="number">5</span>|<span class="number">7</span>]|<span class="number">15</span>[<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>|<span class="number">3</span>|<span class="number">5</span>|<span class="number">6</span>|<span class="number">7</span>|<span class="number">8</span>|<span class="number">9</span>]|<span class="number">18</span>[<span class="number">0</span>|<span class="number">1</span>|<span class="number">2</span>|<span class="number">3</span>|<span class="number">5</span>|<span class="number">6</span>|<span class="number">7</span>|<span class="number">8</span>|<span class="number">9</span>])\\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断IE的版本<br>IE目前还没被完全取代，很多页面还是需要做版本兼容，下面是IE版本检查的表达式。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^.*MSIE [<span class="number">5</span>-<span class="number">8</span>](?:\\.[<span class="number">0</span>-<span class="number">9</span>]+)?(?!.*Trident\\/[<span class="number">5</span>-<span class="number">9</span>]\\<span class="number">.0</span>).*$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>校验IP-v4地址<br>IP4 正则语句。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\\b(?:(?:25[<span class="link_label">0-5</span>]|2[<span class="link_label">0-4</span>][<span class="link_reference">0-9</span>]|[<span class="link_label">01</span>]?[<span class="link_label">0-9</span>][<span class="link_reference">0-9</span>]?)\\.)&#123;3&#125;(?:25[<span class="link_label">0-5</span>]|2[<span class="link_label">0-4</span>][<span class="link_reference">0-9</span>]|[<span class="link_label">01</span>]?[<span class="link_label">0-9</span>][<span class="link_reference">0-9</span>]?)\\b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>校验IP-v6地址<br>IP6 正则语句。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(([<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">7</span>,<span class="number">7</span>&#125;[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">7</span>&#125;:|([<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">6</span>&#125;:[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">5</span>&#125;(:[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">2</span>&#125;|([<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;(:[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;|([<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;(:[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;|([<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">2</span>&#125;(:[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">5</span>&#125;|[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:((:[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">6</span>&#125;)|:((:[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">1</span>,<span class="number">7</span>&#125;|:)|fe80:(:[<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">0</span>,<span class="number">4</span>&#125;)&#123;<span class="number">0</span>,<span class="number">4</span>&#125;%[<span class="number">0</span>-<span class="number">9</span>a-zA-Z]&#123;<span class="number">1</span>,&#125;|::(ffff(:<span class="number">0</span>&#123;<span class="number">1</span>,<span class="number">4</span>&#125;)&#123;<span class="number">0</span>,<span class="number">1</span>&#125;:)&#123;<span class="number">0</span>,<span class="number">1</span>&#125;((<span class="number">25</span>[<span class="number">0</span>-<span class="number">5</span>]|(<span class="number">2</span>[<span class="number">0</span>-<span class="number">4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span>-<span class="number">9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span>-<span class="number">9</span>])\\.)&#123;<span class="number">3</span>,<span class="number">3</span>&#125;(<span class="number">25</span>[<span class="number">0</span>-<span class="number">5</span>]|(<span class="number">2</span>[<span class="number">0</span>-<span class="number">4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span>-<span class="number">9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span>-<span class="number">9</span>])|([<span class="number">0</span>-<span class="number">9</span>a-fA-F]&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:)&#123;<span class="number">1</span>,<span class="number">4</span>&#125;:((<span class="number">25</span>[<span class="number">0</span>-<span class="number">5</span>]|(<span class="number">2</span>[<span class="number">0</span>-<span class="number">4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span>-<span class="number">9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span>-<span class="number">9</span>])\\.)&#123;<span class="number">3</span>,<span class="number">3</span>&#125;(<span class="number">25</span>[<span class="number">0</span>-<span class="number">5</span>]|(<span class="number">2</span>[<span class="number">0</span>-<span class="number">4</span>]|<span class="number">1</span>&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span>-<span class="number">9</span>])&#123;<span class="number">0</span>,<span class="number">1</span>&#125;[<span class="number">0</span>-<span class="number">9</span>]))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查URL的前缀<br>应用开发中很多时候需要区分请求是HTTPS还是HTTP，通过下面的表达式可以取出一个url的前缀然后再逻辑判断。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!s.<span class="keyword">match</span>(/^[a-zA-Z]+:\\/\\<span class="comment">//)) &#123;</span></span><br><span class="line">    s = <span class="string">'http</span>:<span class="comment">//' + s;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提取URL链接<br>下面的这个表达式可以筛选出一段文本中的URL。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(f|ht)<span class="special">&#123;</span>1<span class="special">&#125;</span>(tp|tps):<span class="command">\\</span>/<span class="command">\\</span>/(<span class="special">[</span><span class="command">\\</span>w-<span class="special">]</span>+<span class="command">\\</span>.)+<span class="special">[</span><span class="command">\\</span>w-<span class="special">]</span>+(<span class="command">\\</span>/<span class="special">[</span><span class="command">\\</span>w- ./?<span class="comment">%&amp;=]*)?</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件路径及扩展名校验<br>验证windows下文件路径和扩展名（下面的例子中为.txt文件）</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(<span class="special">[</span>a-zA-Z<span class="special">]</span><span class="command">\\</span>:|<span class="command">\\</span><span class="command">\\</span>)<span class="command">\\</span><span class="command">\\</span>(<span class="special">[</span>^<span class="command">\\</span><span class="command">\\</span><span class="special">]</span>+<span class="command">\\</span><span class="command">\\</span>)*<span class="special">[</span>^<span class="command">\\</span>/:*?"&lt;&gt;|<span class="special">]</span>+<span class="command">\\</span>.txt(l)?<span class="formula">$</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提取Color Hex Codes<br>有时需要抽取网页中的颜色代码，可以使用下面的表达式。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="preprocessor">#([A-Fa-f0-<span class="number">9</span>]&#123;<span class="number">6</span>&#125;|[A-Fa-f0-<span class="number">9</span>]&#123;<span class="number">3</span>&#125;)$</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提取网页图片<br>假若你想提取网页中所有图片信息，可以利用下面的表达式。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="command">\\</span>&lt; *<span class="special">[</span>img<span class="special">]</span><span class="special">[</span>^<span class="command">\\</span>&gt;<span class="special">]</span>*<span class="special">[</span>src<span class="special">]</span> *= *<span class="special">[</span><span class="command">\\</span>"<span class="command">\\</span>'<span class="special">]</span><span class="special">&#123;</span>0,1<span class="special">&#125;</span>(<span class="special">[</span>^<span class="command">\\</span>"<span class="command">\\</span>'<span class="command">\\</span> &gt;<span class="special">]</span>*)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提取页面超链接<br>提取html中的超链接。</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">(&lt;a\\s*(?!.*\\brel=)</span>[^&gt;]*)<span class="comment">(href="https?:\\/\\/)</span><span class="comment">((?!(?:(?:www\\.)</span>?<span class="string">'.implode('</span>|<span class="comment">(?:www\\.)</span>?<span class="string">', $follow_list).'</span>))[^<span class="string">"]+)"</span><span class="comment">((?!.*\\brel=)</span>[^&gt;]*)<span class="comment">(?:[^&gt;]*)</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找CSS属性<br>通过下面的表达式，可以搜索到相匹配的CSS属性。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^<span class="command">\\</span>s*<span class="special">[</span>a-zA-Z<span class="command">\\</span>-<span class="special">]</span>+<span class="command">\\</span>s*<span class="special">[</span>:<span class="special">]</span><span class="special">&#123;</span>1<span class="special">&#125;</span><span class="command">\\</span>s<span class="special">[</span>a-zA-Z0-9<span class="command">\\</span>s.<span class="special">#</span><span class="special">]</span>+<span class="special">[</span>;<span class="special">]</span><span class="special">&#123;</span>1<span class="special">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>抽取注释<br>如果你需要移除HMTL中的注释，可以使用如下的表达式。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--(.*?)--&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>匹配HTML标签<br>通过下面的表达式可以匹配出HTML中的标签属性。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="command">\\</span>/?<span class="command">\\</span>w+((<span class="command">\\</span>s+<span class="command">\\</span>w+(<span class="command">\\</span>s*=<span class="command">\\</span>s*(?:".*?"|'.*?'|<span class="special">[</span><span class="command">\\</span>^'"&gt;<span class="command">\\</span>s<span class="special">]</span>+))?)+<span class="command">\\</span>s*|<span class="command">\\</span>s*)<span class="command">\\</span>/?&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/转载文章/" rel="tag">#转载文章</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/26/10分钟看懂OAuth2-0/" rel="next" title="10分钟看懂OAuth2.0">
+                <i class="fa fa-chevron-left"></i> 10分钟看懂OAuth2.0
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/27/知道这20个正则表达式，能让你少写1000行代码/"
+           data-title="知道这20个正则表达式，能让你少写1000行代码" data-url="http://coolfishstudio.github.io/2016/04/27/知道这20个正则表达式，能让你少写1000行代码/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xqxfk.com1.z0.glb.clouddn.com/image%2Favatar%2Fyves.png"
+               alt="Yves" />
+          <p class="site-author-name" itemprop="name">Yves</p>
+          <p class="site-description motion-element" itemprop="description">不想当厨子的玩家不是好程序猿。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/coolfishstudio" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2505096373/profile?is_all=1" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">我的作品</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://snow.coolfishstudio.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> SNOW.JS
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://animate.coolfishstudio.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> AMIMATE.CSS
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在前端开发中经常使用到的20个正则表达式。"><span class="nav-number">1.</span> <span class="nav-text">在前端开发中经常使用到的20个正则表达式。</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yves</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div>
+  <a class="theme-link" href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">京ICP备14019006号</a> | <a class="theme-link" href="https://github.com/coolfishstudio" rel="nofollow">仓库</a> 
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coolfishstudio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
