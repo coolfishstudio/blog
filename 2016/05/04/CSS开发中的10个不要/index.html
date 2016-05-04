@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,转载文章," />
+  <meta name="keywords" content="转载文章," />
 
 
 
@@ -59,16 +59,16 @@
 
 
 
-<meta name="description" content="以前一直以为==和===很简单，也很少去做对象比较[]==![] 这个表达式结果是什么?">
+<meta name="description" content="自我进入这个行业，我就发现开发人员一直在努力征服CSS。理由也很充分，开发人员是用逻辑思考的生物。添加一个DIV元素导致所有代码都不得不往下移一行，而另一个DIV“浮”到左侧，感觉没有任何意义。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="==和===到底有什么区别">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/04/13/和-到底有什么区别/index.html">
+<meta property="og:title" content="CSS开发中的10个不要">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/05/04/CSS开发中的10个不要/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="以前一直以为==和===很简单，也很少去做对象比较[]==![] 这个表达式结果是什么?">
-<meta property="og:updated_time" content="2016-04-13T13:39:32.000Z">
+<meta property="og:description" content="自我进入这个行业，我就发现开发人员一直在努力征服CSS。理由也很充分，开发人员是用逻辑思考的生物。添加一个DIV元素导致所有代码都不得不往下移一行，而另一个DIV“浮”到左侧，感觉没有任何意义。">
+<meta property="og:updated_time" content="2016-05-04T15:16:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="==和===到底有什么区别">
-<meta name="twitter:description" content="以前一直以为==和===很简单，也很少去做对象比较[]==![] 这个表达式结果是什么?">
+<meta name="twitter:title" content="CSS开发中的10个不要">
+<meta name="twitter:description" content="自我进入这个行业，我就发现开发人员一直在努力征服CSS。理由也很充分，开发人员是用逻辑思考的生物。添加一个DIV元素导致所有代码都不得不往下移一行，而另一个DIV“浮”到左侧，感觉没有任何意义。">
 
 
 
@@ -86,7 +86,7 @@
   };
 </script>
 
-  <title> ==和===到底有什么区别 | 酷鱼网 </title>
+  <title> CSS开发中的10个不要 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +246,7 @@
             
             
               
-                ==和===到底有什么区别
+                CSS开发中的10个不要
               
             
           </h1>
@@ -258,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-13T21:37:08+08:00" content="2016-04-13">
-              2016-04-13
+            <time itemprop="dateCreated" datetime="2016-05-04T22:58:42+08:00" content="2016-05-04">
+              2016-05-04
             </time>
           </span>
 
@@ -288,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/13/和-到底有什么区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/和-到底有什么区别/" itemprop="commentsCount"></span>
+                <a href="/2016/05/04/CSS开发中的10个不要/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/04/CSS开发中的10个不要/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,12 +310,27 @@
       
 
       
-        <p>以前一直以为==和===很简单，也很少去做对象比较<br>[]==![] 这个表达式结果是什么?</p>
-<a id="more"></a>
-<p>于是去翻了下==和===的比较</p>
-<h4 id="1-对于string-number等基础类型，-和-是有区别的"><a href="#1-对于string-number等基础类型，-和-是有区别的" class="headerlink" title="1. 对于string,number等基础类型，==和===是有区别的"></a>1. 对于string,number等基础类型，==和===是有区别的</h4><p>1）不同类型间比较，==之比较“转化成同一类型后的值”看“值”是否相等，===如果类型不同，其结果就是不等<br>2）同类型比较，直接进行“值”比较，两者结果一样</p>
-<h4 id="2-对于Array-Object等高级类型，-和-是没有区别的"><a href="#2-对于Array-Object等高级类型，-和-是没有区别的" class="headerlink" title="2. 对于Array,Object等高级类型，==和===是没有区别的"></a>2. 对于Array,Object等高级类型，==和===是没有区别的</h4><p>进行“指针地址”比较</p>
-<h4 id="3-基础类型与高级类型，-和-是有区别的"><a href="#3-基础类型与高级类型，-和-是有区别的" class="headerlink" title="3. 基础类型与高级类型，==和===是有区别的"></a>3. 基础类型与高级类型，==和===是有区别的</h4><p>1）对于==，将高级转化为基础类型，进行“值”比较<br>2）因为类型不同，===结果为false<br>想要得到结果很简单，chrome打开console下输入表达式，答案是true，为什么呢？<br>3-（2）答案在里面的值比较，右边![]肯定是个布尔值false，那么左边为什么也是false呢？<br>原来是valueOf和toString方法调用，这个地方先调用valueOf，Array的valueOf还是数组本身,然后调用了toString方法<br>得到结果是“”，“” == false，结果就是true了</p>
+        <blockquote>
+<p>自我进入这个行业，我就发现开发人员一直在努力征服CSS。理由也很充分，开发人员是用逻辑思考的生物。添加一个DIV元素导致所有代码都不得不往下移一行，而另一个DIV“浮”到左侧，感觉没有任何意义。</p>
+</blockquote>
+<a id="more"></a> 
+<p>自我进入这个行业，我就发现开发人员一直在努力征服CSS。</p>
+<p>理由也很充分，开发人员是用逻辑思考的生物。添加一个DIV元素导致所有代码都不得不往下移一行，而另一个DIV“浮”到左侧，感觉没有任何意义。</p>
+<p>你也一定听到过开发人员的抱怨：</p>
+<p>“我们只需要向左边移动五个像素，但是…天哪！为什么整个都向下移动了一行。到底是哪里错了？！？！？！”</p>
+<p>所以，我们今天就来聊一聊CSS中的十大错误的做法。</p>
+<p>根据我作为开发人员使用CSS的经验，下面是我的十个“不要”。</p>
+<h4 id="1-不要滥用类"><a href="#1-不要滥用类" class="headerlink" title="1.不要滥用类"></a>1.不要滥用类</h4><p>在有意义的地方使用ID而不要使用类。这是一个使得浏览器能够更快访问DOM元素的方法。</p>
+<h4 id="2-不要把一切都扔进一个CSS文件中"><a href="#2-不要把一切都扔进一个CSS文件中" class="headerlink" title="2.不要把一切都扔进一个CSS文件中"></a>2.不要把一切都扔进一个CSS文件中</h4><p>分区CSS使其更易于管理。每一个CSS文件都可以分解成例如header.css、footer.css等逻辑组件。</p>
+<h4 id="3-不要命名选择器为“-red-with-green-dashed-lines”（红绿虚线"><a href="#3-不要命名选择器为“-red-with-green-dashed-lines”（红绿虚线" class="headerlink" title="3.不要命名选择器为“.red-with-green-dashed-lines”（红绿虚线)"></a>3.不要命名选择器为“.red-with-green-dashed-lines”（红绿虚线)</h4><p>根据页面上的组件命名你的选择器。例如：“header-left”，“content-title”或“content-date”更具描述性。</p>
+<h4 id="4-不要忘记注释"><a href="#4-不要忘记注释" class="headerlink" title="4.不要忘记注释"></a>4.不要忘记注释</h4><p>注释在CSS中非常重要，可用来理解每个样式如何与其他样式关联以及什么颜色方案适用于哪些组件。</p>
+<h4 id="5-不要害怕开发工具"><a href="#5-不要害怕开发工具" class="headerlink" title="5.不要害怕开发工具"></a>5.不要害怕开发工具</h4><p>现在的每个浏览器都有自己的一套开发工具，通常是按F12。这些工具在“调试CSS”时至关重要。</p>
+<h4 id="6-不要害怕覆盖"><a href="#6-不要害怕覆盖" class="headerlink" title="6.不要害怕覆盖"></a>6.不要害怕覆盖</h4><p>当然，CSS框架，例如Bootstrap和Foundation都较为巨大，但每一个都需要根据你的需要做出一点调整。当你得到一个更新的框架时，它将覆盖你的改变。与其深入挖掘庞大的CSS文件，还不如创建一个bootstrap-overrides.css文件，按照你的意愿调整框架，只是…</p>
+<h4 id="7-不要滥用-很重要"><a href="#7-不要滥用-很重要" class="headerlink" title="7.不要滥用 !很重要"></a>7.不要滥用 !很重要</h4><p>CSS的整体思路是，从一个到另一个地“层叠”样式。 !重点是要记住排雷一样地踏遍所有早先的样式。 :  -)</p>
+<h4 id="8-不要使用大量网络字体"><a href="#8-不要使用大量网络字体" class="headerlink" title="8.不要使用大量网络字体"></a>8.不要使用大量网络字体</h4><p>这也是显而易见的，但有些人就是喜欢自己排版。只在网站上使用一个或两个（最多三个）网络字体，然后回归到浏览器默认设置，以保持网站的优化。</p>
+<h4 id="9-不要手动编码所有的CSS"><a href="#9-不要手动编码所有的CSS" class="headerlink" title="9.不要手动编码所有的CSS"></a>9.不要手动编码所有的CSS</h4><p>为了保持CSS的DRY，可以使用CSS预处理程序例如LESS或SASS。使用这些预处理器的最大好处是，你可以定义变量，例如在上面定义配色方案，然后重复使用到所有CSS，而不必当你需要修改的时候追踪每个颜色。</p>
+<h4 id="10-不要让CSS过于“臃肿”"><a href="#10-不要让CSS过于“臃肿”" class="headerlink" title="10.不要让CSS过于“臃肿”"></a>10.不要让CSS过于“臃肿”</h4><p>空格会占用CSS文件的空间空间。由于我们都希望我们的CSS能够快速加载，因此在部署到网站之前最好使用CSS压缩工具来一次瘦身。</p>
+<p>以上只是我作为一个开发人员在编写CSS时认为不应该做的事情。欢迎提出不同的看法。</p>
 
       
     </div>
@@ -323,8 +338,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
             <a href="/tags/转载文章/" rel="tag">#转载文章</a>
           
@@ -335,17 +348,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/11/一个括号引发的撕逼/" rel="next" title="一个括号引发的撕逼">
-                <i class="fa fa-chevron-left"></i> 一个括号引发的撕逼
+              <a href="/2016/04/27/知道这20个正则表达式，能让你少写1000行代码/" rel="next" title="知道这20个正则表达式，能让你少写1000行代码">
+                <i class="fa fa-chevron-left"></i> 知道这20个正则表达式，能让你少写1000行代码
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/14/js函数前面的加号、叹号/" rel="prev" title="js函数前面的加号、叹号">
-                js函数前面的加号、叹号 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -371,8 +380,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/13/和-到底有什么区别/"
-           data-title="==和===到底有什么区别" data-url="http://coolfishstudio.github.io/2016/04/13/和-到底有什么区别/">
+      <div class="ds-thread" data-thread-key="2016/05/04/CSS开发中的10个不要/"
+           data-title="CSS开发中的10个不要" data-url="http://coolfishstudio.github.io/2016/05/04/CSS开发中的10个不要/">
       </div>
     
   </div>
@@ -514,7 +523,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-对于string-number等基础类型，-和-是有区别的"><span class="nav-number">1.</span> <span class="nav-text">1. 对于string,number等基础类型，==和===是有区别的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对于Array-Object等高级类型，-和-是没有区别的"><span class="nav-number">2.</span> <span class="nav-text">2. 对于Array,Object等高级类型，==和===是没有区别的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-基础类型与高级类型，-和-是有区别的"><span class="nav-number">3.</span> <span class="nav-text">3. 基础类型与高级类型，==和===是有区别的</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-不要滥用类"><span class="nav-number">1.</span> <span class="nav-text">1.不要滥用类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-不要把一切都扔进一个CSS文件中"><span class="nav-number">2.</span> <span class="nav-text">2.不要把一切都扔进一个CSS文件中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-不要命名选择器为“-red-with-green-dashed-lines”（红绿虚线"><span class="nav-number">3.</span> <span class="nav-text">3.不要命名选择器为“.red-with-green-dashed-lines”（红绿虚线)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-不要忘记注释"><span class="nav-number">4.</span> <span class="nav-text">4.不要忘记注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-不要害怕开发工具"><span class="nav-number">5.</span> <span class="nav-text">5.不要害怕开发工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-不要害怕覆盖"><span class="nav-number">6.</span> <span class="nav-text">6.不要害怕覆盖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-不要滥用-很重要"><span class="nav-number">7.</span> <span class="nav-text">7.不要滥用 !很重要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-不要使用大量网络字体"><span class="nav-number">8.</span> <span class="nav-text">8.不要使用大量网络字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-不要手动编码所有的CSS"><span class="nav-number">9.</span> <span class="nav-text">9.不要手动编码所有的CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-不要让CSS过于“臃肿”"><span class="nav-number">10.</span> <span class="nav-text">10.不要让CSS过于“臃肿”</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
