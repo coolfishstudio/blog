@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="转载文章," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -59,19 +59,16 @@
 
 
 
-<meta name="description" content="在head里面增加1&amp;lt;link rel=&apos;icon&apos; href=&apos;pic.ico&apos; type=&apos;image/x-ico&apos; /&amp;gt;
-本片文章的重点是">
+<meta name="description" content="用过jQuery的offset()的同学都知道offset().top或offset().left很方便地取得元素相对于整个页面的偏移。而在js里，没有这样直接的方法，节点的属性offsetTop可以获得该节点相对于父节点的相对偏移，但不能直接获得其绝对偏移，我们可用节点逐层递归向上来相加offsetTop来获得绝对偏移。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="给网页标题增加自己的图标">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/13/给网页标题增加自己的图标/index.html">
+<meta property="og:title" content="js实现jquery的offset方法实例">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/05/06/js实现jquery的offset方法实例/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="在head里面增加1&amp;lt;link rel=&apos;icon&apos; href=&apos;pic.ico&apos; type=&apos;image/x-ico&apos; /&amp;gt;
-本片文章的重点是">
-<meta property="og:updated_time" content="2016-03-18T10:01:19.000Z">
+<meta property="og:description" content="用过jQuery的offset()的同学都知道offset().top或offset().left很方便地取得元素相对于整个页面的偏移。而在js里，没有这样直接的方法，节点的属性offsetTop可以获得该节点相对于父节点的相对偏移，但不能直接获得其绝对偏移，我们可用节点逐层递归向上来相加offsetTop来获得绝对偏移。">
+<meta property="og:updated_time" content="2016-05-06T13:14:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="给网页标题增加自己的图标">
-<meta name="twitter:description" content="在head里面增加1&amp;lt;link rel=&apos;icon&apos; href=&apos;pic.ico&apos; type=&apos;image/x-ico&apos; /&amp;gt;
-本片文章的重点是">
+<meta name="twitter:title" content="js实现jquery的offset方法实例">
+<meta name="twitter:description" content="用过jQuery的offset()的同学都知道offset().top或offset().left很方便地取得元素相对于整个页面的偏移。而在js里，没有这样直接的方法，节点的属性offsetTop可以获得该节点相对于父节点的相对偏移，但不能直接获得其绝对偏移，我们可用节点逐层递归向上来相加offsetTop来获得绝对偏移。">
 
 
 
@@ -89,7 +86,7 @@
   };
 </script>
 
-  <title> 给网页标题增加自己的图标 | 酷鱼网 </title>
+  <title> js实现jquery的offset方法实例 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +246,7 @@
             
             
               
-                给网页标题增加自己的图标
+                js实现jquery的offset方法实例
               
             
           </h1>
@@ -261,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-13T17:28:58+08:00" content="2016-03-13">
-              2016-03-13
+            <time itemprop="dateCreated" datetime="2016-05-06T21:08:09+08:00" content="2016-05-06">
+              2016-05-06
             </time>
           </span>
 
@@ -291,8 +288,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/13/给网页标题增加自己的图标/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/13/给网页标题增加自己的图标/" itemprop="commentsCount"></span>
+                <a href="/2016/05/06/js实现jquery的offset方法实例/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/06/js实现jquery的offset方法实例/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,8 +310,12 @@
       
 
       
-        <p>在head里面增加<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="symbol">'icon'</span> href=<span class="symbol">'pic</span>.ico' <span class="keyword">type</span>=<span class="symbol">'image</span>/x-ico' /&gt;</span><br></pre></td></tr></table></figure></p>
-<p>本片文章的重点是<br><a id="more"></a><br>制作ico图标的网站：<a href="http://www.bitbug.net/" target="_blank" rel="external">http://www.bitbug.net/</a></p>
+        <blockquote>
+<p>用过jQuery的offset()的同学都知道offset().top或offset().left很方便地取得元素相对于整个页面的偏移。而在js里，没有这样直接的方法，节点的属性offsetTop可以获得该节点相对于父节点的相对偏移，但不能直接获得其绝对偏移，我们可用节点逐层递归向上来相加offsetTop来获得绝对偏移。</p>
+</blockquote>
+<a id="more"></a>
+<p>实现方式<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getOffset(<span class="keyword">Node</span><span class="identifier"></span><span class="title">, offset</span>) &#123;</span><br><span class="line">    if (!offset) &#123;</span><br><span class="line">        offset = &#123;&#125;;</span><br><span class="line">        offset.top = <span class="number">0</span>;</span><br><span class="line">        offset.left = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    if (<span class="keyword">Node</span><span class="identifier"> </span><span class="title">== document</span>.body) &#123;//当该节点为body节点时，结束递归</span><br><span class="line">        return offset;</span><br><span class="line">    &#125;</span><br><span class="line">    offset.top += <span class="keyword">Node</span>.<span class="identifier"></span><span class="title">offsetTop</span>;</span><br><span class="line">    offset.left += <span class="keyword">Node</span>.<span class="identifier"></span><span class="title">offsetLeft</span>;</span><br><span class="line">    return getOffset(<span class="keyword">Node</span>.<span class="identifier"></span><span class="title">parentNode</span>, offset);//向上累加offset里的值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.getElementById(<span class="string">'a'</span>);</span><br><span class="line"><span class="comment">//getOffset(a).top</span></span><br><span class="line"><span class="comment">//getOffset(a).left</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -323,7 +324,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/转载文章/" rel="tag">#转载文章</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -332,17 +333,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/12/Webpack配置React开发环境/" rel="next" title="Webpack配置React开发环境">
-                <i class="fa fa-chevron-left"></i> Webpack配置React开发环境
+              <a href="/2016/05/04/CSS开发中的10个不要/" rel="next" title="CSS开发中的10个不要">
+                <i class="fa fa-chevron-left"></i> CSS开发中的10个不要
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/14/HTML锚点的使用/" rel="prev" title="HTML锚点的使用">
-                HTML锚点的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -368,8 +365,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/13/给网页标题增加自己的图标/"
-           data-title="给网页标题增加自己的图标" data-url="http://coolfishstudio.github.io/2016/03/13/给网页标题增加自己的图标/">
+      <div class="ds-thread" data-thread-key="2016/05/06/js实现jquery的offset方法实例/"
+           data-title="js实现jquery的offset方法实例" data-url="http://coolfishstudio.github.io/2016/05/06/js实现jquery的offset方法实例/">
       </div>
     
   </div>

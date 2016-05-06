@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-05-04T15:16:07.000Z</updated>
+  <updated>2016-05-06T13:14:26.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js实现jquery的offset方法实例</title>
+    <link href="http://coolfishstudio.github.io/2016/05/06/js%E5%AE%9E%E7%8E%B0jquery%E7%9A%84offset%E6%96%B9%E6%B3%95%E5%AE%9E%E4%BE%8B/"/>
+    <id>http://coolfishstudio.github.io/2016/05/06/js实现jquery的offset方法实例/</id>
+    <published>2016-05-06T13:08:09.000Z</published>
+    <updated>2016-05-06T13:14:26.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;用过jQuery的offset()的同学都知道offset().top或offset().left很方便地取得元素相对于整个页面的偏移。而在js里，没有这样直接的方法，节点的属性offsetTop可以获得该节点相对于父节点的相对偏移，但不能直接获得其绝对偏移，我们可用节点逐层递归向上来相加offsetTop来获得绝对偏移。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;实现方式&lt;br&gt;&lt;figure class=&quot;highlight crmsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function getOffset(&lt;span class=&quot;keyword&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;identifier&quot;&gt;&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;, offset&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if (!offset) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        offset = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        offset.top = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        offset.left = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    if (&lt;span class=&quot;keyword&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;identifier&quot;&gt; &lt;/span&gt;&lt;span class=&quot;title&quot;&gt;== document&lt;/span&gt;.body) &amp;#123;//当该节点为body节点时，结束递归&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        return offset;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    offset.top += &lt;span class=&quot;keyword&quot;&gt;Node&lt;/span&gt;.&lt;span class=&quot;identifier&quot;&gt;&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;offsetTop&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    offset.left += &lt;span class=&quot;keyword&quot;&gt;Node&lt;/span&gt;.&lt;span class=&quot;identifier&quot;&gt;&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;offsetLeft&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return getOffset(&lt;span class=&quot;keyword&quot;&gt;Node&lt;/span&gt;.&lt;span class=&quot;identifier&quot;&gt;&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;parentNode&lt;/span&gt;, offset);//向上累加offset里的值&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;使用&lt;br&gt;&lt;figure class=&quot;highlight dart&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//getOffset(a).top&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//getOffset(a).left&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;用过jQuery的offset()的同学都知道offset().top或offset().left很方便地取得元素相对于整个页面的偏移。而在js里，没有这样直接的方法，节点的属性offsetTop可以获得该节点相对于父节点的相对偏移，但不能直接获得其绝对偏移，我们可用节点逐层递归向上来相加offsetTop来获得绝对偏移。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
+    
+    
+      <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS开发中的10个不要</title>
@@ -692,34 +722,6 @@
       <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
     
       <category term="移动端" scheme="http://coolfishstudio.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速合并多个数组</title>
-    <link href="http://coolfishstudio.github.io/2016/03/25/%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA%E6%95%B0%E7%BB%84/"/>
-    <id>http://coolfishstudio.github.io/2016/03/25/快速合并多个数组/</id>
-    <published>2016-03-25T08:10:43.000Z</published>
-    <updated>2016-03-25T08:17:46.000Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt; 一句js实现快速合并多个数组&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var arr = [].concat.call([&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;],[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;],[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;(arr); &lt;span class=&quot;comment&quot;&gt;//值为 1,2,5,3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt; 一句js实现快速合并多个数组&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/spa
-    
-    </summary>
-    
-      <category term="黑科技" scheme="http://coolfishstudio.github.io/categories/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
-    
-    
-      <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
     
   </entry>
   
