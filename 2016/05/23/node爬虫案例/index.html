@@ -1,0 +1,811 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Node.js," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="酷鱼网" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="花了一点时间写了一个热点新闻api接口的爬虫地址在 https://github.com/coolfishstudio/hotnews-api">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node爬虫案例">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/05/23/node爬虫案例/index.html">
+<meta property="og:site_name" content="酷鱼网">
+<meta property="og:description" content="花了一点时间写了一个热点新闻api接口的爬虫地址在 https://github.com/coolfishstudio/hotnews-api">
+<meta property="og:updated_time" content="2016-05-23T12:10:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node爬虫案例">
+<meta name="twitter:description" content="花了一点时间写了一个热点新闻api接口的爬虫地址在 https://github.com/coolfishstudio/hotnews-api">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> node爬虫案例 | 酷鱼网 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b5c8397c77de69eded98c6238d1c9ab2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">酷鱼网</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生，从外打破，是压力；从内打破，是成长。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                node爬虫案例
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-23T20:07:00+08:00" content="2016-05-23">
+              2016-05-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/23/node爬虫案例/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/node爬虫案例/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>花了一点时间写了一个热点新闻api接口的爬虫<br>地址在 <a href="https://github.com/coolfishstudio/hotnews-api" target="_blank" rel="external">https://github.com/coolfishstudio/hotnews-api</a></p>
+<a id="more"></a>
+<h1 id="项目名称-hotnews-api"><a href="#项目名称-hotnews-api" class="headerlink" title="项目名称 hotnews-api"></a>项目名称 hotnews-api</h1><p>实现方式请看代码</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li>Description : 这是一个今日热点的新闻api，通过对百度风云榜的数据抓取，获得新闻关键词，再在搜索引擎进行搜索，得到链接，通过接口获取文章内容，从而实现内容的抓取，数据每一小时一更新</li>
+<li>Engineer : Yves <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x34;&#54;&#x31;&#x38;&#x33;&#54;&#x33;&#50;&#52;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#x34;&#54;&#x31;&#x38;&#x33;&#54;&#x33;&#50;&#52;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>CreateTime : 2016-05-12</li>
+</ul>
+<p>注意数据存在缓存中</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https:<span class="comment">//github.com/coolfishstudio/hotnews-api.git</span></span><br><span class="line">$ cd hotnews-api</span><br><span class="line">$ cp config/config<span class="class">.default</span><span class="class">.js</span> config/config_current<span class="class">.js</span></span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h2 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">node</span><span class="identifier"> </span><span class="title">app</span>.js</span><br></pre></td></tr></table></figure>
+<h2 id="Api"><a href="#Api" class="headerlink" title="Api"></a>Api</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/ping                           /</span>/检测接口是否正常</span><br><span class="line"><span class="regexp">/v1/</span>hotnews                     <span class="comment">//获取热门新闻关键词</span></span><br><span class="line"><span class="regexp">/v1/</span>hotnews<span class="regexp">/keyword             /</span>/根据新闻关键词获取内容</span><br></pre></td></tr></table></figure>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="检测接口是否正常"><a href="#检测接口是否正常" class="headerlink" title="检测接口是否正常"></a>检测接口是否正常</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">http:</span>//api.hotnews.coolfishstudio.com/<span class="built_in">ping</span></span><br></pre></td></tr></table></figure>
+<p>返回值为<br><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="ok">ok</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="获取热门新闻关键词"><a href="#获取热门新闻关键词" class="headerlink" title="获取热门新闻关键词"></a>获取热门新闻关键词</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">http:</span><span class="comment">//api.hotnews.coolfishstudio.com/v1/hotnews</span></span><br></pre></td></tr></table></figure>
+<p>返回值为<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"<span class="attribute">status</span>":<span class="value"><span class="number">1</span></span>,"<span class="attribute">content</span>":<span class="value">[&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"驻日美军起降训练"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">6281</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">247</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>,"<span class="attribute">gentime</span>":<span class="value"><span class="string">"2016-05-12 19:48:32"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"林青霞继女登封面"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">139412</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">143</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"9名向导登顶珠峰"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">13143</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">90</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"宋仲基吃货体情书"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">119669</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">111</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"鸵鸟被野蛮抓捕亡"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">22930</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">9</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"女子点煤气自杀"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">35062</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">51</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"聚焦男护士群体"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">207528</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">939</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"曝三里屯突发火灾"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">189928</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">1306</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"同学会定恋人关系"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">114435</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">23</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"张馨予拥吻男制片"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">80287</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">44</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"周冬雨泳装遭吐槽"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">78335</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">16</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"不孕公告走红网络"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">51266</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">35</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"华西医院院长跳楼"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">56116</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">47</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"王思聪带美女买车"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">38796</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">60</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"孟非怒斥颜值说"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">11684</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">65</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"校花朝天蹬走红"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">7747</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">65</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"高考报名人数减少"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">14194</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">53</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"高圆圆录节目哽咽"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">5550</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">62</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"镜面蛋糕走红网络"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">53873</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">208</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"失联女孩尸体发现"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">11182</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">22</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"浙江台州飞机坠毁"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">8106</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">38</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"周杰伦模仿星爷"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">4281</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">10</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"白领欠车费被开除"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">12936</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">24</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"72岁老太生子"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">6470</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">21</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"汶川地震八周年"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">24625</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">20</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"18岁父亲求捐钱"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">6821</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">30</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"北大强制跳短裙操"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">8962</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">2</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"体育老师骚扰女生"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">6851</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">2</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"超级高铁首测"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">9463</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">20</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"景甜现身台湾夜市"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">3469</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">59</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"江苏武汉比赛冲突"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">29928</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">16</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"疑张子萱已怀男孩"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">8312</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">41</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"荣耀V8百度预约"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">3917</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">4</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"中国第一金库曝光"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">10486</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">135</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"黑客入侵多家网站"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">3620</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">10</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"南充3岁女童被抢"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">41777</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">411</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"长三角城市群规划"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">3581</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">41</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"闯红灯被查脱衣"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">3594</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">11</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"曹云金江若琳恋情"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">13033</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">23</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"旅客飞机如厕生子"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">4039</span></span>,"<span class="attribute">changeRate</span>":<span class="value"><span class="number">32</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"rise"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"2016戛纳电影节"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">18294</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">3</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"龙口叫停石化项目"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">3158</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">31</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"李小鹏老婆诞二胎"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">5320</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">24</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"小米max发布会"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">13539</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">20</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"台湾附近6级地震"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">8608</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">46</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">"1"</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"刘源捐赠上将军服"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">3234</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">45</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"警方通报雷洋案"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">99066</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">28</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;,&#123;"<span class="attribute">keyword</span>":<span class="value"><span class="string">"2016CES展"</span></span>,"<span class="attribute">searches</span>":<span class="value"><span class="number">5404</span></span>,"<span class="attribute">changeRate</span>":<span class="value">-<span class="number">5</span></span>,"<span class="attribute">isNew</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">trend</span>":<span class="value"><span class="string">"fall"</span></span>&#125;]</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="获取内容"><a href="#获取内容" class="headerlink" title="获取内容"></a>获取内容</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">http:</span><span class="comment">//api.hotnews.coolfishstudio.com/v1/hotnews/白领欠车费被开除</span></span><br></pre></td></tr></table></figure>
+<p>返回值为<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"<span class="attribute">status</span>":<span class="value"><span class="number">1</span></span>,"<span class="attribute">content</span>":<span class="value">&#123;"<span class="attribute">nid</span>":<span class="value"><span class="string">"5896597269703103086"</span></span>,"<span class="attribute">sourcets</span>":<span class="value"><span class="string">"1462974120000"</span></span>,"<span class="attribute">ts</span>":<span class="value"><span class="string">"1462974120000"</span></span>,"<span class="attribute">title</span>":<span class="value"><span class="string">"女白领欠36元打车费被司机找上门 单位将其开除"</span></span>,"<span class="attribute">url</span>":<span class="value"><span class="string">"http://news.china.com/socialgd/10000169/20160511/22629308.html"</span></span>,"<span class="attribute">imageurls</span>":<span class="value">[]</span>,"<span class="attribute">site</span>":<span class="value"><span class="string">"中华网"</span></span>,"<span class="attribute">isvideo</span>":<span class="value"><span class="string">"0"</span></span>,"<span class="attribute">type</span>":<span class="value"><span class="string">"searchnews"</span></span>,"<span class="attribute">abs</span>":<span class="value"><span class="string">""</span></span>,"<span class="attribute">content</span>":<span class="value">[&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"text"</span></span>,"<span class="attribute">data</span>":<span class="value"><span class="string">"原标题：&lt;b&gt;女白领&lt;/b&gt;欠36元车费被开除"</span></span>,"<span class="attribute">keywords</span>":<span class="value">[<span class="string">"白领"</span>]</span>&#125;,&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"text"</span></span>,"<span class="attribute">data</span>":<span class="value"><span class="string">"本报讯 （记者 白羽）拖欠36元出租车费，被出租车司机“人肉”找到单位，涉事女白领因此被开除。最近，这件职场小事在申城HR圈内热传。有人为这个女白领鸣不平，但职场专家指出，职场诚信无小事，即便是私人事件，也可能影响职场发展。“说好下车付36元车费，但是一直没等到。”专车司机吴师傅告诉记者，前一阵，他曾搭载一名年轻女白领回公司，车程不远，开到目的地之后，女孩说下车后用手机付款，谁知道等了又等，直到第二天也没有收到车费。其间，师傅打了好几次女孩叫车时候使用的手机，就是没人接听。"</span></span>,"<span class="attribute">keywords</span>":<span class="value">[<span class="string">"白领"</span>,<span class="string">"职场"</span>,<span class="string">"HR"</span>,<span class="string">"手机"</span>]</span>&#125;,&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"text"</span></span>,"<span class="attribute">data</span>":<span class="value"><span class="string">"因为36元并不算多，又联系不到本人，吴师傅本以为钱收不回来。巧的是第二天，又有人叫了他的车，目的地正是此前那个女孩的公司，于是吴师傅心里越想越气，索性找到公司前台，拿着手机号找这个女白领。"</span></span>,"<span class="attribute">keywords</span>":<span class="value">[<span class="string">"手机"</span>,<span class="string">"白领"</span>]</span>&#125;,&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"text"</span></span>,"<span class="attribute">data</span>":<span class="value"><span class="string">"据了解，前台一开始并不答应凭借一个手机号找人，吴师傅一不做二不休的坚决态度倒是引来了公司的负责人，HR经理接待后，真的通过手机号找到了那位没付车费的女员工。车费补交后，事情的另一个结果出乎吴师傅的意料，女白领马上被HR开除了。"</span></span>,"<span class="attribute">keywords</span>":<span class="value">[<span class="string">"手机"</span>,<span class="string">"HR"</span>,<span class="string">"白领"</span>]</span>&#125;,&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"text"</span></span>,"<span class="attribute">data</span>":<span class="value"><span class="string">"这件事情随后在申城HR圈内热传，还有人在论坛上发帖讲述，引发了不少关注。有网友评论，“36元车费小到可以说是忘记，大到可以上升到本质是一个贪小便宜的人。”但也有人为这个年轻女白领鸣不平，30多元车“钱对打车的人来说，根本不算一笔大数目。何况，难道一个白领会故意不付一笔小小的打车费？”“职场诚信无小事，各种细节体现的正是职业操守。”前程无忧首席人力资源专家冯丽娟指出，绝大部分企业对职业诚信的要求非常高，特别是研发、财务、管理等特殊岗位，更加谨慎，员工工作过程中的诸多细节都在考察范围之内。“简历造假、公私不分、不守时、不注意保密等，往往是一件微妙的小事，就会影响职场的发展。职场人切不可因一些‘无心之过’，而登上诚信黑名单。”"</span></span>,"<span class="attribute">keywords</span>":<span class="value">[<span class="string">"HR"</span>,<span class="string">"白领"</span>,<span class="string">"职场"</span>,<span class="string">"人力资源"</span>]</span>&#125;]</span>,"<span class="attribute">keyword</span>":<span class="value"><span class="string">"白领欠车费被开除"</span></span>&#125;</span>&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Node-js/" rel="tag">#Node.js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/07/CSS重置reset-css/" rel="next" title="CSS重置reset.css">
+                <i class="fa fa-chevron-left"></i> CSS重置reset.css
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/23/node爬虫案例/"
+           data-title="node爬虫案例" data-url="http://coolfishstudio.github.io/2016/05/23/node爬虫案例/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xqxfk.com1.z0.glb.clouddn.com/image%2Favatar%2Fyves.png"
+               alt="Yves" />
+          <p class="site-author-name" itemprop="name">Yves</p>
+          <p class="site-description motion-element" itemprop="description">不想当厨子的玩家不是好程序猿。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">60</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/coolfishstudio" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2505096373/profile?is_all=1" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">我的作品</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://snow.coolfishstudio.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> SNOW.JS
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://animate.coolfishstudio.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> AMIMATE.CSS
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目名称-hotnews-api"><span class="nav-number">1.</span> <span class="nav-text">项目名称 hotnews-api</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">1.2.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Run"><span class="nav-number">1.3.</span> <span class="nav-text">Run</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Api"><span class="nav-number">1.4.</span> <span class="nav-text">Api</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用说明"><span class="nav-number">1.5.</span> <span class="nav-text">使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检测接口是否正常"><span class="nav-number">1.5.1.</span> <span class="nav-text">检测接口是否正常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取热门新闻关键词"><span class="nav-number">1.5.2.</span> <span class="nav-text">获取热门新闻关键词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取内容"><span class="nav-number">1.5.3.</span> <span class="nav-text">获取内容</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yves</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div>
+  <a class="theme-link" href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">京ICP备14019006号</a> | <a class="theme-link" href="https://github.com/coolfishstudio" rel="nofollow">仓库</a> 
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coolfishstudio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
