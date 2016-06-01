@@ -1,0 +1,781 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端，后端，移动端，端端皆为技术" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="酷鱼网" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="三种办法来判断是否移动端是否安装某款app">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js判断移动端是否安装某款app">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/06/01/js判断移动端是否安装某款app/index.html">
+<meta property="og:site_name" content="酷鱼网">
+<meta property="og:description" content="三种办法来判断是否移动端是否安装某款app">
+<meta property="og:updated_time" content="2016-06-01T09:38:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js判断移动端是否安装某款app">
+<meta name="twitter:description" content="三种办法来判断是否移动端是否安装某款app">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> js判断移动端是否安装某款app | 酷鱼网 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b5c8397c77de69eded98c6238d1c9ab2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">酷鱼网</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生，从外打破，是压力；从内打破，是成长。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js判断移动端是否安装某款app
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-01T17:28:31+08:00" content="2016-06-01">
+              2016-06-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/01/js判断移动端是否安装某款app/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/js判断移动端是否安装某款app/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>三种办法来判断是否移动端是否安装某款app</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="第一种方法："><a href="#第一种方法：" class="headerlink" title="第一种方法："></a>第一种方法：</h3><h4 id="一-判断是那种设备"><a href="#一-判断是那种设备" class="headerlink" title="一:判断是那种设备"></a>一:判断是那种设备</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isAndroid = <span class="keyword">u</span>.indexOf('Android') &gt; -1 || <span class="keyword">u</span>.indexOf('Linux') &gt; -1; <span class="comment">//android终端或者uc浏览器</span></span><br><span class="line"><span class="keyword">var</span> isiOS = !!<span class="keyword">u</span>.<span class="literal">match</span>(/\(i[^;]+;( <span class="keyword">U</span>;)? CPU.+<span class="keyword">Mac</span> OS X/); <span class="comment">//ios终端</span></span><br></pre></td></tr></table></figure>
+<h4 id="二：安卓设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载app"><a href="#二：安卓设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载app" class="headerlink" title="二：安卓设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载app"></a>二：安卓设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载app</h4><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">android();</span><br><span class="line"> </span><br><span class="line">if(isAndroid)&#123;</span><br><span class="line">    function android()&#123;</span><br><span class="line">        window.location.href = <span class="string">"openwjtr://com.tyrbl.wjtr"</span>; /<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>打开app的协议，有安卓同事提供<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/</span><br><span class="line">        window.setTimeout(function()&#123;</span><br><span class="line">             window.location.href = <span class="string">"http://www.wjtr.com/download/index.html"</span>; /<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>打开app的协议，有安卓同事提供<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/</span><br><span class="line">        &#125;,2000);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="三：ios设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载appios"><a href="#三：ios设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载appios" class="headerlink" title="三：ios设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载appios();"></a>三：ios设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载appios();</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ios();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(isiOS)&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ios</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">        ifr.src = <span class="string">"openwjtr://com.tyrbl.wjtr"</span>; <span class="comment">/***打开app的协议，有ios同事提供***/</span></span><br><span class="line">        ifr.style.display = <span class="string">"none"</span>; </span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(ifr);</span><br><span class="line">        <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">document</span>.body.removeChild(ifr);</span><br><span class="line">             <span class="built_in">window</span>.location.href = <span class="string">"http://www.wjtr.com/download/index.html"</span>; <span class="comment">/***下载app的地址***/</span></span><br><span class="line">        &#125;,<span class="number">2000</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二种方法："><a href="#第二种方法：" class="headerlink" title="第二种方法："></a>第二种方法：</h3><p>虽然在Js中可以启动某个app，但是并不能判断该app是否安装；<br>启动app需要的时间较长，js中断时间长，如果没安装，js瞬间就执行完毕。直接上代码吧！</p>
+<h4 id="html代码："><a href="#html代码：" class="headerlink" title="html代码："></a>html代码：</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:testApp('tel:1868888888')"</span>&gt;</span>打电话<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="js代码："><a href="#js代码：" class="headerlink" title="js代码："></a>js代码：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testApp</span>(<span class="params">url</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> timeout, t = <span class="number">1000</span>, hasApp = <span class="literal">true</span>; </span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (hasApp) &#123; </span><br><span class="line">            alert(<span class="string">'安装了app'</span>); </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">            alert(<span class="string">'未安装app'</span>); </span><br><span class="line">        &#125; </span><br><span class="line">        <span class="built_in">document</span>.body.removeChild(ifr); </span><br><span class="line">    &#125;, <span class="number">2000</span>) </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> t1 = <span class="built_in">Date</span>.now(); </span><br><span class="line">    <span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>); </span><br><span class="line">    ifr.setAttribute(<span class="string">'src'</span>, url); </span><br><span class="line">    ifr.setAttribute(<span class="string">'style'</span>, <span class="string">'display:none'</span>); </span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(ifr); </span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">         <span class="keyword">var</span> t2 = <span class="built_in">Date</span>.now(); </span><br><span class="line">         <span class="keyword">if</span> (!t1 || t2 - t1 &lt; t + <span class="number">100</span>) &#123; </span><br><span class="line">             hasApp = <span class="literal">false</span>; </span><br><span class="line">         &#125; </span><br><span class="line">    &#125;, t); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第三种方法："><a href="#第三种方法：" class="headerlink" title="第三种方法："></a>第三种方法：</h3><p>最近在做项目的wap版，有个需求就是，先判断手机上是否有我们的APP应用，如果有的话打开应用，没有才跳转到wap页面。<br>wap简单来说就是运行在移动端浏览器上的网站。不管应用在什么地方，总之就是浏览器呗，可以通过JS来判断本地是否有某应用，实现方式实际就是将http协议转为本地软件协议。<br>还是直接贴代码吧。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">"javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="keyword">if</span> (navigator.userAgent.match(<span class="regexp">/(iPhone|iPod|iPad);?/i</span>)) &#123;</span><br><span class="line">        <span class="keyword">var</span> loadDateTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> timeOutDateTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">            <span class="keyword">if</span> (timeOutDateTime - loadDateTime &lt; <span class="number">5000</span>) &#123;</span><br><span class="line">                <span class="built_in">window</span>.location = <span class="string">"要跳转的页面URL"</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">window</span>.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="number">25</span>);</span><br><span class="line">        <span class="built_in">window</span>.location = <span class="string">" apps custom url schemes "</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.userAgent.match(<span class="regexp">/android/i</span>)) &#123;</span><br><span class="line">        <span class="keyword">var</span> state = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            state = <span class="built_in">window</span>.open(<span class="string">"apps custom url schemes "</span>, <span class="string">'_blank'</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span>(e) &#123;&#125;</span><br><span class="line">        <span class="keyword">if</span> (state) &#123;</span><br><span class="line">            <span class="built_in">window</span>.close();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">window</span>.location = <span class="string">"要跳转的页面URL"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="apps-custom-url-schemes-是什么呢？"><a href="#apps-custom-url-schemes-是什么呢？" class="headerlink" title="apps custom url schemes 是什么呢？"></a>apps custom url schemes 是什么呢？</h4><p>其实就是你与APP约定的一个协议URL，你的IOS同事或Android同事在写程序的时候会设置一个URL Scheme，<br>例如设置：<br>URL Scheme ：app<br>然后其他的程序就可以通过URLString ＝ app://  调用该应用。<br>还可以传参数，如：</p>
+<h4 id="app-reaction-uid-1"><a href="#app-reaction-uid-1" class="headerlink" title="app://reaction/?uid=1"></a>app://reaction/?uid=1</h4><p>原理：500ms内，本机有应用程序能解析这个协议并打开程序，调用该应用；如果本机没有应用程序能解析该协议或者500ms内没有打开这个程序，则执行setTimeout里面的function，就是跳转到你想跳转的页面。</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/23/node爬虫案例/" rel="next" title="node爬虫案例">
+                <i class="fa fa-chevron-left"></i> node爬虫案例
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/01/js判断移动端是否安装某款app/"
+           data-title="js判断移动端是否安装某款app" data-url="http://coolfishstudio.github.io/2016/06/01/js判断移动端是否安装某款app/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xqxfk.com1.z0.glb.clouddn.com/image%2Favatar%2Fyves.png"
+               alt="Yves" />
+          <p class="site-author-name" itemprop="name">Yves</p>
+          <p class="site-description motion-element" itemprop="description">不想当厨子的玩家不是好程序猿。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/coolfishstudio" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2505096373/profile?is_all=1" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">我的作品</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://snow.coolfishstudio.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> SNOW.JS
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://animate.coolfishstudio.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> AMIMATE.CSS
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种方法："><span class="nav-number">1.</span> <span class="nav-text">第一种方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-判断是那种设备"><span class="nav-number">1.1.</span> <span class="nav-text">一:判断是那种设备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二：安卓设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载app"><span class="nav-number">1.2.</span> <span class="nav-text">二：安卓设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载app</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三：ios设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载appios"><span class="nav-number">1.3.</span> <span class="nav-text">三：ios设备：原理：判断是否认识这个协议，认识则直接跳转，不认识就在这里下载appios();</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种方法："><span class="nav-number">2.</span> <span class="nav-text">第二种方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#html代码："><span class="nav-number">2.1.</span> <span class="nav-text">html代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js代码："><span class="nav-number">2.2.</span> <span class="nav-text">js代码：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三种方法："><span class="nav-number">3.</span> <span class="nav-text">第三种方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#apps-custom-url-schemes-是什么呢？"><span class="nav-number">3.1.</span> <span class="nav-text">apps custom url schemes 是什么呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#app-reaction-uid-1"><span class="nav-number">3.2.</span> <span class="nav-text">app://reaction/?uid=1</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yves</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div>
+  <a class="theme-link" href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">京ICP备14019006号</a> | <a class="theme-link" href="https://github.com/coolfishstudio" rel="nofollow">仓库</a> 
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coolfishstudio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
