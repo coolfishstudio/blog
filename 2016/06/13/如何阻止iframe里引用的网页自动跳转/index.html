@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="转载文章," />
+  <meta name="keywords" content="HTML5,JavaScript," />
 
 
 
@@ -59,19 +59,19 @@
 
 
 
-<meta name="description" content="在android平台的uc浏览器和微信浏览器中使用display: flex;会出问题。
-使用display: flex;的时候需要加上display: -webkit-box;">
+<meta name="description" content="今天做了个网页，要在网页里设置一个iframe，然后套用其他的网站。使用http://www.neiyiyun.com/portal.php这个网址的时候，出现了莫名其妙的问题，我的网页居然会强制自动跳转到这个网页上。经过检查，原来这个网页用了如下的一段代码：
+1if (top.location != self.location) &amp;#123;top.location=self.location;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决UC浏览器、微信浏览器使用display:flex">
-<meta property="og:url" content="http://coolfishstudio.github.io/2016/03/30/解决UC浏览器、微信浏览器使用display-flex/index.html">
+<meta property="og:title" content="如何阻止iframe里引用的网页自动跳转">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/06/13/如何阻止iframe里引用的网页自动跳转/index.html">
 <meta property="og:site_name" content="酷鱼网">
-<meta property="og:description" content="在android平台的uc浏览器和微信浏览器中使用display: flex;会出问题。
-使用display: flex;的时候需要加上display: -webkit-box;">
-<meta property="og:updated_time" content="2016-04-09T13:50:56.000Z">
+<meta property="og:description" content="今天做了个网页，要在网页里设置一个iframe，然后套用其他的网站。使用http://www.neiyiyun.com/portal.php这个网址的时候，出现了莫名其妙的问题，我的网页居然会强制自动跳转到这个网页上。经过检查，原来这个网页用了如下的一段代码：
+1if (top.location != self.location) &amp;#123;top.location=self.location;">
+<meta property="og:updated_time" content="2016-06-13T07:03:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决UC浏览器、微信浏览器使用display:flex">
-<meta name="twitter:description" content="在android平台的uc浏览器和微信浏览器中使用display: flex;会出问题。
-使用display: flex;的时候需要加上display: -webkit-box;">
+<meta name="twitter:title" content="如何阻止iframe里引用的网页自动跳转">
+<meta name="twitter:description" content="今天做了个网页，要在网页里设置一个iframe，然后套用其他的网站。使用http://www.neiyiyun.com/portal.php这个网址的时候，出现了莫名其妙的问题，我的网页居然会强制自动跳转到这个网页上。经过检查，原来这个网页用了如下的一段代码：
+1if (top.location != self.location) &amp;#123;top.location=self.location;">
 
 
 
@@ -89,7 +89,7 @@
   };
 </script>
 
-  <title> 解决UC浏览器、微信浏览器使用display:flex | 酷鱼网 </title>
+  <title> 如何阻止iframe里引用的网页自动跳转 | 酷鱼网 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +249,7 @@
             
             
               
-                解决UC浏览器、微信浏览器使用display:flex
+                如何阻止iframe里引用的网页自动跳转
               
             
           </h1>
@@ -261,8 +261,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-30T10:50:06+08:00" content="2016-03-30">
-              2016-03-30
+            <time itemprop="dateCreated" datetime="2016-06-13T14:58:46+08:00" content="2016-06-13">
+              2016-06-13
             </time>
           </span>
 
@@ -282,6 +282,18 @@
 
                 
                 
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端特效/黑科技/" itemprop="url" rel="index">
+                    <span itemprop="name">黑科技</span>
+                  </a>
+                </span>
+
+                
+                
 
               
             </span>
@@ -291,8 +303,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/30/解决UC浏览器、微信浏览器使用display-flex/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/30/解决UC浏览器、微信浏览器使用display-flex/" itemprop="commentsCount"></span>
+                <a href="/2016/06/13/如何阻止iframe里引用的网页自动跳转/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/13/如何阻止iframe里引用的网页自动跳转/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,12 +325,13 @@
       
 
       
-        <p>在android平台的uc浏览器和微信浏览器中使用display: flex;会出问题。</p>
-<p>使用display: flex;的时候需要加上<code>display: -webkit-box;</code><br><a id="more"></a><br>使用flex: 1;的时候要加上:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">-webkit-box-flex</span>: <span class="number">1</span>;      </span><br><span class="line"><span class="attribute">-moz-box-flex</span>: <span class="number">1</span>;         </span><br><span class="line"><span class="attribute">-ms-flex</span>: <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<p>使用align-items: center;的时候需要加上：-webkit-box-align: center;</p>
-<p>使用flex-direction: column;的时候需要加上：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line"><span class="attribute">-moz-box-orient</span>: vertical;</span><br><span class="line"><span class="attribute">box-orient</span>: vertical;</span><br></pre></td></tr></table></figure></p>
-<p>这里有个demo大家可以看一下<br>请点击：测试页面<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0, user-scalable=no"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">title</span>&gt;</span>Demo for flex on uc<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">  <span class="tag">html</span>,<span class="tag">body</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line">  <span class="class">.demo1</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> yellow</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">80px</span></span></span>;    </span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-flex</span></span>;     </span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-align-items</span>:<span class="value"> center</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">align-items</span>:<span class="value"> center</span></span>;</span><br><span class="line">    <span class="comment">/* for uc */</span></span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-box</span></span>;  </span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-box-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line">  <span class="class">.demo1</span>&gt;<span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> green</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">2px</span></span></span>;       </span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-flex</span>:<span class="value"> <span class="number">1</span></span></span>;          </span><br><span class="line">    <span class="rule"><span class="attribute">flex</span>:<span class="value"> <span class="number">1</span></span></span>;         </span><br><span class="line">    <span class="comment">/* for uc */</span></span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-box-flex</span>:<span class="value"> <span class="number">1</span></span></span>;      </span><br><span class="line">    <span class="rule"><span class="attribute">-moz-box-flex</span>:<span class="value"> <span class="number">1</span></span></span>;         </span><br><span class="line">    <span class="rule"><span class="attribute">-ms-flex</span>:<span class="value"> <span class="number">1</span></span></span>;                </span><br><span class="line">  &#125;</span></span><br><span class="line">  <span class="class">.demo2</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> yellow</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">80px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-flex</span></span>;     </span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-flex-direction</span>:<span class="value"> column</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">flex-direction</span>:<span class="value"> column</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-align-items</span>:<span class="value"> center</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">align-items</span>:<span class="value"> center</span></span>;</span><br><span class="line">    <span class="comment">/* for uc */</span></span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-box</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-box-orient</span>:<span class="value"> vertical</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-moz-box-orient</span>:<span class="value"> vertical</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">box-orient</span>:<span class="value"> vertical</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-box-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line">  <span class="class">.demo2</span>&gt;<span class="tag">div</span><span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> green</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">40px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">2px</span></span></span>;       </span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-flex</span>:<span class="value"> <span class="number">1</span></span></span>;          </span><br><span class="line">    <span class="rule"><span class="attribute">flex</span>:<span class="value"> <span class="number">1</span></span></span>;         </span><br><span class="line">    <span class="comment">/* for uc */</span></span><br><span class="line">    <span class="rule"><span class="attribute">-webkit-box-flex</span>:<span class="value"> <span class="number">1</span></span></span>;      </span><br><span class="line">    <span class="rule"><span class="attribute">-moz-box-flex</span>:<span class="value"> <span class="number">1</span></span></span>;         </span><br><span class="line">    <span class="rule"><span class="attribute">-ms-flex</span>:<span class="value"> <span class="number">1</span></span></span>;    </span><br><span class="line">  &#125;</span></span><br><span class="line">  </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h2</span>&gt;</span>左右排列，上下居中<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"demo1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h2</span>&gt;</span>上下排列，左右居中<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"demo2"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>flex<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+        <p>今天做了个网页，要在网页里设置一个iframe，然后套用其他的网站。<br>使用<code>http://www.neiyiyun.com/portal.php</code>这个网址的时候，出现了莫名其妙的问题，我的网页居然会强制自动跳转到这个网页上。<br>经过检查，原来这个网页用了如下的一段代码：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (top.<span class="built_in">location</span> != self.<span class="built_in">location</span>) &#123;top.<span class="built_in">location</span>=self.<span class="built_in">location</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>使用里这段代码之后，会自动判断当前的location是否是顶层的，即是否被嵌套到iframe里面了，如果是，则强制跳转。</p>
+<a id="more"></a>
+<p>一时间搜索无果，网上的很多做法都不怎么行了。然后找到了这两篇文章：<br><a href="http://www.codinghorror.com/blog/2009/06/we-done-been-framed.html" target="_blank" rel="external">http://www.codinghorror.com/blog/2009/06/we-done-been-framed.html</a><br>以及：<br><a href="http://seclab.stanford.edu/websec/framebusting/framebust.pdf" target="_blank" rel="external">http://seclab.stanford.edu/websec/framebusting/framebust.pdf</a></p>
+<p>特别是第二篇文章，介绍了很多基于iframe的攻防技术。<br>双重iframe的确可以阻止强制跳转。但是，第一层的iframe就覆盖了第二层的。所以要把第一层的做成透明的，然后第二层嵌套网页。<br>但是我没有测试过。<br>我的做法如下：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">iframe</span> src=<span class="string">"http://www.neiyiyun.com/portal.php"</span> scrolling=<span class="string">"no"</span> security=<span class="string">"restricted"</span> sandbox=<span class="string">""</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>即增加两个：<code>security=&quot;restricted&quot; sandbox=&quot;&quot;</code>，前者是IE的禁止js的功能，后者是HTML5的功能。刚好就可以让IE，Chrome，Firefox这三大浏览器都实现了禁止iframe的自动跳转。</p>
 
       
     </div>
@@ -327,7 +340,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/转载文章/" rel="tag">#转载文章</a>
+            <a href="/tags/HTML5/" rel="tag">#HTML5</a>
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -336,17 +351,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/29/html拨打电话与发送短信/" rel="next" title="html拨打电话与发送短信">
-                <i class="fa fa-chevron-left"></i> html拨打电话与发送短信
+              <a href="/2016/06/01/js判断移动端是否安装某款app/" rel="next" title="js判断移动端是否安装某款app">
+                <i class="fa fa-chevron-left"></i> js判断移动端是否安装某款app
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/05/JS实现网页切出网站TITLE变化/" rel="prev" title="JS实现网页切出网站TITLE变化">
-                JS实现网页切出网站TITLE变化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -372,8 +383,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/30/解决UC浏览器、微信浏览器使用display-flex/"
-           data-title="解决UC浏览器、微信浏览器使用display:flex" data-url="http://coolfishstudio.github.io/2016/03/30/解决UC浏览器、微信浏览器使用display-flex/">
+      <div class="ds-thread" data-thread-key="2016/06/13/如何阻止iframe里引用的网页自动跳转/"
+           data-title="如何阻止iframe里引用的网页自动跳转" data-url="http://coolfishstudio.github.io/2016/06/13/如何阻止iframe里引用的网页自动跳转/">
       </div>
     
   </div>

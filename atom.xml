@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coolfishstudio.github.io/"/>
-  <updated>2016-06-01T09:38:13.000Z</updated>
+  <updated>2016-06-13T07:03:16.000Z</updated>
   <id>http://coolfishstudio.github.io/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何阻止iframe里引用的网页自动跳转</title>
+    <link href="http://coolfishstudio.github.io/2016/06/13/%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2iframe%E9%87%8C%E5%BC%95%E7%94%A8%E7%9A%84%E7%BD%91%E9%A1%B5%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC/"/>
+    <id>http://coolfishstudio.github.io/2016/06/13/如何阻止iframe里引用的网页自动跳转/</id>
+    <published>2016-06-13T06:58:46.000Z</published>
+    <updated>2016-06-13T07:03:16.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天做了个网页，要在网页里设置一个iframe，然后套用其他的网站。&lt;br&gt;使用&lt;code&gt;http://www.neiyiyun.com/portal.php&lt;/code&gt;这个网址的时候，出现了莫名其妙的问题，我的网页居然会强制自动跳转到这个网页上。&lt;br&gt;经过检查，原来这个网页用了如下的一段代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight sqf&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (top.&lt;span class=&quot;built_in&quot;&gt;location&lt;/span&gt; != self.&lt;span class=&quot;built_in&quot;&gt;location&lt;/span&gt;) &amp;#123;top.&lt;span class=&quot;built_in&quot;&gt;location&lt;/span&gt;=self.&lt;span class=&quot;built_in&quot;&gt;location&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;使用里这段代码之后，会自动判断当前的location是否是顶层的，即是否被嵌套到iframe里面了，如果是，则强制跳转。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;一时间搜索无果，网上的很多做法都不怎么行了。然后找到了这两篇文章：&lt;br&gt;&lt;a href=&quot;http://www.codinghorror.com/blog/2009/06/we-done-been-framed.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.codinghorror.com/blog/2009/06/we-done-been-framed.html&lt;/a&gt;&lt;br&gt;以及：&lt;br&gt;&lt;a href=&quot;http://seclab.stanford.edu/websec/framebusting/framebust.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://seclab.stanford.edu/websec/framebusting/framebust.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;特别是第二篇文章，介绍了很多基于iframe的攻防技术。&lt;br&gt;双重iframe的确可以阻止强制跳转。但是，第一层的iframe就覆盖了第二层的。所以要把第一层的做成透明的，然后第二层嵌套网页。&lt;br&gt;但是我没有测试过。&lt;br&gt;我的做法如下：&lt;br&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;tag&quot;&gt;iframe&lt;/span&gt; src=&lt;span class=&quot;string&quot;&gt;&quot;http://www.neiyiyun.com/portal.php&quot;&lt;/span&gt; scrolling=&lt;span class=&quot;string&quot;&gt;&quot;no&quot;&lt;/span&gt; security=&lt;span class=&quot;string&quot;&gt;&quot;restricted&quot;&lt;/span&gt; sandbox=&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;即增加两个：&lt;code&gt;security=&amp;quot;restricted&amp;quot; sandbox=&amp;quot;&amp;quot;&lt;/code&gt;，前者是IE的禁止js的功能，后者是HTML5的功能。刚好就可以让IE，Chrome，Firefox这三大浏览器都实现了禁止iframe的自动跳转。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天做了个网页，要在网页里设置一个iframe，然后套用其他的网站。&lt;br&gt;使用&lt;code&gt;http://www.neiyiyun.com/portal.php&lt;/code&gt;这个网址的时候，出现了莫名其妙的问题，我的网页居然会强制自动跳转到这个网页上。&lt;br&gt;经过检查，原来这个网页用了如下的一段代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight sqf&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (top.&lt;span class=&quot;built_in&quot;&gt;location&lt;/span&gt; != self.&lt;span class=&quot;built_in&quot;&gt;location&lt;/span&gt;) &amp;#123;top.&lt;span class=&quot;built_in&quot;&gt;location&lt;/span&gt;=self.&lt;span class=&quot;built_in&quot;&gt;location&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;使用里这段代码之后，会自动判断当前的location是否是顶层的，即是否被嵌套到iframe里面了，如果是，则强制跳转。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
+    
+      <category term="黑科技" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
+    
+    
+      <category term="HTML5" scheme="http://coolfishstudio.github.io/tags/HTML5/"/>
+    
+      <category term="JavaScript" scheme="http://coolfishstudio.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>js判断移动端是否安装某款app</title>
@@ -60,7 +95,7 @@
 &lt;h1 id=&quot;项目名称-hotnews-api&quot;&gt;&lt;a href=&quot;#项目名称-hotnews-api&quot; class=&quot;headerlink&quot; title=&quot;项目名称 hotnews-api&quot;&gt;&lt;/a&gt;项目名称 hotnews-api&lt;/h1&gt;&lt;p&gt;实现方式请看代码&lt;/p&gt;
 &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Description : 这是一个今日热点的新闻api，通过对百度风云榜的数据抓取，获得新闻关键词，再在搜索引擎进行搜索，得到链接，通过接口获取文章内容，从而实现内容的抓取，数据每一小时一更新&lt;/li&gt;
-&lt;li&gt;Engineer : Yves &lt;a href=&quot;&amp;#109;&amp;#x61;&amp;#105;&amp;#108;&amp;#116;&amp;#x6f;&amp;#x3a;&amp;#x34;&amp;#54;&amp;#x31;&amp;#56;&amp;#x33;&amp;#54;&amp;#51;&amp;#50;&amp;#52;&amp;#x40;&amp;#113;&amp;#x71;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;&quot;&gt;&amp;#x34;&amp;#54;&amp;#x31;&amp;#56;&amp;#x33;&amp;#54;&amp;#51;&amp;#50;&amp;#52;&amp;#x40;&amp;#113;&amp;#x71;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Engineer : Yves &lt;a href=&quot;&amp;#109;&amp;#97;&amp;#105;&amp;#x6c;&amp;#116;&amp;#111;&amp;#58;&amp;#x34;&amp;#x36;&amp;#49;&amp;#56;&amp;#51;&amp;#54;&amp;#51;&amp;#50;&amp;#x34;&amp;#64;&amp;#x71;&amp;#113;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#x6d;&quot;&gt;&amp;#x34;&amp;#x36;&amp;#49;&amp;#56;&amp;#51;&amp;#54;&amp;#51;&amp;#50;&amp;#x34;&amp;#64;&amp;#x71;&amp;#113;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;CreateTime : 2016-05-12&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;注意数据存在缓存中&lt;/p&gt;
@@ -673,32 +708,6 @@
     
       <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
     
-    
-      <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html拨打电话与发送短信</title>
-    <link href="http://coolfishstudio.github.io/2016/03/29/html%E6%8B%A8%E6%89%93%E7%94%B5%E8%AF%9D%E4%B8%8E%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1/"/>
-    <id>http://coolfishstudio.github.io/2016/03/29/html拨打电话与发送短信/</id>
-    <published>2016-03-29T07:05:09.000Z</published>
-    <updated>2016-03-29T07:07:20.000Z</updated>
-    
-    <content type="html">&lt;p&gt;1，拨打电话&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;title&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;热线电话&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tel://13500000000&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;data-ajax&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;false&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dl&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dt&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;alt&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;热线电话&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;img/icon_4.png&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dt&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dd&lt;/span&gt;&amp;gt;&lt;/span&gt;热线电话&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dd&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dl&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;2，发送短信&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;title&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;在线留言&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;sms:13500000000&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;data-ajax&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;false&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dl&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dt&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;alt&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;在线留言&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;img/icon_5.png&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dt&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;dd&lt;/span&gt;&amp;gt;&lt;/span&gt;发送短信&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dd&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;dl&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1，拨打电话&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="前端特效" scheme="http://coolfishstudio.github.io/categories/%E5%89%8D%E7%AB%AF%E7%89%B9%E6%95%88/"/>
-    
-    
-      <category term="HTML5" scheme="http://coolfishstudio.github.io/tags/HTML5/"/>
     
       <category term="转载文章" scheme="http://coolfishstudio.github.io/tags/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/"/>
     

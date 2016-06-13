@@ -263,6 +263,132 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/13/如何阻止iframe里引用的网页自动跳转/" itemprop="url">
+                  如何阻止iframe里引用的网页自动跳转
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T14:58:46+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端特效/" itemprop="url" rel="index">
+                    <span itemprop="name">前端特效</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端特效/黑科技/" itemprop="url" rel="index">
+                    <span itemprop="name">黑科技</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/13/如何阻止iframe里引用的网页自动跳转/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/13/如何阻止iframe里引用的网页自动跳转/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>今天做了个网页，要在网页里设置一个iframe，然后套用其他的网站。<br>使用<code>http://www.neiyiyun.com/portal.php</code>这个网址的时候，出现了莫名其妙的问题，我的网页居然会强制自动跳转到这个网页上。<br>经过检查，原来这个网页用了如下的一段代码：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (top.<span class="built_in">location</span> != self.<span class="built_in">location</span>) &#123;top.<span class="built_in">location</span>=self.<span class="built_in">location</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>使用里这段代码之后，会自动判断当前的location是否是顶层的，即是否被嵌套到iframe里面了，如果是，则强制跳转。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/13/如何阻止iframe里引用的网页自动跳转/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/01/js判断移动端是否安装某款app/" itemprop="url">
                   js判断移动端是否安装某款app
                 </a>
@@ -1237,120 +1363,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/18/Node-js的process模块/" itemprop="url">
-                  Node.js的process模块
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-18T17:24:23+08:00" content="2016-04-18">
-              2016-04-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Node学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Node学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/18/Node-js的process模块/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/Node-js的process模块/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>process模块用来与当前进程互动，可以通过全局变量process访问，不必使用require命令加载。它是一个EventEmitter对象的实例。</p>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>process对象提供一系列属性，用于返回系统信息。</p>
-<p>process.pid：当前进程的进程号。<br>process.version：Node的版本，比如v0.10.18。<br>process.platform：当前系统平台，比如Linux。<br>process.title：默认值为“node”，可以自定义该值。<br>process.argv：当前进程的命令行参数数组。<br>process.env：指向当前shell的环境变量，比如process.env.HOME。<br>process.execPath：运行当前进程的可执行文件的绝对路径。<br>process.stdout：指向标准输出。<br>process.stdin：指向标准输入。<br>process.stderr：指向标准错误。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/18/Node-js的process模块/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1397,7 +1409,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-count">62</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
