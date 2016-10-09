@@ -1,0 +1,913 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="微信,移动端," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="酷鱼网" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="首先感谢cnode社区提供的api，本次实现了简单的cnode社区应用号制作。实现了数据的读取、展示，实现了简单的布局，实现了下一页功能。
+放上我的github地址https://github.com/coolfishstudio/wechat-webapp-cnode
+cnode地址
+
+下面就说说我做这个的过程，不足之处，请多多指教，只愿为进步。
+1.创建项目首先，在官网下载工具，下载地址 我的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信应用号入门实践之cnode社区版">
+<meta property="og:url" content="http://coolfishstudio.github.io/2016/10/09/微信小程序入门教程/index.html">
+<meta property="og:site_name" content="酷鱼网">
+<meta property="og:description" content="首先感谢cnode社区提供的api，本次实现了简单的cnode社区应用号制作。实现了数据的读取、展示，实现了简单的布局，实现了下一页功能。
+放上我的github地址https://github.com/coolfishstudio/wechat-webapp-cnode
+cnode地址
+
+下面就说说我做这个的过程，不足之处，请多多指教，只愿为进步。
+1.创建项目首先，在官网下载工具，下载地址 我的">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/1.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/2.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/3.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/4.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/5.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/6.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/7.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/8.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/9.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/10.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/11.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/12.png">
+<meta property="og:image" content="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/13.png">
+<meta property="og:updated_time" content="2016-10-09T03:36:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信应用号入门实践之cnode社区版">
+<meta name="twitter:description" content="首先感谢cnode社区提供的api，本次实现了简单的cnode社区应用号制作。实现了数据的读取、展示，实现了简单的布局，实现了下一页功能。
+放上我的github地址https://github.com/coolfishstudio/wechat-webapp-cnode
+cnode地址
+
+下面就说说我做这个的过程，不足之处，请多多指教，只愿为进步。
+1.创建项目首先，在官网下载工具，下载地址 我的">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 微信应用号入门实践之cnode社区版 | 酷鱼网 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b5c8397c77de69eded98c6238d1c9ab2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">酷鱼网</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生，从外打破，是压力；从内打破，是成长。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                微信应用号入门实践之cnode社区版
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-09T11:27:56+08:00" content="2016-10-09">
+              2016-10-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/手机移动/" itemprop="url" rel="index">
+                    <span itemprop="name">手机移动</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/手机移动/微信/" itemprop="url" rel="index">
+                    <span itemprop="name">微信</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/09/微信小程序入门教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/09/微信小程序入门教程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>首先感谢cnode社区提供的api，本次实现了简单的cnode社区应用号制作。<br>实现了数据的读取、展示，<br>实现了简单的布局，<br>实现了下一页功能。</p>
+<p>放上我的github地址<br><a href="https://github.com/coolfishstudio/wechat-webapp-cnode" target="_blank" rel="external">https://github.com/coolfishstudio/wechat-webapp-cnode</a></p>
+<p><a href="https://cnodejs.org/topic/57ea257b3670ca3f44c5beb6" target="_blank" rel="external">cnode地址</a></p>
+<p><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/1.png" alt="首页列表"><br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/2.png" alt="内容详情"></p>
+<p>下面就说说我做这个的过程，不足之处，请多多指教，只愿为进步。</p>
+<h2 id="1-创建项目"><a href="#1-创建项目" class="headerlink" title="1.创建项目"></a>1.创建项目</h2><p>首先，在官网下载工具，<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=1474887501214" target="_blank" rel="external">下载地址</a> 我的是选择mac版本0.9.092300。</p>
+<p>然后跟着官方的<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/?t=1474887501301" target="_blank" rel="external">简版教程</a> 创建一个项目。</p>
+<h4 id="注：现在官方的工具支持无appid创建项目。"><a href="#注：现在官方的工具支持无appid创建项目。" class="headerlink" title="注：现在官方的工具支持无appid创建项目。"></a>注：现在官方的工具支持无appid创建项目。</h4><h5 id="1-打开开发者工具，选择“添加项目”"><a href="#1-打开开发者工具，选择“添加项目”" class="headerlink" title="1.打开开发者工具，选择“添加项目”"></a>1.打开开发者工具，选择“添加项目”</h5><p><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/3.png" alt=""></p>
+<h5 id="2-选择无appid，填写地址，创建项目"><a href="#2-选择无appid，填写地址，创建项目" class="headerlink" title="2.选择无appid，填写地址，创建项目"></a>2.选择无appid，填写地址，创建项目</h5><p><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/4.png" alt=""></p>
+<h5 id="3-创建成功，看到默认的Demo项目页面"><a href="#3-创建成功，看到默认的Demo项目页面" class="headerlink" title="3.创建成功，看到默认的Demo项目页面"></a>3.创建成功，看到默认的Demo项目页面</h5><p><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/5.png" alt=""></p>
+<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h2><p>默认的项目里已经没有关于tabBar的配置信息，所以为了学习，我把这个配置进行了修改。</p>
+<p>首先关于配置的说明同样来自于<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html?t=1474887501556" target="_blank" rel="external">官方</a> </p>
+<p>注意：官方的代码有些字段是不一样的，小心被坑。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">pages</span>":<span class="value">[</span><br><span class="line">    <span class="string">"pages/index/index"</span>,</span><br><span class="line">    <span class="string">"pages/logs/logs"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">window</span>":<span class="value">&#123;</span><br><span class="line">    "<span class="attribute">backgroundTextStyle</span>":<span class="value"><span class="string">"light"</span></span>,</span><br><span class="line">    "<span class="attribute">navigationBarBackgroundColor</span>": <span class="value"><span class="string">"#fff"</span></span>,</span><br><span class="line">    "<span class="attribute">navigationBarTitleText</span>": <span class="value"><span class="string">"WeChat"</span></span>,</span><br><span class="line">    "<span class="attribute">navigationBarTextStyle</span>":<span class="value"><span class="string">"black"</span></span><br><span class="line">  </span>&#125;</span>,</span><br><span class="line">  "<span class="attribute">tabBar</span>":<span class="value">&#123;</span><br><span class="line">    "<span class="attribute">list</span>": <span class="value">[&#123;</span><br><span class="line">      "<span class="attribute">pagePath</span>": <span class="value"><span class="string">"pages/index/index"</span></span>,</span><br><span class="line">      "<span class="attribute">text</span>": <span class="value"><span class="string">"首页"</span></span><br><span class="line">    </span>&#125;, &#123;</span><br><span class="line">      "<span class="attribute">pagePath</span>": <span class="value"><span class="string">"pages/logs/logs"</span></span>,</span><br><span class="line">      "<span class="attribute">text</span>": <span class="value"><span class="string">"日志"</span></span><br><span class="line">    </span>&#125;]</span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>增加了tabBar, 查看调试<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/6.png" alt=""><br>看界面是如此的简陋，为此针对tabBar参考官方说明进行了简单的美化。</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"tabBar"</span>:&#123;</span><br><span class="line">   <span class="string">"color"</span>:<span class="string">"#272636"</span>,</span><br><span class="line">   <span class="string">"selectedColor"</span>:<span class="string">"#80bd01"</span>,</span><br><span class="line">   <span class="string">"backgroundColor"</span>:<span class="string">"#fff"</span>,</span><br><span class="line">   <span class="string">"borderStyle"</span>:<span class="string">"white"</span>,</span><br><span class="line">   <span class="string">"list"</span>:[&#123;</span><br><span class="line">     <span class="string">"pagePath"</span>:<span class="string">"pages/index/index"</span>,</span><br><span class="line">     <span class="string">"text"</span>:<span class="string">"首页"</span>,</span><br><span class="line">     <span class="string">"iconPath"</span>:<span class="string">"images/tabBar/my.png"</span>,</span><br><span class="line">     <span class="string">"selectedIconPath"</span>:<span class="string">"images/tabBar/my_hl.png"</span></span><br><span class="line">   &#125;,&#123;</span><br><span class="line">     <span class="string">"pagePath"</span>:<span class="string">"pages/index/index"</span>,</span><br><span class="line">     <span class="string">"text"</span>:<span class="string">"我的"</span>,</span><br><span class="line">     <span class="string">"iconPath"</span>:<span class="string">"images/tabBar/list.png"</span>,</span><br><span class="line">     <span class="string">"selectedIconPath"</span>:<span class="string">"images/tabBar/list_hl.png"</span></span><br><span class="line">   &#125;]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>效果如图<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/7.png" alt=""><br>最后根据文档，对默认页面的窗口表现进行了修改</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"window"</span>:&#123;</span><br><span class="line">  <span class="string">"backgroundTextStyle"</span>:<span class="string">"black"</span>,</span><br><span class="line">  <span class="string">"backgroundColor"</span>:<span class="string">"<span class="subst">#fff</span>"</span>,</span><br><span class="line">  <span class="string">"navigationBarBackgroundColor"</span>:<span class="string">"#000"</span>,</span><br><span class="line">  <span class="string">"navigationBarTitleText"</span>:<span class="string">"CNODE 应用号版"</span>,</span><br><span class="line">  <span class="string">"navigationBarTextStyle"</span>:<span class="string">"white"</span>,</span><br><span class="line">  <span class="string">"enablePullDownRefresh"</span>:<span class="string">"true"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>效果如图<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/8.png" alt=""><br>整体配置文件为</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">pages</span>":<span class="value">[</span><br><span class="line">    <span class="string">"pages/index/index"</span>,</span><br><span class="line">    <span class="string">"pages/logs/logs"</span></span><br><span class="line">  ]</span>,</span><br><span class="line">  "<span class="attribute">window</span>":<span class="value">&#123;</span><br><span class="line">    "<span class="attribute">backgroundTextStyle</span>":<span class="value"><span class="string">"black"</span></span>,</span><br><span class="line">    "<span class="attribute">backgroundColor</span>":<span class="value"><span class="string">"#fff"</span></span>,</span><br><span class="line">    "<span class="attribute">navigationBarBackgroundColor</span>":<span class="value"><span class="string">"#000"</span></span>,</span><br><span class="line">    "<span class="attribute">navigationBarTitleText</span>":<span class="value"><span class="string">"CNODE 应用号版"</span></span>,</span><br><span class="line">    "<span class="attribute">navigationBarTextStyle</span>":<span class="value"><span class="string">"white"</span></span>,</span><br><span class="line">    "<span class="attribute">enablePullDownRefresh</span>":<span class="value"><span class="string">"true"</span></span><br><span class="line">  </span>&#125;</span>,</span><br><span class="line">  "<span class="attribute">tabBar</span>":<span class="value">&#123;</span><br><span class="line">    "<span class="attribute">color</span>":<span class="value"><span class="string">"#272636"</span></span>,</span><br><span class="line">    "<span class="attribute">selectedColor</span>":<span class="value"><span class="string">"#80bd01"</span></span>,</span><br><span class="line">    "<span class="attribute">backgroundColor</span>":<span class="value"><span class="string">"#fff"</span></span>,</span><br><span class="line">    "<span class="attribute">borderStyle</span>":<span class="value"><span class="string">"white"</span></span>,</span><br><span class="line">    "<span class="attribute">list</span>":<span class="value">[&#123;</span><br><span class="line">      "<span class="attribute">pagePath</span>":<span class="value"><span class="string">"pages/index/index"</span></span>,</span><br><span class="line">      "<span class="attribute">text</span>":<span class="value"><span class="string">"首页"</span></span>,</span><br><span class="line">      "<span class="attribute">iconPath</span>":<span class="value"><span class="string">"images/tabBar/my.png"</span></span>,</span><br><span class="line">      "<span class="attribute">selectedIconPath</span>":<span class="value"><span class="string">"images/tabBar/my_hl.png"</span></span><br><span class="line">    </span>&#125;,&#123;</span><br><span class="line">      "<span class="attribute">pagePath</span>":<span class="value"><span class="string">"pages/index/index"</span></span>,</span><br><span class="line">      "<span class="attribute">text</span>":<span class="value"><span class="string">"我的"</span></span>,</span><br><span class="line">      "<span class="attribute">iconPath</span>":<span class="value"><span class="string">"images/tabBar/list.png"</span></span>,</span><br><span class="line">      "<span class="attribute">selectedIconPath</span>":<span class="value"><span class="string">"images/tabBar/list_hl.png"</span></span><br><span class="line">    </span>&#125;]</span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-制作首页列表"><a href="#3-制作首页列表" class="headerlink" title="3.制作首页列表"></a>3.制作首页列表</h2><p>根据官方要求，我在pages文件夹内创建了topics文件夹，并创建了对应了 topics.js、topics.wxml、topics.wxss 三个文件。</p>
+<h3 id="1-注册页面"><a href="#1-注册页面" class="headerlink" title="1.注册页面"></a>1.注册页面</h3><p>首先在配置文件里注册这个topics,</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"pages"</span>:[</span><br><span class="line">  <span class="string">"pages/topics/topics"</span>,</span><br><span class="line">  <span class="string">"pages/index/index"</span>,</span><br><span class="line">  <span class="string">"pages/logs/logs"</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p>并且制定tabBar点击跳到对应的topics页面</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"tabBar"</span>:&#123;</span><br><span class="line">  <span class="string">"color"</span>:<span class="string">"#272636"</span>,</span><br><span class="line">  <span class="string">"selectedColor"</span>:<span class="string">"#80bd01"</span>,</span><br><span class="line">  <span class="string">"backgroundColor"</span>:<span class="string">"#fff"</span>,</span><br><span class="line">  <span class="string">"borderStyle"</span>:<span class="string">"white"</span>,</span><br><span class="line">  <span class="string">"list"</span>:[&#123;</span><br><span class="line">    <span class="string">"pagePath"</span>:<span class="string">"pages/topics/topics"</span>,</span><br><span class="line">    <span class="string">"text"</span>:<span class="string">"首页"</span>,</span><br><span class="line">    <span class="string">"iconPath"</span>:<span class="string">"images/tabBar/my.png"</span>,</span><br><span class="line">    <span class="string">"selectedIconPath"</span>:<span class="string">"images/tabBar/my_hl.png"</span></span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    <span class="string">"pagePath"</span>:<span class="string">"pages/index/index"</span>,</span><br><span class="line">    <span class="string">"text"</span>:<span class="string">"我的"</span>,</span><br><span class="line">    <span class="string">"iconPath"</span>:<span class="string">"images/tabBar/list.png"</span>,</span><br><span class="line">    <span class="string">"selectedIconPath"</span>:<span class="string">"images/tabBar/list_hl.png"</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="注意：我发现注册页面的顺序会影响到默认显示tabBar的顺序，所以我把-quot-pages-topics-topics-quot-放到了-quot-pages-index-index-quot-的前面"><a href="#注意：我发现注册页面的顺序会影响到默认显示tabBar的顺序，所以我把-quot-pages-topics-topics-quot-放到了-quot-pages-index-index-quot-的前面" class="headerlink" title="注意：我发现注册页面的顺序会影响到默认显示tabBar的顺序，所以我把&quot;pages/topics/topics&quot;放到了&quot;pages/index/index&quot;的前面"></a>注意：我发现注册页面的顺序会影响到默认显示tabBar的顺序，所以我把<code>&quot;pages/topics/topics&quot;</code>放到了<code>&quot;pages/index/index&quot;</code>的前面</h5><p>然后编写topics.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    title: <span class="string">'首页列表'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'onLoad by topics'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>以及topics.wxml文件</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">view</span> <span class="keyword">class</span>=<span class="string">"topics-main"</span>&gt;</span><br><span class="line">  测试首页列表界面</span><br><span class="line">&lt;/<span class="keyword">view</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>和topics.wxss文件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.topics-main</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f60</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>最后效果如图<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/9.png" alt=""></p>
+<h3 id="2-创建请求"><a href="#2-创建请求" class="headerlink" title="2.创建请求"></a>2.创建请求</h3><p>根据文档<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/network-request.html?t=1474887499445" target="_blank" rel="external">请求数据</a>，在util文件夹内创建一个api.js文件，专门进行数据请求处理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> HOST_URI = <span class="string">'https://cnodejs.org/api/v1'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> GET_TOPICS = <span class="string">'/topics'</span>;</span><br><span class="line"><span class="keyword">var</span> GET_TOPIC_BY_ID = <span class="string">'/topic/'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">obj2uri</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.keys(obj).map(<span class="function"><span class="keyword">function</span> (<span class="params">k</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">encodeURIComponent</span>(k) + <span class="string">'='</span> + <span class="built_in">encodeURIComponent</span>(obj[k]);</span><br><span class="line">    &#125;).join(<span class="string">'&amp;'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// 获取列表数据</span></span><br><span class="line">    getTopics: <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> HOST_URI + GET_TOPICS + <span class="string">'?'</span> + obj2uri(obj);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 获取内容页数据</span></span><br><span class="line">    getTopicByID: <span class="function"><span class="keyword">function</span> (<span class="params">id, obj</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> HOST_URI + GET_TOPIC_BY_ID + id + <span class="string">'?'</span> + obj2uri(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>修改topics.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Api = <span class="built_in">require</span>(<span class="string">'../../utils/api.js'</span>);</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    title: <span class="string">'首页列表'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'onLoad by topics'</span>);</span><br><span class="line">    <span class="keyword">this</span>.fetchData();<span class="comment">// 获取数据</span></span><br><span class="line">  &#125;,</span><br><span class="line">  fetchData: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理参数</span></span><br><span class="line">    <span class="keyword">if</span> (!data) data = &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span> (!data.page) data.page = <span class="number">1</span>;</span><br><span class="line">    wx.request(&#123;</span><br><span class="line">      url: Api.getTopics(data),</span><br><span class="line">      success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>效果如图<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/10.png" alt=""><br>成功拿到了数据。</p>
+<h3 id="3-完善首页列表"><a href="#3-完善首页列表" class="headerlink" title="3.完善首页列表"></a>3.完善首页列表</h3><p>拿到了数据，也能修改界面，那么就直接完善这个首页吧</p>
+<p>代码就不放了，直接上图<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/11.png" alt=""><br>我认为这里值得说的大概只有loading、循环、传参、下一页和页面跳转了。</p>
+<h4 id="1-loading"><a href="#1-loading" class="headerlink" title="1.loading"></a>1.loading</h4><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">loading</span> <span class="attribute">hidden</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">hidden</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span></span><br><span class="line">  加载中...</span><br><span class="line"><span class="tag">&lt;/<span class="title">loading</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>在topics.wxml中写官方提供的loading组件，根据在topics.js中对hidden值的修改，来触发loading。</p>
+<h4 id="2-循环数据，展示列表"><a href="#2-循环数据，展示列表" class="headerlink" title="2.循环数据，展示列表"></a>2.循环数据，展示列表</h4><p>文档提供了<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/list.html?t=1474887501556" target="_blank" rel="external">列表渲染</a></p>
+<p>通过<code>wx:for</code>实现列表的渲染。</p>
+<h5 id="注意-默认数组的当前项的下标变量名默认为index，数组当前项的变量名默认为item。"><a href="#注意-默认数组的当前项的下标变量名默认为index，数组当前项的变量名默认为item。" class="headerlink" title="注意: 默认数组的当前项的下标变量名默认为index，数组当前项的变量名默认为item。"></a>注意: 默认数组的当前项的下标变量名默认为index，数组当前项的变量名默认为item。</h5><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">block</span> <span class="attribute">wx:for</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">postsList</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"posts-item"</span> <span class="attribute">index</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">index</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">id</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">item.id</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">catchtap</span>=<span class="value">"redictDetail"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"author"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">image</span> <span class="attribute">class</span>=<span class="value">"author-avatar"</span> <span class="attribute">src</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">item.author.avatar</span>_<span class="variable">url</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span><span class="tag">&lt;/<span class="title">image</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"author-name"</span>&gt;</span></span><span class="expression">&#123;&#123;<span class="variable">item.author.loginname</span>&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"posts-tag hot"</span> <span class="attribute">wx:if</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">item.top</span> === <span class="variable">true</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span>置顶<span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"posts-tag"</span> <span class="attribute">wx:if</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">item.good</span> === <span class="variable">true</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span>精华<span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"posts-last-reply"</span>&gt;</span></span><span class="expression">&#123;&#123;<span class="variable">item.last</span>_<span class="variable">reply</span>_<span class="variable">at</span>&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"posts-title"</span>&gt;</span></span><span class="expression">&#123;&#123;<span class="variable">item.title</span>&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"bar-info"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"bar-info-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">image</span> <span class="attribute">class</span>=<span class="value">"bar-info-item-icon"</span> <span class="attribute">src</span>=<span class="value">"/images/icon/reply.png"</span>&gt;</span><span class="tag">&lt;/<span class="title">image</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"bar-info-item-number"</span>&gt;</span></span><span class="expression">&#123;&#123;<span class="variable">item.reply</span>_<span class="variable">count</span>&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"bar-info-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">image</span> <span class="attribute">class</span>=<span class="value">"bar-info-item-icon"</span> <span class="attribute">src</span>=<span class="value">"/images/icon/visit.png"</span>&gt;</span><span class="tag">&lt;/<span class="title">image</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">view</span> <span class="attribute">class</span>=<span class="value">"bar-info-item-number"</span>&gt;</span></span><span class="expression">&#123;&#123;<span class="variable">item.visit</span>_<span class="variable">count</span>&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">block</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>附上一个没有样式的列表展现<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/12.png" alt=""></p>
+<h4 id="3-传参，实现tab切换"><a href="#3-传参，实现tab切换" class="headerlink" title="3.传参，实现tab切换"></a>3.传参，实现tab切换</h4><p>根据cnode的api可以知道通过tab不同的值，获得到不同标签下的内容列表。</p>
+<p>所以 在页面的最上面 tab 栏中</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">view</span> <span class="keyword">class</span>=<span class="string">"top-bar"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">view</span> <span class="keyword">class</span>=<span class="string">"top-bar-item"</span> id=<span class="string">"all"</span> catchtap=<span class="string">"onTapTag"</span>&gt;全部&lt;/<span class="keyword">view</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">view</span> <span class="keyword">class</span>=<span class="string">"top-bar-item"</span> id=<span class="string">"good"</span> catchtap=<span class="string">"onTapTag"</span>&gt;精华&lt;/<span class="keyword">view</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">view</span> <span class="keyword">class</span>=<span class="string">"top-bar-item"</span> id=<span class="string">"share"</span> catchtap=<span class="string">"onTapTag"</span>&gt;分享&lt;/<span class="keyword">view</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">view</span> <span class="keyword">class</span>=<span class="string">"top-bar-item"</span> id=<span class="string">"ask"</span> catchtap=<span class="string">"onTapTag"</span>&gt;问答&lt;/<span class="keyword">view</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">view</span> <span class="keyword">class</span>=<span class="string">"top-bar-item"</span> id=<span class="string">"job"</span> catchtap=<span class="string">"onTapTag"</span>&gt;招聘&lt;/<span class="keyword">view</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">view</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>将id进行定义，通过获取id拿到对应的tab类型。</p>
+<p>其中<code>catchtap</code>是事件绑定。</p>
+<p>bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。</p>
+<p>在topics.js获取</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">onTapTag: function (<span class="keyword">e</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> self = this;</span><br><span class="line">  <span class="keyword">var</span> <span class="keyword">tab</span> = <span class="keyword">e</span>.currentTarget.id;</span><br><span class="line">  <span class="comment">// 这里就能获取到不同的tab值了</span></span><br><span class="line">  self.setData(&#123;</span><br><span class="line">    <span class="keyword">tab</span>: <span class="keyword">tab</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">tab</span> !== 'all') &#123;</span><br><span class="line">    this.fetchData(&#123;<span class="keyword">tab</span>: <span class="keyword">tab</span>&#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    this.fetchData();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h4 id="4-下一页的实现"><a href="#4-下一页的实现" class="headerlink" title="4.下一页的实现"></a>4.下一页的实现</h4><p>根据文档，组件的视图容器中有<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/component/scroll-view.html?t=1474887496374" target="_blank" rel="external">scroll-view</a>这个可滚动视图区域。</p>
+<h5 id="注意：使用竖向滚动时，需要给一个固定高度。"><a href="#注意：使用竖向滚动时，需要给一个固定高度。" class="headerlink" title="注意：使用竖向滚动时，需要给一个固定高度。"></a>注意：使用竖向滚动时，需要给<scroll-view>一个固定高度。</scroll-view></h5><figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">scroll-view</span> <span class="attribute">class</span>=<span class="value">"posts-list"</span> <span class="attribute">style</span>=<span class="value">"height:100%"</span> <span class="attribute">scroll-y</span>=<span class="value">"true"</span> <span class="attribute">bindscrolltolower</span>=<span class="value">"lower"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">block</span> <span class="attribute">wx:for</span>=<span class="value">"</span></span></span><span class="expression">&#123;&#123;<span class="variable">postsList</span>&#125;&#125;</span><span class="xml"><span class="tag"><span class="value">"</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="title">block</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">scroll-view</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>topics.js文件</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lower: function (e) &#123;</span><br><span class="line">  <span class="built_in">var</span> <span class="built_in">self</span> = this;</span><br><span class="line">  <span class="comment">// 修改当前页码</span></span><br><span class="line">  <span class="built_in">self</span><span class="built_in">.</span>setData(&#123;</span><br><span class="line">    page: <span class="built_in">self</span><span class="built_in">.</span><span class="built_in">data</span><span class="built_in">.</span>page + <span class="number">1</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// 判断当前页的tab值 进行请求数据</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">self</span><span class="built_in">.</span><span class="built_in">data</span><span class="built_in">.</span>tab !== <span class="string">'all'</span>) &#123;</span><br><span class="line">    this<span class="built_in">.</span>fetchData(&#123;tab: <span class="built_in">self</span><span class="built_in">.</span><span class="built_in">data</span><span class="built_in">.</span>tab, page: <span class="built_in">self</span><span class="built_in">.</span><span class="built_in">data</span><span class="built_in">.</span>page&#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    this<span class="built_in">.</span>fetchData(&#123;page: <span class="built_in">self</span><span class="built_in">.</span><span class="built_in">data</span><span class="built_in">.</span>page&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-跳页的实现"><a href="#5-跳页的实现" class="headerlink" title="5.跳页的实现"></a>5.跳页的实现</h4><p>在<code>posts-item</code>中已经进行了事件绑定。利用<code>wx.navigateTo</code>实现页面的跳转。</p>
+<h5 id="注意：一个应用同时只能打开5个页面，当已经打开了5个页面之后，wx-navigateTo不能正常打开新页面。"><a href="#注意：一个应用同时只能打开5个页面，当已经打开了5个页面之后，wx-navigateTo不能正常打开新页面。" class="headerlink" title="注意：一个应用同时只能打开5个页面，当已经打开了5个页面之后，wx.navigateTo不能正常打开新页面。"></a>注意：一个应用同时只能打开5个页面，当已经打开了5个页面之后，wx.navigateTo不能正常打开新页面。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">redictDetail: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'我要看详情'</span>);</span><br><span class="line">  <span class="keyword">var</span> id = e.currentTarget.id,</span><br><span class="line">      url = <span class="string">'../detail/detail?id='</span> + id;</span><br><span class="line">      <span class="comment">// 这里的detail是需要创建对应的文件，以及页面注册的</span></span><br><span class="line">  wx.navigateTo(&#123;</span><br><span class="line">    url: url</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="4-实现详情页"><a href="#4-实现详情页" class="headerlink" title="4.实现详情页"></a>4.实现详情页</h3><p>同样的原理，创建detail文件，并注册，获取数据，并美化页面。<br><img src="http://7xqxfk.com1.z0.glb.clouddn.com//xiaoyingyong/cnode/13.png" alt=""></p>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h3><ul>
+<li>微信小应用页面的脚本逻辑在是在JsCore中运行，JsCore是一个没有窗口对象的环境，所以不能再脚本中使用window，也无法在脚本中操作组件</li>
+<li>同样不能用jquery</li>
+<li>也不能操作dom</li>
+<li>部分标签不支持，比如 h1-h6 会编译报错。</li>
+<li>暂时没找到解决富文本详情页显示的办法。</li>
+<li>整体下来，感觉开发简单，限制很多。</li>
+<li>写过react的看这个确实比较简单。</li>
+</ul>
+<p>放上我的github地址<br><a href="https://github.com/coolfishstudio/wechat-webapp-cnode" target="_blank" rel="external">https://github.com/coolfishstudio/wechat-webapp-cnode</a></p>
+<p>最后感谢：cnode社区和博卡君</p>
+<p>附上 博卡君的教程</p>
+<p><a href="https://my.oschina.net/wwnick/blog/750055" target="_blank" rel="external">全球首个微信应用号开发教程！通宵吐血赶稿，每日更新！</a></p>
+<p><a href="https://my.oschina.net/wwnick/blog/750495" target="_blank" rel="external">博卡君的应用号（小程序）开发教程首发第二弹！（0923）</a></p>
+<p><a href="https://my.oschina.net/wwnick/blog/750974" target="_blank" rel="external">第三弹！全球首个微信应用号开发教程！通宵吐血赶稿，每日更新！</a></p>
+<p><a href="https://my.oschina.net/wwnick/blog/751826" target="_blank" rel="external">第四弹！全球首个微信应用号开发教程！通宵吐血赶稿，每日更新！</a></p>
+<p><a href="https://my.oschina.net/wwnick/blog/752421" target="_blank" rel="external">第五弹！全球首个微信应用号开发教程！通宵吐血赶稿，每日更新！</a></p>
+<p><a href="https://my.oschina.net/wwnick/blog/753597" target="_blank" rel="external">第六弹！全球首个微信小程序（应用号）开发教程！通宵吐血赶稿！</a></p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微信/" rel="tag">#微信</a>
+          
+            <a href="/tags/移动端/" rel="tag">#移动端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/13/如何阻止iframe里引用的网页自动跳转/" rel="next" title="如何阻止iframe里引用的网页自动跳转">
+                <i class="fa fa-chevron-left"></i> 如何阻止iframe里引用的网页自动跳转
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/09/微信小程序入门教程/"
+           data-title="微信应用号入门实践之cnode社区版" data-url="http://coolfishstudio.github.io/2016/10/09/微信小程序入门教程/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xqxfk.com1.z0.glb.clouddn.com/image%2Favatar%2Fyves.png"
+               alt="Yves" />
+          <p class="site-author-name" itemprop="name">Yves</p>
+          <p class="site-description motion-element" itemprop="description">不想当厨子的玩家不是好程序猿。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">63</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/coolfishstudio" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2505096373/profile?is_all=1" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">我的作品</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://snow.coolfishstudio.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> SNOW.JS
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://animate.coolfishstudio.com" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> AMIMATE.CSS
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建项目"><span class="nav-number">1.</span> <span class="nav-text">1.创建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注：现在官方的工具支持无appid创建项目。"><span class="nav-number">1.0.1.</span> <span class="nav-text">注：现在官方的工具支持无appid创建项目。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-打开开发者工具，选择“添加项目”"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">1.打开开发者工具，选择“添加项目”</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-选择无appid，填写地址，创建项目"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">2.选择无appid，填写地址，创建项目</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-创建成功，看到默认的Demo项目页面"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">3.创建成功，看到默认的Demo项目页面</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置"><span class="nav-number">2.</span> <span class="nav-text">2.配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-制作首页列表"><span class="nav-number">3.</span> <span class="nav-text">3.制作首页列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-注册页面"><span class="nav-number">3.1.</span> <span class="nav-text">1.注册页面</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：我发现注册页面的顺序会影响到默认显示tabBar的顺序，所以我把-quot-pages-topics-topics-quot-放到了-quot-pages-index-index-quot-的前面"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">注意：我发现注册页面的顺序会影响到默认显示tabBar的顺序，所以我把"pages/topics/topics"放到了"pages/index/index"的前面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-创建请求"><span class="nav-number">3.2.</span> <span class="nav-text">2.创建请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-完善首页列表"><span class="nav-number">3.3.</span> <span class="nav-text">3.完善首页列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-loading"><span class="nav-number">3.3.1.</span> <span class="nav-text">1.loading</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-循环数据，展示列表"><span class="nav-number">3.3.2.</span> <span class="nav-text">2.循环数据，展示列表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意-默认数组的当前项的下标变量名默认为index，数组当前项的变量名默认为item。"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">注意: 默认数组的当前项的下标变量名默认为index，数组当前项的变量名默认为item。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-传参，实现tab切换"><span class="nav-number">3.3.3.</span> <span class="nav-text">3.传参，实现tab切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-下一页的实现"><span class="nav-number">3.3.4.</span> <span class="nav-text">4.下一页的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：使用竖向滚动时，需要给一个固定高度。"><span class="nav-number">3.3.4.1.</span> <span class="nav-text">注意：使用竖向滚动时，需要给一个固定高度。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-跳页的实现"><span class="nav-number">3.3.5.</span> <span class="nav-text">5.跳页的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：一个应用同时只能打开5个页面，当已经打开了5个页面之后，wx-navigateTo不能正常打开新页面。"><span class="nav-number">3.3.5.1.</span> <span class="nav-text">注意：一个应用同时只能打开5个页面，当已经打开了5个页面之后，wx.navigateTo不能正常打开新页面。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-实现详情页"><span class="nav-number">3.4.</span> <span class="nav-text">4.实现详情页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-总结"><span class="nav-number">3.5.</span> <span class="nav-text">5.总结</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yves</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div>
+  <a class="theme-link" href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">京ICP备14019006号</a> | <a class="theme-link" href="https://github.com/coolfishstudio" rel="nofollow">仓库</a> 
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"coolfishstudio"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
